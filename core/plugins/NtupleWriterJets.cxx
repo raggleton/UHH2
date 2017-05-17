@@ -295,6 +295,33 @@ void NtupleWriterJets::fill_jet_info(const pat::Jet & pat_jet, Jet & jet, bool d
       // throw runtime_error("did not find all b-taggers; see output for details");
     }
   }
+
+  // do special vars according to 1704.03878
+  float ptd = 0, lha = 0, width = 0, thrust = 0;
+  float pt_sum = 0;
+  for (unsigned i = 0; i < pat_jet.numberOfDaughters(); i++) {
+    const reco::Candidate * dtr = pat_jet.daughter(i);
+    pt_sum += dtr->pt();
+  }
+  float jet_radius = 1.0;
+  // Doesn't seem to be a way to get jet radius (e.g. 0.4)
+  // so for now user has to divide by R**beta
+  for (unsigned i = 0; i < pat_jet.numberOfDaughters(); i++) {
+    const reco::Candidate * dtr = pat_jet.daughter(i);
+    float z = dtr->pt() / pt_sum;
+    float theta = reco::deltaR(*dtr, pat_jet) / jet_radius;
+    ptd += pow(z, 2);
+    lha += z * pow(theta, 0.5);
+    width += z*theta;
+    thrust += z * pow(theta, 2);
+  }
+  // cout << "My pt_sum: " << pt_sum << " jet pt: " << pat_jet.pt() << endl;
+  jet.set_pTD(ptd);
+  jet.set_LHA(lha);
+  jet.set_width(width);
+  jet.set_thrust(thrust);
+  // cout << "My mass: " << mass << " obj mass: " << pat_jet.mass() << endl;
+
 }
 
 
