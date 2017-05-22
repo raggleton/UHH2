@@ -833,7 +833,9 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         genparticle_source = cms.InputTag("prunedPrunedGenParticles"),
         stablegenparticle_source = cms.InputTag("packedGenParticles"),
         doAllGenParticles = cms.bool(False), #set to true if you want to store all gen particles, otherwise, only prunedPrunedGenParticles are stored (see above)
-        doGenJets = cms.bool(not useData),
+
+        # doGenJets = cms.bool(not useData),
+        doGenJets = cms.bool(False),
         genjet_sources = cms.vstring("slimmedGenJets","slimmedGenJetsAK8","ca15GenJets"),
         genjet_ptmin = cms.double(10.0),
         genjet_etamax = cms.double(5.0),
@@ -849,8 +851,12 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         #gentopjet_tau1 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau1"),cms.InputTag("NjettinessAk8SoftDropGen","tau1")), #this can be used to save N-subjettiness for GenJets
         #gentopjet_tau2 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau2"),cms.InputTag("NjettinessAk8SoftDropGen","tau2")), #this can be used to save N-subjettiness for GenJets
         #gentopjet_tau3 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau3"),cms.InputTag("NjettinessAk8SoftDropGen","tau3")), #this can be used to save N-subjettiness for GenJets
-        
-        doGenJetsWithParts = cms.bool(False),
+
+        doGenJetsWithParts = cms.bool(True),
+        genjetwithparts_sources = cms.vstring("slimmedGenJets", "slimmedGenJetsAK8", "ca15GenJets"),
+        genjetwithparts_ptmin = cms.double(10.0),
+        genjetwithparts_etamax = cms.double(5.0),
+
         doAllPFParticles = cms.bool(False),
         pf_collection_source = cms.InputTag("packedPFCandidates"),
 
