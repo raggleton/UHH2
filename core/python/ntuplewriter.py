@@ -747,21 +747,22 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         tau_etamax = cms.double(999.0),
         doPhotons = cms.bool(False),
         #photon_sources = cms.vstring("selectedPatPhotons"),
-        
+
         doJets = cms.bool(True),
         #jet_sources = cms.vstring("patJetsAk4PFCHS", "patJetsAk8PFCHS", "patJetsCa15CHSJets", "patJetsCa8CHSJets", "patJetsCa15PuppiJets", "patJetsCa8PuppiJets"),
    #     jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi"),
         jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi","patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
         jet_ptmin = cms.double(10.0),
         jet_etamax = cms.double(999.0),
-        
+
         doMET = cms.bool(True),
         #met_sources =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS","slimmedMETsMuEGClean"),
         met_sources =  met_sources_GL,
-        #doTopJets = cms.bool(False),
-        doTopJets = cms.bool(True),
+
+        doTopJets = cms.bool(False),
+        # doTopJets = cms.bool(True),
         topjet_ptmin = cms.double(150.0),
-        topjet_etamax = cms.double(5.0),                                                                               
+        topjet_etamax = cms.double(5.0),
         topjet_sources = cms.vstring("slimmedJetsAK8","patJetsAk8CHSJetsSoftDropPacked","patJetsHepTopTagCHSPacked","patJetsHepTopTagPuppiPacked","patJetsAk8PuppiJetsSoftDropPacked"),
       #  topjet_sources = cms.vstring("slimmedJetsAK8","patJetsAk8CHSJetsSoftDropPacked","patJetsAk8PuppiJetsSoftDropPacked"),
         #Note: use label "daughters" for  subjet_sources if you want to store as subjets the linked daughters of the topjets (NOT for slimmedJetsAK8 in miniAOD!)
@@ -839,11 +840,12 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         genjet_sources = cms.vstring("slimmedGenJets","slimmedGenJetsAK8","ca15GenJets"),
         genjet_ptmin = cms.double(10.0),
         genjet_etamax = cms.double(5.0),
-                            
-        doGenTopJets = cms.bool(not useData),
+
+        # doGenTopJets = cms.bool(not useData),
+        doGenTopJets = cms.bool(False),
         gentopjet_sources = cms.VInputTag(cms.InputTag("ak8GenJetsSoftDrop")),
         #gentopjet_sources = cms.VInputTag(cms.InputTag("ak8GenJets"),cms.InputTag("ak8GenJetsSoftDrop")), #this can be used to save N-subjettiness for ungroomed GenJets
-        gentopjet_ptmin = cms.double(150.0), 
+        gentopjet_ptmin = cms.double(150.0),
         gentopjet_etamax = cms.double(5.0),
         gentopjet_tau1 = cms.VInputTag(),
         gentopjet_tau2 = cms.VInputTag(),
@@ -861,14 +863,14 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         pf_collection_source = cms.InputTag("packedPFCandidates"),
 
         # # *** HOTVR & XCone stuff
-        doHOTVR = cms.bool(True),
-        doXCone = cms.bool(True),
-        doGenHOTVR = cms.bool(not useData),
-        doGenXCone = cms.bool(not useData),    
-         # doHOTVR = cms.bool(False),
-         # doXCone = cms.bool(False),
-         # doGenHOTVR = cms.bool(False),
-         # doGenXCone =  cms.bool(False),
+        # doHOTVR = cms.bool(True),
+        # doXCone = cms.bool(True),
+        # doGenHOTVR = cms.bool(not useData),
+        # doGenXCone = cms.bool(not useData),
+        doHOTVR = cms.bool(False),
+        doXCone = cms.bool(False),
+        doGenHOTVR = cms.bool(False),
+        doGenXCone =  cms.bool(False)
 
 )
 
