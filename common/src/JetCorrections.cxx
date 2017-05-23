@@ -764,7 +764,7 @@ GenericJetResolutionSmearer::GenericJetResolutionSmearer(uhh2::Context& ctx, con
   h_recjets_    = ctx.get_handle<std::vector<Jet> >      (recjet_label);
   h_rectopjets_ = ctx.get_handle<std::vector<TopJet> >   (recjet_label);
 
-  h_genjets_    = ctx.get_handle<std::vector<Particle> > (genjet_label);
+  h_genjets_    = ctx.get_handle<std::vector<GenJetWithParts> > (genjet_label);
   h_gentopjets_ = ctx.get_handle<std::vector<GenTopJet> >(genjet_label);
 
   JER_SFs_ = JER_sf;
@@ -781,7 +781,7 @@ bool GenericJetResolutionSmearer::process(uhh2::Event& evt){
   else if(evt.is_valid(h_rectopjets_)) rec_topjets = &evt.get(h_rectopjets_);
   else throw std::runtime_error("GenericJetResolutionSmearer::process -- invalid handle to RECO-jets");
 
-  std::vector<Particle>*  gen_jets(0);
+  std::vector<GenJetWithParts>*  gen_jets(0);
   std::vector<GenTopJet>* gen_topjets(0);
 
   if     (evt.is_valid(h_genjets_))    gen_jets    = &evt.get(h_genjets_);

@@ -451,7 +451,7 @@ NtupleWriter::NtupleWriter(const edm::ParameterSet& iConfig): outfile(0), tr(0),
     genjets.resize(genjet_sources.size());
     for(size_t j=0; j< genjet_sources.size(); ++j){
         genjet_tokens.push_back(consumes<vector<reco::GenJet>>(genjet_sources[j]));
-        branch(tr, genjet_sources[j].c_str(), "std::vector<Particle>", &genjets[j]);
+        branch(tr, genjet_sources[j].c_str(), "std::vector<GenJetWithParts>", &genjets[j]);
     }
     if(!genjet_sources.empty()){
         event->genjets = &genjets[0];
@@ -868,7 +868,7 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
          if(gen_jet.pt() < genjet_ptmin) continue;
          if(fabs(gen_jet.eta()) > genjet_etamax) continue;
 
-          Particle jet;
+          GenJetWithParts jet;
           jet.set_charge(gen_jet.charge());
           jet.set_pt(gen_jet.pt());
           jet.set_eta(gen_jet.eta());
@@ -915,9 +915,8 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
 
 	 // recalculate the jet charge
 	 int jet_charge = 0;
-	 std::vector<const reco::GenParticle * > jetgenps = gen_jet->getGenConstituents();
-	 for(unsigned int l = 0; l<jetgenps.size(); ++l){
-	   jet_charge +=  jetgenps[l]->charge();
+        for (unsigned i = 0; i < gen_jet->numberOfDaughters(); i++) {
+          jet_charge += gen_jet->daughter(i)->charge();
 	 }
 
     	 genjet.set_charge(jet_charge);
@@ -1383,18 +1382,18 @@ void NtupleWriter::fillDescriptions(edm::ConfigurationDescriptions& descriptions
 void NtupleWriter::fill_genparticles_jet(const reco::GenJet& reco_genjet, GenJetWithParts& genjet)
 {
   // loop over all jet constituents, fill into gen_particle collection
-	 
-  std::vector<const reco::GenParticle*> jetgenps = reco_genjet.getGenConstituents();
-  for(unsigned int l = 0; l<jetgenps.size(); ++l){
-    const reco::GenParticle* jetgenp =  jetgenps[l];
-    size_t genparticles_index = add_genpart(*jetgenp, *event->genparticles);
+  // Need to use the daughter(idx) and numberOfDaughters() methods NOT getGenConstituents()
+  // See https://twiki.cern.ch/twiki/bin/view/CMSPublic/WorkBookMiniAOD2016#GenJets
+  for (unsigned i = 0; i < reco_genjet.numberOfDaughters(); i++) {
+    const reco::Candidate & dtr = *reco_genjet.daughter(i);
+    // dodgy conversion from reco::Candidate to GenParticle - there must be a better way!
+    reco::GenParticle jetgenp(dtr.charge(), dtr.p4(), dtr.vertex(), dtr.pdgId(), dtr.status(), true);
+    size_t genparticles_index = add_genpart(jetgenp, *event->genparticles);
     genjet.add_genparticles_index(genparticles_index);
   }
 
   //  if(topjet.genparticles_indices().size()!= jetgenps.size())
   //  std::cout << "WARNING: Found only " << topjet.genparticles_indices().size() << " from " << jetgenps.size() << " gen particles of this topjet"<<std::endl;
-  
-
 }
 
 //define this as a plug-in

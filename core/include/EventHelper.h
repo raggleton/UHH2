@@ -108,7 +108,7 @@ private:
     Event::Handle<GenInfo> h_genInfo;
     Event::Handle<std::vector<GenTopJet>> h_gentopjets;
     Event::Handle<std::vector<GenParticle>> h_genparticles;
-    Event::Handle<std::vector<Particle>> h_genjets;
+    Event::Handle<std::vector<GenJetWithParts>> h_genjets;
     
     Event::Handle<std::vector<bool>> h_triggerResults;
     Event::Handle<std::vector<std::string>> h_triggerNames;

@@ -21,11 +21,11 @@ GenJetsHists::GenJetsHists(Context & ctx,
       }
     }
     if(!collection.empty()){
-        h_jets = ctx.get_handle<std::vector<Particle> >(collection);
+        h_jets = ctx.get_handle<std::vector<GenJetWithParts> >(collection);
     }
 
 }
-void GenJetsHists::fill_ParticleHist(const Particle & jet, ParticleHist & particle_hist, double  weight){
+void GenJetsHists::fill_ParticleHist(const GenJetWithParts & jet, ParticleHist & particle_hist, double  weight){
   particle_hist.pt->Fill(jet.pt(), weight);
   particle_hist.eta->Fill(jet.eta(), weight);
   particle_hist.phi->Fill(jet.phi(), weight);
@@ -47,7 +47,7 @@ void GenJetsHists::fill(const uhh2::Event & event){
     cerr<<collection<<" is invalid. Going to abort from GenJetsHists class"<<endl;
     assert(1==0);
   }
-  vector<Particle> jets = collection.empty() ?  *event.genjets : event.get(h_jets);
+  vector<GenJetWithParts> jets = collection.empty() ?  *event.genjets : event.get(h_jets);
   number->Fill(jets.size(), w);
   for(unsigned int i = 0; i <jets.size(); i++){
     const auto & jet = jets[i];

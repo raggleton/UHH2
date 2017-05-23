@@ -301,7 +301,7 @@ class GenericJetResolutionSmearer : public uhh2::AnalysisModule {
 
  private:
   uhh2::Event::Handle<std::vector<Jet> >       h_recjets_;
-  uhh2::Event::Handle<std::vector<Particle> >  h_genjets_;
+  uhh2::Event::Handle<std::vector<GenJetWithParts> >  h_genjets_;
   uhh2::Event::Handle<std::vector<TopJet> >    h_rectopjets_;
   uhh2::Event::Handle<std::vector<GenTopJet> > h_gentopjets_;
 

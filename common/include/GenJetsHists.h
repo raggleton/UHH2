@@ -16,12 +16,12 @@ class GenJetsHists : public uhh2::Hists {
   };
   GenJetsHists(uhh2::Context & ctx, const std::string & dirname,  const unsigned int NumberOfPlottedJets=4, const std::string & collection_="");
   GenJetsHists::ParticleHist book_ParticleHist(const std::string & axisSuffix, const std::string & histSuffix, double minPt, double maxPt);
-  void fill_ParticleHist(const Particle & jet, ParticleHist & particle_hist, double  weight);
+  void fill_ParticleHist(const GenJetWithParts & jet, ParticleHist & particle_hist, double  weight);
   virtual void fill(const uhh2::Event & ev) override;
  private:
   std::string collection;
   std::vector<ParticleHist> single_ParticleHists;
   ParticleHist alljets;
   TH1F* number;
-  uhh2::Event::Handle<std::vector<Particle> > h_jets;
+  uhh2::Event::Handle<std::vector<GenJetWithParts> > h_jets;
 };

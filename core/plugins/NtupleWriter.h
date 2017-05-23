@@ -88,7 +88,7 @@ class NtupleWriter : public edm::EDFilter {
       edm::EDGetToken dupECALClusters_token;
       edm::EDGetToken hitsNotReplaced_token;
       std::vector<edm::EDGetToken> genjet_tokens;
-      std::vector<std::vector<Particle>> genjets;
+      std::vector<std::vector<GenJetWithParts>> genjets;
       double genjet_ptmin;
       double genjet_etamax;
 

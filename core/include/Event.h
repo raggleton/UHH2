@@ -39,7 +39,7 @@ public:
   GenInfo* genInfo;
   std::vector< GenTopJet >* gentopjets;
   std::vector< GenParticle >* genparticles;
-  std::vector< Particle>* genjets;
+  std::vector< GenJetWithParts>* genjets;
   std::vector< PFParticle>* pfparticles;
 
   //Add variables to trace possible issues with the ECAL slew rate mitigation
