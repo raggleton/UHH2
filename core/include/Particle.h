@@ -58,3 +58,6 @@ private:
   float m_energy;
 };
 
+inline bool operator==(const Particle& lhs, const Particle& rhs) {
+  return (lhs.v4() == rhs.v4());
+}
