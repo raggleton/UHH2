@@ -37,6 +37,7 @@ class Jet : public FlavorParticle {
     m_JEC_L1factor_raw = 0;
     m_genjet_index = 0;
     m_hadronFlavor = 0;
+    m_genPartonFlavor = 0;
 
     m_lepton_keys.clear();
 
@@ -71,6 +72,7 @@ class Jet : public FlavorParticle {
   float get_tag(tag t) const { return tags.get_tag(static_cast<int>(t)); }
   JetBTagInfo btaginfo() const{return m_btaginfo;}
   int hadronFlavor() const { return m_hadronFlavor; }
+  int genPartonFlavor() const { return m_genPartonFlavor; }
 
   const std::vector<long int>& lepton_keys() const { return m_lepton_keys; }
 
@@ -105,6 +107,7 @@ class Jet : public FlavorParticle {
   void set_tag(tag t, float value) { return tags.set_tag(static_cast<int>(t), value); }
   void set_btaginfo(JetBTagInfo x){m_btaginfo=x;}
   void set_hadronFlavor(int x){ m_hadronFlavor = x; }
+  void set_genPartonFlavor(int x){ m_genPartonFlavor = x; }
 
   void set_lepton_keys(const std::vector<long int>& vlk){ m_lepton_keys = vlk; }
   void add_lepton_key (const long int k){ m_lepton_keys.push_back(k); }
@@ -139,6 +142,7 @@ class Jet : public FlavorParticle {
   float m_JEC_L1factor_raw;
   int m_genjet_index;
   int m_hadronFlavor;
+  int m_genPartonFlavor;
 
   JetBTagInfo m_btaginfo;
 

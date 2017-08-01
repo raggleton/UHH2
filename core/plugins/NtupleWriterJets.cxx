@@ -28,6 +28,7 @@
 #include "DataFormats/TrackReco/interface/TrackFwd.h"
 #include "TrackingTools/TransientTrack/interface/TransientTrackBuilder.h"
 #include "RecoBTag/SecondaryVertex/interface/TrackKinematics.h"
+#include "DataFormats/HepMCCandidate/interface/GenParticle.h"
 using namespace uhh2;
 using namespace std;
 
@@ -147,6 +148,12 @@ void NtupleWriterJets::fill_jet_info(const pat::Jet & pat_jet, Jet & jet, bool d
   jet.set_energy(pat_jet.energy());
   jet.set_flavor(pat_jet.partonFlavour());
   jet.set_hadronFlavor(pat_jet.hadronFlavour());
+  int flav = 0;
+  if (pat_jet.genParton() != nullptr) {
+    flav = pat_jet.genParton()->pdgId();
+  }
+  jet.set_genPartonFlavor(flav);
+
   jet.set_numberOfDaughters (pat_jet.numberOfDaughters());
   jet.set_jetArea(pat_jet.jetArea());
   if(pat_jet.isPFJet()){
