@@ -15,6 +15,7 @@ eval `scramv1 runtime -sh`
 git cms-init
 git cms-merge-topic -u cms-met:fromCMSSW_8_0_20_postICHEPfilter
 git cms-merge-topic gkasieczka:test-httv2-8014
+git cms-merge-topic Sam-Harper:HEEPV70VID_8010_ReducedCheckout
 git cms-merge-topic ikrav:egm_id_80X_v2
 git-cms-addpkg RecoBTag
 git-cms-addpkg PhysicsTools

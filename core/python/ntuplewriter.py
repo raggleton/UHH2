@@ -636,7 +636,7 @@ process.egmGsfElectronIDs.physicsObjectSrc = cms.InputTag('slimmedElectrons')
 elecID_mod_ls = [
   'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Summer16_80X_V1_cff',
   'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronHLTPreselecition_Summer16_V1_cff',
-  'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV60_cff',
+  'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV70_cff',
   'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Spring16_GeneralPurpose_V1_cff',
   'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Spring16_HZZ_V1_cff',
 ]
@@ -657,7 +657,7 @@ process.slimmedElectronsUSER = cms.EDProducer('PATElectronUserData',
 
     cutBasedElectronHLTPreselection_Summer16_V1 = cms.InputTag('egmGsfElectronIDs:cutBasedElectronHLTPreselection-Summer16-V1'),
 
-    heepElectronID_HEEPV60                                = cms.InputTag('egmGsfElectronIDs:heepElectronID-HEEPV60'),
+    heepElectronID_HEEPV70                                = cms.InputTag('egmGsfElectronIDs:heepElectronID-HEEPV70'),
 
   ),
 
@@ -731,7 +731,7 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
           'cutBasedElectronID_Summer16_80X_V1_medium',
           'cutBasedElectronID_Summer16_80X_V1_tight',
           'cutBasedElectronHLTPreselection_Summer16_V1',
-          'heepElectronID_HEEPV60',
+          'heepElectronID_HEEPV70',
         ),
         #Add variables to trace possible issues with the ECAL slew rate mitigation 
         #https://twiki.cern.ch/twiki/bin/view/CMSPublic/ReMiniAOD03Feb2017Notes#EGM
