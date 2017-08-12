@@ -197,6 +197,12 @@ void NtupleWriterMuons::process(const edm::Event & event, uhh2::Event & uevent, 
 
      mu.set_segmentCompatibility(muon::segmentCompatibility(pat_mu));
 
+     mu.set_tunePMuonBestTrack_pt(pat_mu.tunePMuonBestTrack()->pt());
+     mu.set_tunePMuonBestTrack_eta(pat_mu.tunePMuonBestTrack()->eta());
+     mu.set_tunePMuonBestTrack_phi(pat_mu.tunePMuonBestTrack()->phi());
+
+     mu.set_trackIso(pat_mu.trackIso());
+
      mu.set_sumChargedHadronPt(pat_mu.pfIsolationR04().sumChargedHadronPt);
      mu.set_sumNeutralHadronEt(pat_mu.pfIsolationR04().sumNeutralHadronEt);
      mu.set_sumPhotonEt       (pat_mu.pfIsolationR04().sumPhotonEt);

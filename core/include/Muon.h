@@ -48,6 +48,12 @@ class Muon : public Particle {
     m_combinedQuality_trkKink = 0;
     m_segmentCompatibility = 0;
 
+    m_tunePMuonBestTrack_pt = 0;
+    m_tunePMuonBestTrack_eta = 0;
+    m_tunePMuonBestTrack_phi = 0;
+
+    m_trackIso = 0;
+
     m_sumChargedHadronPt = 0;
     m_sumNeutralHadronEt = 0;
     m_sumPhotonEt = 0;
@@ -78,6 +84,12 @@ class Muon : public Particle {
   float combinedQuality_trkKink()                 const { return m_combinedQuality_trkKink; }
   float segmentCompatibility()                    const { return m_segmentCompatibility; }
 
+  float tunePMuonBestTrack_pt() const { return m_tunePMuonBestTrack_pt; }
+  float tunePMuonBestTrack_eta() const { return m_tunePMuonBestTrack_eta; }
+  float tunePMuonBestTrack_phi() const { return m_tunePMuonBestTrack_phi; }
+
+  float trackIso() const { return m_trackIso; }
+
   float sumChargedHadronPt() const{ return m_sumChargedHadronPt; } 
   float sumNeutralHadronEt() const{ return m_sumNeutralHadronEt; } 
   float sumPhotonEt()        const{ return m_sumPhotonEt; }
@@ -106,6 +118,12 @@ class Muon : public Particle {
   void set_combinedQuality_chi2LocalPosition      (float x){ m_combinedQuality_chi2LocalPosition = x; }
   void set_combinedQuality_trkKink                (float x){ m_combinedQuality_trkKink = x; }
   void set_segmentCompatibility                   (float x){ m_segmentCompatibility = x; }
+
+  void set_tunePMuonBestTrack_pt  (float x) { m_tunePMuonBestTrack_pt = x; }
+  void set_tunePMuonBestTrack_eta (float x) { m_tunePMuonBestTrack_eta = x; }
+  void set_tunePMuonBestTrack_phi (float x) { m_tunePMuonBestTrack_phi = x; }
+
+  void set_trackIso (float x) { m_trackIso = x; }
 
   void set_sumChargedHadronPt(float x){m_sumChargedHadronPt=x;} 
   void set_sumNeutralHadronEt(float x){m_sumNeutralHadronEt=x;} 
@@ -160,6 +178,12 @@ class Muon : public Particle {
   float m_combinedQuality_chi2LocalPosition;
   float m_combinedQuality_trkKink;
   float m_segmentCompatibility;
+
+  float m_tunePMuonBestTrack_pt;
+  float m_tunePMuonBestTrack_eta;
+  float m_tunePMuonBestTrack_phi;
+
+  float m_trackIso;
 
   float m_sumChargedHadronPt;
   float m_sumNeutralHadronEt;
