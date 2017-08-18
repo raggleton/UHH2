@@ -188,6 +188,8 @@ bool ElectronID_MVAHZZ_Spring16_loose(const Electron& ele, const uhh2::Event& ev
 bool ElectronID_HEEP_RunII_25ns(const Electron& ele, const uhh2::Event&){ return Electron_HEEP(ele, "RunII_25ns", "CMS_WorkPoint_NoIso"); }
 
 bool Electron_HEEP(const Electron& ele_, const std::string& tuning_, const std::string& wp_){
+  // if (!ele_.get_tag(Electron::tag::heepElectronID_HEEPV70)) return false;
+  return (ele_.get_tag(Electron::tag::heepElectronID_HEEPV70));
 
   bool pass(false);
 
