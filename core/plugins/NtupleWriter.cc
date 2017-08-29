@@ -1086,7 +1086,8 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
          met[j].set_pt(pat_met.pt());
          met[j].set_phi(pat_met.phi());
          met[j].set_mEtSig(pat_met.mEtSig());
-	 met[j].set_uncorr_pt(pat_met.uncorPt());
+	 /* Disable this bit for the patPFMet* collections which don't have uncorrected Pt
+   met[j].set_uncorr_pt(pat_met.uncorPt());
 	 met[j].set_uncorr_phi(pat_met.uncorPhi());
 	 //	 std::cout<<"MET uncorrPt = "<<pat_met.uncorPt()<<" uncorrPhi = "<<pat_met.uncorPhi()<<" corrPt = "<<pat_met.pt()<<" corrPhi = "<<pat_met.phi()<<std::endl;
          if(!puppi.at(j))
@@ -1115,7 +1116,7 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
                met[j].set_shiftedPy_TauEnDown(pat_met.shiftedPy(pat::MET::METUncertainty::TauEnDown, pat::MET::METCorrectionLevel::Type1));
                met[j].set_shiftedPy_MuonEnDown(pat_met.shiftedPy(pat::MET::METUncertainty::MuonEnDown, pat::MET::METCorrectionLevel::Type1));
                met[j].set_shiftedPy_MuonEnUp(pat_met.shiftedPy(pat::MET::METUncertainty::MuonEnUp, pat::MET::METCorrectionLevel::Type1));
-            }
+            }*/
        }
       }
    }

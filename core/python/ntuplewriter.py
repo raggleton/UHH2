@@ -5,9 +5,9 @@ isDebug = False
 #useData = False
 useData = True
 if useData:
-    met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS","slimmedMETsMuEGClean","slimmedMETsEGClean","slimmedMETsUncorrected")
+    met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi", "patPFMetT1Txy", "patPFMetT1TxySmear", "patPFMetT1") #,"slMETsCHS","slimmedMETsMuEGClean","slimmedMETsEGClean","slimmedMETsUncorrected")
 else:
-    met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS","slimmedMETsMuEGClean")
+    met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi", "patPFMetT1Txy", "patPFMetT1TxySmear", "patPFMetT1") #,"slMETsCHS","slimmedMETsMuEGClean")
 
 # minimum pt for the large-R jets (applies for all: vanilla CA8/CA15, cmstoptag, heptoptag). Also applied for the corresponding genjets.
 fatjet_ptmin = 150.0
@@ -523,6 +523,30 @@ addJetCollection(process,labelName = 'AK8PFCHS', jetSource = cms.InputTag('ak8CH
 
 ### MET
 
+
+from PhysicsTools.PatUtils.tools.runMETCorrectionsAndUncertainties import runMetCorAndUncFromMiniAOD
+def doMetCorrections(process, isData, runBtoF):
+    # If you only want to re-correct and get the proper uncertainties
+    # eg do Type-1 corrections due to new JEC
+    runMetCorAndUncFromMiniAOD(process, isData=isData)
+
+    # Update MET phi corrections to latest ones
+    newPhiCorr = None
+    if isData:
+        if runBtoF:
+            from multPhiCorr_ReMiniAOD_Data_BCDEF_80X_sumPt_cfi import multPhiCorr_Data_BCDEF_80X as newPhiCorr
+        else:
+            from multPhiCorr_ReMiniAOD_Data_GH_80X_sumPt_cfi import multPhiCorr_Data_GH_80X as newPhiCorr
+    else:
+        from multPhiCorr_Summer16_MC_DY_80X_sumPt_cfi import multPhiCorr_MC_DY_sumPT_80X as newPhiCorr
+    if not newPhiCorr:
+        raise RuntimeError("Cannot find new phi corrections for this input")
+    process.patPFMetTxyCorr.parameters = newPhiCorr
+
+# TODO: automate runBtoF
+doMetCorrections(process, useData, True)
+
+"""
 ## MET CHS (not available as slimmedMET collection)
 ## copied from https://github.com/cms-jet/JMEValidator/blob/CMSSW_7_6_X/python/FrameworkConfiguration.py
 def clean_met_(met):
@@ -572,7 +596,7 @@ else:
 clean_met_(process.slimmedMETsCHS)
 addMETCollection(process, labelName="slMETsCHS", metSource="slimmedMETsCHS")
 process.slMETsCHS.addGenMET = False
-
+"""
 ### LEPTON cfg
 
 # collections for lepton PF-isolation deposits
