@@ -42,7 +42,11 @@ task = cms.Task()
 process.load("FWCore.MessageService.MessageLogger_cfi")
 process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1000)
 #process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1)
-process.options = cms.untracked.PSet( wantSummary = cms.untracked.bool(False) , allowUnscheduled = cms.untracked.bool(True) )
+process.options = cms.untracked.PSet( 
+    wantSummary = cms.untracked.bool(False),
+    allowUnscheduled = cms.untracked.bool(True)
+#    SkipEvent = cms.untracked.vstring('ProductNotFound')
+)
 #process.options = cms.untracked.PSet( wantSummary = cms.untracked.bool(True) , allowUnscheduled = cms.untracked.bool(True) )
 
 # DEBUG ----------------
@@ -815,8 +819,9 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         #jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi","patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
         jet_ptmin = cms.double(10.0),
         jet_etamax = cms.double(999.0),
-        
+                                
         doMET = cms.bool(True),
+        doGenMET= cms.bool(False), #irene
         #met_sources =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS","slimmedMETsMuEGClean"),
         met_sources =  met_sources_GL,
         doTopJets = cms.bool(False),
@@ -941,7 +946,7 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         stablegenparticle_source = cms.InputTag("packedGenParticles"),
         doAllGenParticles = cms.bool(False), #set to true if you want to store all gen particles, otherwise, only prunedPrunedGenParticles are stored (see above)
         doGenJets = cms.bool(not useData),
-        genjet_sources = cms.vstring("slimmedGenJets","slimmedGenJetsAK8","ca15GenJets"),
+        genjet_sources = cms.vstring("slimmedGenJets","slimmedGenJetsAK8"),#,"ca15GenJets"), #irene
         genjet_ptmin = cms.double(10.0),
         genjet_etamax = cms.double(5.0),
                             

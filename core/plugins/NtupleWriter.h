@@ -56,7 +56,7 @@ class NtupleWriter : public edm::EDFilter {
       bool doGenJetsWithParts;
       bool doGenTopJets;
       bool doMET;
-      bool doGenMET;
+      bool doGenMET; //irene commented
       bool doPhotons;
       bool doGenInfo;
       bool doAllGenParticles;
