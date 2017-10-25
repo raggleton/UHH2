@@ -5,6 +5,7 @@
 #include <algorithm>
 #include <memory>
 #include <boost/optional.hpp>
+#include <vector>
 
 namespace uhh2 {
 

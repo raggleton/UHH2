@@ -1,0 +1,762 @@
+5,6c5,6
+< #useData = False
+< useData = True
+---
+> useData = False
+> #useData = True
+8,9c8
+< #    met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS","slimmedMETsMuEGClean","slimmedMETsEGClean","slimmedMETsUncorrected")
+<     met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS")
+---
+>     met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS","slimmedMETsMuEGClean","slimmedMETsEGClean","slimmedMETsUncorrected")
+39,40d37
+< task = cms.Task()
+< 
+42,43c39,40
+< process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1000)
+< #process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1)
+---
+> #process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1000)
+> process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1)
+63,66c60,156
+<             #'file:////nfs/dust/cms/user/hinzmann/6214AEE4-751A-E711-8645-0025905A6056.root'
+< #            '/store/data/Run2017B/JetHT/MINIAOD/23Jun2017-v1/00000/004DBDB2-C859-E711-8DD0-002590D0B042.root'
+<             '/store/data/Run2017B/JetHT/MINIAOD/22Jun2017-v1/00000/00063668-8858-E711-9C49-001E67792486.root'
+<   ]),
+---
+> #            'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/EXO-RunIISummer16MiniAODv2-01758_Phase1PU.root'
+> #' file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2/EXO-RunIISummer16MiniAODv2-01758_Phase2_m4000.root'
+> #QCD P1PU
+> 'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/QstarToqW/newGen/QstarToqW-RunIISummer16MiniAODv2-01758_Phase1PU_1.root',
+> 'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/QstarToqW/newGen/QstarToqW-RunIISummer16MiniAODv2-01758_Phase1PU_2.root',
+> 'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/QstarToqW/newGen/QstarToqW-RunIISummer16MiniAODv2-01758_Phase1PU_3.root',
+> 'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/QstarToqW/newGen/QstarToqW-RunIISummer16MiniAODv2-01758_Phase1PU_4.root',
+> 'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/QstarToqW/newGen/QstarToqW-RunIISummer16MiniAODv2-01758_Phase1PU_5.root',
+> 'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/QstarToqW/newGen/QstarToqW-RunIISummer16MiniAODv2-01758_Phase1PU_6.root',
+> 'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/QstarToqW/newGen/QstarToqW-RunIISummer16MiniAODv2-01758_Phase1PU_7.root',
+> 'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/QstarToqW/newGen/QstarToqW-RunIISummer16MiniAODv2-01758_Phase1PU_8.root',
+> 'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/QstarToqW/newGen/QstarToqW-RunIISummer16MiniAODv2-01758_Phase1PU_9.root',
+> 'file:////nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase1PU/QstarToqW/newGen/QstarToqW-RunIISummer16MiniAODv2-01758_Phase1PU_10.root'
+> 
+> 
+> #QCD P2PU                                         
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_0.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_1.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_2.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_3.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_4.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_5.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_6.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_7.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_8.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_9.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_10.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_11.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_12.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_13.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_14.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_15.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_16.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_17.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_18.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_19.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_20.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_21.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_22.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_23.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_24.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_25.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_26.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_27.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_28.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_29.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_30.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_31.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_32.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_33.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_34.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_35.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_36.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_37.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_38.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/QCD/QCD-RunIISummer16MiniAODv2-01758_Phase2PU_39.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_0.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_1.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_2.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_3.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_4.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_5.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_6.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_7.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_8.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_9.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_10.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_11.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_12.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_13.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_14.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_15.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_16.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_17.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_18.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_19.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_20.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_21.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_22.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_23.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_24.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_25.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_26.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_27.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_28.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_29.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_30.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_31.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_32.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_33.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_34.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_35.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_36.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_37.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_38.root',
+> # 'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/Phase2PU/CMSSW_9_0_0_pre5/src/EXO-RunIISummer16MiniAODv2-01758_Phase2PU_m2000_39.root',
+>  ]),
+69,70c159,162
+< 
+< process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(100))
+---
+> #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(5))
+> process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(500))
+> #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000))
+> #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000))
+103,104c195,196
+<     #"keep *_patJetsCmsTopTagCHSPacked_*_*",
+<     #"keep *_patJetsCmsTopTagCHSSubjets_*_*",
+---
+>     "keep *_patJetsCmsTopTagCHSPacked_*_*",
+>     "keep *_patJetsCmsTopTagCHSSubjets_*_*",
+126c218
+<     process.GlobalTag.globaltag = '92X_dataRun2_Jun23ReReco_PixelCommissioning' 
+---
+>     process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v5' 
+157d248
+< task.add(process.prunedTmp)
+167d257
+< task.add(process.prunedPrunedGenParticles)
+174,175c264
+< process.chs = cms.EDFilter("CandPtrSelector", src = cms.InputTag("packedPFCandidates"), cut = cms.string("fromPV(0) > 0"))
+< task.add(process.chs)
+---
+> process.chs = cms.EDFilter("CandPtrSelector", src = cms.InputTag("packedPFCandidates"), cut = cms.string("fromPV"))
+179d267
+< task.add(process.ak8CHSJets)
+181d268
+< task.add(process.ak8CHSJetsFat)
+200,212c287,299
+< #process.cmsTopTagCHS = cms.EDProducer(
+< #    "CATopJetProducer",
+< #    PFJetParameters.clone( src = cms.InputTag('chs'),
+< #                           doAreaFastjet = cms.bool(True),
+< #                           doRhoFastjet = cms.bool(False),
+< #                           jetPtMin = cms.double(fatjet_ptmin)
+< #                           ),
+< #    AnomalousCellParameters,
+< #    CATopJetParameters.clone( jetCollInstanceName = cms.string("SubJets")),
+< #    jetAlgorithm = cms.string("CambridgeAachen"),
+< #    rParam = cms.double(0.8),
+< #    writeCompound = cms.bool(True)
+< #)
+---
+> process.cmsTopTagCHS = cms.EDProducer(
+>     "CATopJetProducer",
+>     PFJetParameters.clone( src = cms.InputTag('chs'),
+>                            doAreaFastjet = cms.bool(True),
+>                            doRhoFastjet = cms.bool(False),
+>                            jetPtMin = cms.double(fatjet_ptmin)
+>                            ),
+>     AnomalousCellParameters,
+>     CATopJetParameters.clone( jetCollInstanceName = cms.string("SubJets")),
+>     jetAlgorithm = cms.string("CambridgeAachen"),
+>     rParam = cms.double(0.8),
+>     writeCompound = cms.bool(True)
+> )
+222,245c309,332
+< #process.hepTopTagCHS = cms.EDProducer(     
+< #        "HTTTopJetProducer",
+< #         PFJetParameters.clone( src = cms.InputTag('chs'),
+< #                               doAreaFastjet = cms.bool(True),
+< #                               doRhoFastjet = cms.bool(False),
+< #                               jetPtMin = cms.double(fatjet_ptmin)
+< #                               ),   
+< #        AnomalousCellParameters,
+< #        optimalR = cms.bool(True),
+< #        algorithm = cms.int32(1),
+< #        jetCollInstanceName = cms.string("SubJets"),
+< #        jetAlgorithm = cms.string("CambridgeAachen"),
+< #        rParam = cms.double(1.5),
+< #        mode = cms.int32(4),
+< #        minFatjetPt = cms.double(fatjet_ptmin),
+< #        minCandPt = cms.double(0.),
+< #        minSubjetPt = cms.double(0.),
+< #        writeCompound = cms.bool(True),
+< #        minCandMass = cms.double(0.),
+< #        maxCandMass = cms.double(1000),
+< #        massRatioWidth = cms.double(100.),
+< #        minM23Cut = cms.double(0.),
+< #        minM13Cut = cms.double(0.),
+< #        maxM13Cut = cms.double(2.))
+---
+> process.hepTopTagCHS = cms.EDProducer(     
+>         "HTTTopJetProducer",
+>          PFJetParameters.clone( src = cms.InputTag('chs'),
+>                                doAreaFastjet = cms.bool(True),
+>                                doRhoFastjet = cms.bool(False),
+>                                jetPtMin = cms.double(fatjet_ptmin)
+>                                ),   
+>         AnomalousCellParameters,
+>         optimalR = cms.bool(True),
+>         algorithm = cms.int32(1),
+>         jetCollInstanceName = cms.string("SubJets"),
+>         jetAlgorithm = cms.string("CambridgeAachen"),
+>         rParam = cms.double(1.5),
+>         mode = cms.int32(4),
+>         minFatjetPt = cms.double(fatjet_ptmin),
+>         minCandPt = cms.double(0.),
+>         minSubjetPt = cms.double(0.),
+>         writeCompound = cms.bool(True),
+>         minCandMass = cms.double(0.),
+>         maxCandMass = cms.double(1000),
+>         massRatioWidth = cms.double(100.),
+>         minM23Cut = cms.double(0.),
+>         minM13Cut = cms.double(0.),
+>         maxM13Cut = cms.double(2.))
+261d347
+< task.add(process.ak8CHSJetsSoftDrop)
+265d350
+< task.add(process.ak8CHSJetsSoftDropforsub)
+270d354
+< task.add(process.ak8CHSJetsPruned)
+280d363
+< task.add(process.puppi)
+285d367
+< task.add(process.ak8PuppiJetsSoftDrop)
+289d370
+< task.add(process.ak8PuppiJetsSoftDropforsub)
+294d374
+< task.add(process.ak8PuppiJets)
+297d376
+< task.add(process.ak8PuppiJetsFat)
+300c379
+< for name in ['ca8CHSJets', 'ca15CHSJets', 'ca8CHSJetsPruned', 'ca15CHSJetsFiltered']:#, 'cmsTopTagCHS', 'hepTopTagCHS']:
+---
+> for name in ['ca8CHSJets', 'ca15CHSJets', 'ca8CHSJetsPruned', 'ca15CHSJetsFiltered', 'cmsTopTagCHS', 'hepTopTagCHS']:
+330d408
+< task.add(process.packedGenParticlesForJetsNoNu)
+375,377c453
+< 	if not hasattr(process, groomed_genjets_name):
+<           setattr(process, groomed_genjets_name, groomed_jetproducer.clone(src = cms.InputTag('packedGenParticlesForJetsNoNu'), jetType = 'GenJet'))
+< 	  task.add(getattr(process,groomed_genjets_name))
+---
+>         setattr(process, groomed_genjets_name, groomed_jetproducer.clone(src = cms.InputTag('packedGenParticlesForJetsNoNu'), jetType = 'GenJet'))
+383,385c459
+< 	if not hasattr(process, ungroomed_genjets_name):
+<           setattr(process, ungroomed_genjets_name, ungroomed_jetproducer.clone(src = cms.InputTag('packedGenParticlesForJetsNoNu'), jetType = 'GenJet'))
+< 	  task.add(getattr(process,ungroomed_genjets_name))
+---
+>         setattr(process, ungroomed_genjets_name, ungroomed_jetproducer.clone(src = cms.InputTag('packedGenParticlesForJetsNoNu'), jetType = 'GenJet'))
+397c471,472
+<             genJetCollection = cms.InputTag(ungroomed_genjets_name),
+---
+>             #genJetCollection = cms.InputTag(ungroomed_genjets_name),
+> 	    genJetCollection = cms.InputTag("slimmedGenJets"),
+422c497,498
+<         genJetCollection = cms.InputTag(groomed_genjets_name, 'SubJets'),
+---
+>         #genJetCollection = cms.InputTag(groomed_genjets_name, 'SubJets'),
+>         genJetCollection = cms.InputTag("slimmedGenJets"),
+431d506
+<     task.add(getattr(process,'patJets' + cap(groomed_jets_name) + 'Packed'))
+482d556
+< task.add(process.NjettinessAk8CHS)
+511d584
+< task.add(process.NjettinessAk8SoftDropCHS)
+513d585
+< task.add(process.NjettinessAk8SoftDropPuppi)
+518d589
+< task.add(process.NjettinessAk8Puppi)
+551,566d621
+< ### Higgs tagging commissioning
+< 
+< from RecoBTag.SecondaryVertex.trackSelection_cff import *
+< 
+< process.pfBoostedDoubleSVTagInfos = cms.EDProducer("BoostedDoubleSVProducer",
+<                                            trackSelectionBlock,
+<                                            beta = cms.double(1.0),
+<                                            R0 = cms.double(0.8),
+<                                            maxSVDeltaRToJet = cms.double(0.7),
+<                                            trackPairV0Filter = cms.PSet(k0sMassWindow = cms.double(0.03)),
+<                                            svTagInfos = cms.InputTag("pfInclusiveSecondaryVertexFinderTagInfosAk8CHSJets")
+< )
+< task.add(process.pfBoostedDoubleSVTagInfos)
+< 
+< process.pfBoostedDoubleSVTagInfos.trackSelection.jetDeltaRMax = cms.double(0.8)
+< 
+583c638
+< ## Raw PAT METs
+---
+> ## Raw PF METs
+585,587c640,641
+< process.pfMet.src = cms.InputTag('chs')
+< task.add(process.pfMet)
+< addMETCollection(process, labelName='patPFMetCHS', metSource='pfMet') # RAW MET
+---
+> 
+> process.pfMet.src = cms.InputTag('packedPFCandidates')
+589a644,648
+> 
+> process.pfMetCHS = process.pfMet.clone()
+> process.pfMetCHS.src = cms.InputTag("chs")
+> process.pfMetCHS.alias = cms.string('pfMetCHS')
+> addMETCollection(process, labelName='patPFMetCHS', metSource='pfMetCHS') # RAW CHS MET
+590a650,651
+> 
+> 
+595,600c656,672
+< # ### CHS
+< process.slMETsCHS = slimmedMETs.clone()
+< process.slMETsCHS.src = cms.InputTag("patPFMetCHS")
+< process.slMETsCHS.rawUncertainties = cms.InputTag("patPFMetCHS") # only central value
+< task.add(process.slMETsCHS)
+< clean_met_(process.slMETsCHS)
+---
+> 
+> ### CHS
+> process.slimmedMETsCHS = slimmedMETs.clone()
+> if hasattr(process, "patPFMetCHS"):
+>     # Create MET from Type 1 PF collection
+>     process.patPFMetCHS.addGenMET = False
+>     process.slimmedMETsCHS.src = cms.InputTag("patPFMetCHS")
+>     process.slimmedMETsCHS.rawUncertainties = cms.InputTag("patPFMetCHS") # only central value
+> else:
+>     # Create MET from RAW PF collection
+>     process.patPFMetCHS.addGenMET = False
+>     process.slimmedMETsCHS.src = cms.InputTag("patPFMetCHS")
+>     del process.slimmedMETsCHS.rawUncertainties # not available
+>     
+> clean_met_(process.slimmedMETsCHS)
+> addMETCollection(process, labelName="slMETsCHS", metSource="slimmedMETsCHS")
+> process.slMETsCHS.addGenMET = False
+608,609c680,681
+< ## MUON # WILL BE IN MINIAOD OF 9_1_0 RELEASE
+< #from UHH2.core.muon_pfMiniIsolation_cff import *
+---
+> ## MUON
+> from UHH2.core.muon_pfMiniIsolation_cff import *
+611c683
+< #mu_isovals = []
+---
+> mu_isovals = []
+613,636c685,692
+< #load_muonPFMiniIso(process, 'muonPFMiniIsoSequenceSTAND', algo = 'STAND',
+< #  src = 'slimmedMuons',
+< #  src_charged_hadron = 'pfAllChargedHadrons',
+< #  src_neutral_hadron = 'pfAllNeutralHadrons',
+< #  src_photon         = 'pfAllPhotons',
+< #  src_charged_pileup = 'pfPileUpAllChargedParticles',
+< #  isoval_list = mu_isovals
+< #)
+< #
+< #load_muonPFMiniIso(process, 'muonPFMiniIsoSequencePFWGT', algo = 'PFWGT',
+< #  src = 'slimmedMuons',
+< #  src_neutral_hadron = 'pfWeightedNeutralHadrons',
+< #  src_photon         = 'pfWeightedPhotons',
+< #  isoval_list = mu_isovals
+< #)
+< #for m in mu_isovals:
+< #  task.add(getattr(process,m))
+< #  task.add(getattr(process,m.replace("Value","Deposit")))
+< #
+< #process.slimmedMuonsUSER = cms.EDProducer('PATMuonUserData',
+< #  src = cms.InputTag('slimmedMuons'),
+< #  vmaps_double = cms.vstring(mu_isovals),
+< #)
+< #task.add(process.slimmedMuonsUSER)
+---
+> load_muonPFMiniIso(process, 'muonPFMiniIsoSequenceSTAND', algo = 'STAND',
+>   src = 'slimmedMuons',
+>   src_charged_hadron = 'pfAllChargedHadrons',
+>   src_neutral_hadron = 'pfAllNeutralHadrons',
+>   src_photon         = 'pfAllPhotons',
+>   src_charged_pileup = 'pfPileUpAllChargedParticles',
+>   isoval_list = mu_isovals
+> )
+638c694,706
+< ## ELECTRON # WILL BE IN MINIAOD OF 9_1_0 RELEASE
+---
+> load_muonPFMiniIso(process, 'muonPFMiniIsoSequencePFWGT', algo = 'PFWGT',
+>   src = 'slimmedMuons',
+>   src_neutral_hadron = 'pfWeightedNeutralHadrons',
+>   src_photon         = 'pfWeightedPhotons',
+>   isoval_list = mu_isovals
+> )
+> 
+> process.slimmedMuonsUSER = cms.EDProducer('PATMuonUserData',
+>   src = cms.InputTag('slimmedMuons'),
+>   vmaps_double = cms.vstring(mu_isovals),
+> )
+> 
+> ## ELECTRON
+641,666c709,720
+< #from UHH2.core.electron_pfMiniIsolation_cff import *
+< #
+< #el_isovals = []
+< #
+< #load_elecPFMiniIso(process, 'elecPFMiniIsoSequenceSTAND', algo = 'STAND',
+< #  src = 'slimmedElectrons',
+< #  src_charged_hadron = 'pfAllChargedHadrons',
+< #  src_neutral_hadron = 'pfAllNeutralHadrons',
+< #  src_photon         = 'pfAllPhotons',
+< #  src_charged_pileup = 'pfPileUpAllChargedParticles',
+< #  isoval_list = el_isovals
+< #)
+< #task.add(process.pfAllChargedHadrons)
+< #task.add(process.pfAllNeutralHadrons)
+< #task.add(process.pfAllPhotons)
+< #task.add(process.pfPileUpAllChargedParticles)
+< #task.add(process.pfPileUp)
+< #
+< #load_elecPFMiniIso(process, 'elecPFMiniIsoSequencePFWGT', algo = 'PFWGT',
+< #  src = 'slimmedElectrons',
+< #  src_neutral_hadron = 'pfWeightedNeutralHadrons',
+< #  src_photon         = 'pfWeightedPhotons',
+< #  isoval_list = el_isovals
+< #)
+< #task.add(process.pfWeightedNeutralHadrons)
+< #task.add(process.pfWeightedPhotons)
+---
+> from UHH2.core.electron_pfMiniIsolation_cff import *
+> 
+> el_isovals = []
+> 
+> load_elecPFMiniIso(process, 'elecPFMiniIsoSequenceSTAND', algo = 'STAND',
+>   src = 'slimmedElectrons',
+>   src_charged_hadron = 'pfAllChargedHadrons',
+>   src_neutral_hadron = 'pfAllNeutralHadrons',
+>   src_photon         = 'pfAllPhotons',
+>   src_charged_pileup = 'pfPileUpAllChargedParticles',
+>   isoval_list = el_isovals
+> )
+668,679c722,740
+< # electron ID from VID # WILL BE IN MINIAOD OF 9_1_0 RELEASE
+< #process.load('RecoEgamma.ElectronIdentification.egmGsfElectronIDs_cff')
+< #process.electronMVAValueMapProducer.srcMiniAOD = cms.InputTag('slimmedElectrons')
+< #process.egmGsfElectronIDs.physicsObjectSrc = cms.InputTag('slimmedElectrons')
+< 
+< #elecID_mod_ls = [
+< #  'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Summer16_80X_V1_cff',
+< #  'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronHLTPreselecition_Summer16_V1_cff',
+< #  'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV60_cff',
+< #  'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Spring16_GeneralPurpose_V1_cff',
+< #  'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Spring16_HZZ_V1_cff',
+< #]
+---
+> load_elecPFMiniIso(process, 'elecPFMiniIsoSequencePFWGT', algo = 'PFWGT',
+>   src = 'slimmedElectrons',
+>   src_neutral_hadron = 'pfWeightedNeutralHadrons',
+>   src_photon         = 'pfWeightedPhotons',
+>   isoval_list = el_isovals
+> )
+> 
+> # electron ID from VID
+> process.load('RecoEgamma.ElectronIdentification.egmGsfElectronIDs_cff')
+> process.electronMVAValueMapProducer.srcMiniAOD = cms.InputTag('slimmedElectrons')
+> process.egmGsfElectronIDs.physicsObjectSrc = cms.InputTag('slimmedElectrons')
+> 
+> elecID_mod_ls = [
+>   'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronID_Summer16_80X_V1_cff',
+>   'RecoEgamma.ElectronIdentification.Identification.cutBasedElectronHLTPreselecition_Summer16_V1_cff',
+>   'RecoEgamma.ElectronIdentification.Identification.heepElectronID_HEEPV60_cff',
+>   'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Spring16_GeneralPurpose_V1_cff',
+>   'RecoEgamma.ElectronIdentification.Identification.mvaElectronID_Spring16_HZZ_V1_cff',
+> ]
+681,682c742,743
+< #from PhysicsTools.SelectorUtils.tools.vid_id_tools import *
+< #for mod in elecID_mod_ls: setupAllVIDIdsInModule(process, mod, setupVIDElectronSelection)
+---
+> from PhysicsTools.SelectorUtils.tools.vid_id_tools import *
+> for mod in elecID_mod_ls: setupAllVIDIdsInModule(process, mod, setupVIDElectronSelection)
+685,712c746,773
+< #process.slimmedElectronsUSER = cms.EDProducer('PATElectronUserData',
+< #  src = cms.InputTag('slimmedElectrons'),
+< #
+< #  vmaps_bool = cms.PSet(
+< #
+< #    cutBasedElectronID_Summer16_80X_V1_veto   = cms.InputTag('egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-veto'),
+< #    cutBasedElectronID_Summer16_80X_V1_loose  = cms.InputTag('egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-loose'),
+< #    cutBasedElectronID_Summer16_80X_V1_medium = cms.InputTag('egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-medium'),
+< #    cutBasedElectronID_Summer16_80X_V1_tight  = cms.InputTag('egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-tight'),
+< #
+< #    cutBasedElectronHLTPreselection_Summer16_V1 = cms.InputTag('egmGsfElectronIDs:cutBasedElectronHLTPreselection-Summer16-V1'),
+< #
+< #    heepElectronID_HEEPV60                                = cms.InputTag('egmGsfElectronIDs:heepElectronID-HEEPV60'),
+< #
+< #  ),
+< #
+< #  vmaps_float = cms.PSet(
+< #    ElectronMVAEstimatorRun2Spring16GeneralPurposeV1Values__user01 = cms.InputTag('electronMVAValueMapProducer:ElectronMVAEstimatorRun2Spring16GeneralPurposeV1Values'),
+< #    ElectronMVAEstimatorRun2Spring16HZZV1Values__user01 = cms.InputTag('electronMVAValueMapProducer:ElectronMVAEstimatorRun2Spring16HZZV1Values'),
+< #  ),
+< #
+< #  vmaps_double = cms.vstring(el_isovals),
+< #
+< #  effAreas_file = cms.FileInPath('RecoEgamma/ElectronIdentification/data/Summer16/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_80X.txt'),
+< #
+< #  mva_GeneralPurpose = cms.string('ElectronMVAEstimatorRun2Spring16GeneralPurposeV1Values__user01'),
+< #  mva_HZZ = cms.string('ElectronMVAEstimatorRun2Spring16HZZV1Values__user01'),
+< #)
+---
+> process.slimmedElectronsUSER = cms.EDProducer('PATElectronUserData',
+>   src = cms.InputTag('slimmedElectrons'),
+> 
+>   vmaps_bool = cms.PSet(
+> 
+>     cutBasedElectronID_Summer16_80X_V1_veto   = cms.InputTag('egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-veto'),
+>     cutBasedElectronID_Summer16_80X_V1_loose  = cms.InputTag('egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-loose'),
+>     cutBasedElectronID_Summer16_80X_V1_medium = cms.InputTag('egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-medium'),
+>     cutBasedElectronID_Summer16_80X_V1_tight  = cms.InputTag('egmGsfElectronIDs:cutBasedElectronID-Summer16-80X-V1-tight'),
+> 
+>     cutBasedElectronHLTPreselection_Summer16_V1 = cms.InputTag('egmGsfElectronIDs:cutBasedElectronHLTPreselection-Summer16-V1'),
+> 
+>     heepElectronID_HEEPV60                                = cms.InputTag('egmGsfElectronIDs:heepElectronID-HEEPV60'),
+> 
+>   ),
+> 
+>   vmaps_float = cms.PSet(
+>     ElectronMVAEstimatorRun2Spring16GeneralPurposeV1Values__user01 = cms.InputTag('electronMVAValueMapProducer:ElectronMVAEstimatorRun2Spring16GeneralPurposeV1Values'),
+>     ElectronMVAEstimatorRun2Spring16HZZV1Values__user01 = cms.InputTag('electronMVAValueMapProducer:ElectronMVAEstimatorRun2Spring16HZZV1Values'),
+>   ),
+> 
+>   vmaps_double = cms.vstring(el_isovals),
+> 
+>   effAreas_file = cms.FileInPath('RecoEgamma/ElectronIdentification/data/Summer16/effAreaElectrons_cone03_pfNeuHadronsAndPhotons_80X.txt'),
+> 
+>   mva_GeneralPurpose = cms.string('ElectronMVAEstimatorRun2Spring16GeneralPurposeV1Values__user01'),
+>   mva_HZZ = cms.string('ElectronMVAEstimatorRun2Spring16HZZV1Values__user01'),
+> )
+750c811
+<         fileName = cms.string("Ntuple.root"), 
+---
+>         fileName = cms.string("Ntuple_Qstar6000ToqW_P1PU.root"), 
+760c821
+<         electron_source = cms.InputTag("slimmedElectrons"),
+---
+>         electron_source = cms.InputTag("slimmedElectronsUSER"),
+766,771c827,832
+<           #'cutBasedElectronID_Summer16_80X_V1_veto', # IDS NOT YET AVAILBLE IN MINIAOD, ADD BACK AFTER 9_1_0 RELEASE
+<           #'cutBasedElectronID_Summer16_80X_V1_loose',
+<           #'cutBasedElectronID_Summer16_80X_V1_medium',
+<           #'cutBasedElectronID_Summer16_80X_V1_tight',
+<           #'cutBasedElectronHLTPreselection_Summer16_V1',
+<           #'heepElectronID_HEEPV60',
+---
+>           'cutBasedElectronID_Summer16_80X_V1_veto',
+>           'cutBasedElectronID_Summer16_80X_V1_loose',
+>           'cutBasedElectronID_Summer16_80X_V1_medium',
+>           'cutBasedElectronID_Summer16_80X_V1_tight',
+>           'cutBasedElectronHLTPreselection_Summer16_V1',
+>           'heepElectronID_HEEPV60',
+773,778c834,838
+<         # #Add variables to trace possible issues with the ECAL slew rate mitigation 
+<         # #https://twiki.cern.ch/twiki/bin/view/CMSPublic/ReMiniAOD03Feb2017Notes#EGM
+<         # doEleAddVars = cms.bool(useData),
+<         # dupECALClusters_source = cms.InputTag('particleFlowEGammaGSFixed:dupECALClusters'),
+<         # hitsNotReplaced_source = cms.InputTag('ecalMultiAndGSGlobalRecHitEB:hitsNotReplaced'),
+<         doEleAddVars = cms.bool(False),
+---
+>         #Add variables to trace possible issues with the ECAL slew rate mitigation 
+>         #https://twiki.cern.ch/twiki/bin/view/CMSPublic/ReMiniAOD03Feb2017Notes#EGM
+>         doEleAddVars = cms.bool(useData),
+>         dupECALClusters_source = cms.InputTag('particleFlowEGammaGSFixed:dupECALClusters'),
+>         hitsNotReplaced_source = cms.InputTag('ecalMultiAndGSGlobalRecHitEB:hitsNotReplaced'),
+781c841
+<         muon_sources = cms.vstring("slimmedMuons"),
+---
+>         muon_sources = cms.vstring("slimmedMuonsUSER"),
+791,792c851,852
+<         jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi"),
+<         #jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi","patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
+---
+>    #     jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi"),
+>         jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi","patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
+799,800c859,860
+<         doTopJets = cms.bool(False),
+<         #doTopJets = cms.bool(True),
+---
+>         #doTopJets = cms.bool(False),
+>         doTopJets = cms.bool(True),
+802,885c862,908
+<         topjet_etamax = cms.double(5.0), 
+< 
+<         TopJets = cms.VPSet( 
+<              cms.PSet(
+<                  topjet_source = cms.string("slimmedJetsAK8"), ## THESE ARE PUPPI JETS IN 91X
+<                  #Note: use label "daughters" for  subjet_source if you want to store as subjets the linked daughters of the topjets (NOT for slimmedJetsAK8 in miniAOD!)
+<                  #to store a subjet collection present in miniAOD indicate the proper label of the subjets method in pat::Jet: SoftDrop or CMSTopTag
+<                  subjet_source = cms.string("SoftDropPuppi"),
+<                  #Specify if you want to store b-tagging taginfos for subjet collection, make sure to have included them with .addTagInfos = True
+<                  #addTagInfos = True is currently true by default, however, only for collections produced and not read directly from miniAOD
+<                  #Default is do_subjet_taginfo=False
+<                  do_subjet_taginfo = cms.bool(False),
+<                  #Note: if you want to store the MVA Higgs tagger discriminator, specify the jet collection from which to pick it up and the tagger name
+<                  #currently the discriminator is trained on ungroomed jets, so the discriminator has to be taken from ungroomed jets
+<                  higgstag_source = cms.string("patJetsAk8PuppiJetsFat"),
+<                  higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+<                  #Note: if empty, njettiness is directly taken from MINIAOD UserFloat and added to jets, otherwise taken from the provided source (for Run II CMSSW_74 ntuples)
+<                  #njettiness_source = cms.string(""),
+<                  #substructure_variables_source = cms.string(""),
+<                  #njettiness_groomed_source = cms.string(""),
+<                  #substructure_groomed_variables_source = cms.string(""),
+<                  #Note: for slimmedJetsAK8 on miniAOD, the pruned mass is available as user float, with label ak8PFJetsCHSPrunedMass.
+<                  #Alternatively it is possible to specify another pruned jet collection (to be produced here), from which to get it by jet-matching.
+<                  #Finally, it is also possible to leave the pruned mass empty with "" 
+<                  prunedmass_source = cms.string("ak8PFJetsCHSValueMap:ak8PFJetsCHSPrunedMass"),
+<                  softdropmass_source  = cms.string("ak8PFJetsPuppiSoftDropMass"),
+<                  # switch off qjets for now, as it takes a long time:
+<                  #qjets_source = cms.string("QJetsCa8CHS")
+<              ) ,
+<              cms.PSet(
+<                  topjet_source = cms.string("patJetsAk8CHSJetsSoftDropPacked"),
+<                  subjet_source = cms.string("daughters"),
+<                  do_subjet_taginfo = cms.bool(True),
+<                  higgstag_source = cms.string("patJetsAk8CHSJets"),
+<                  higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+<                  higgstaginfo_source = cms.string("pfBoostedDoubleSVTagInfos"),
+<                  njettiness_source = cms.string("NjettinessAk8CHS"),
+<                  substructure_variables_source = cms.string("ak8CHSJets"),
+<                  njettiness_groomed_source = cms.string("NjettinessAk8SoftDropCHS"),
+<                  substructure_groomed_variables_source = cms.string("ak8CHSJetsSoftDropforsub"),
+<                  prunedmass_source = cms.string("patJetsAk8CHSJetsPrunedPacked"),
+<                  softdropmass_source  = cms.string("patJetsAk8CHSJetsSoftDropPacked"),
+<              ) ,
+<              #cms.PSet(
+<              #    topjet_source = cms.string("patJetsHepTopTagCHSPacked"),
+<              #    subjet_source = cms.string("daughters"),
+<              #    do_subjet_taginfo = cms.bool(True),
+<              #    higgstag_source = cms.string("patJetsCa15CHSJets"),
+<              #    higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+<              #    njettiness_source = cms.string("NjettinessCa15CHS"),
+<              #    substructure_variables_source = cms.string("ca15CHSJets"),
+<              #    njettiness_groomed_source = cms.string("NjettinessCa15SoftDropCHS"),
+<              #    substructure_groomed_variables_source = cms.string("ca15CHSJetsSoftDropforsub"),
+<              #    prunedmass_source = cms.string("patJetsCa15CHSJetsPrunedPacked"),
+<              #    #softdropmass_source  = cms.string(""),
+<              #) ,
+<              #cms.PSet(
+<              #    topjet_source = cms.string("patJetsHepTopTagPuppiPacked"),
+<              #    subjet_source = cms.string("daughters"),
+<              #    do_subjet_taginfo = cms.bool(True),
+<              #    higgstag_source = cms.string("patJetsCa15PuppiJets"),
+<              #    higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+<              #    njettiness_source = cms.string("NjettinessCa15Puppi"),
+<              #    substructure_variables_source = cms.string("ca15PuppiJets"),
+<              #    njettiness_groomed_source = cms.string("NjettinessCa15SoftDropPuppi"),
+<              #    substructure_groomed_variables_source = cms.string("ca15PuppiJetsSoftDropforsub"),
+<              #    prunedmass_source = cms.string("patJetsCa15CHSJetsPrunedPacked"),
+<              #    #softdropmass_source  = cms.string(""),
+<              #) ,
+<              cms.PSet(
+<                  topjet_source = cms.string("patJetsAk8PuppiJetsSoftDropPacked"),
+<                  subjet_source = cms.string("daughters"),
+<                  do_subjet_taginfo = cms.bool(True),
+<                  higgstag_source = cms.string("patJetsAk8PuppiJetsFat"),
+<                  higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+<                  njettiness_source = cms.string("NjettinessAk8Puppi"),
+<                  substructure_variables_source = cms.string("ak8PuppiJetsFat"),
+<                  njettiness_groomed_source = cms.string("NjettinessAk8SoftDropPuppi"),
+<                  substructure_groomed_variables_source = cms.string("ak8PuppiJetsSoftDropforsub"),
+<                  prunedmass_source = cms.string("patJetsAk8CHSJetsPrunedPacked"),
+<                  softdropmass_source  = cms.string("patJetsAk8PuppiJetsSoftDropPacked"),
+<              ) ,
+< 
+<         ),
+---
+>         topjet_etamax = cms.double(5.0),                                                                               
+>         #topjet_sources = cms.vstring("slimmedJetsAK8","patJetsAk8CHSJetsSoftDropPacked","patJetsHepTopTagCHSPacked","patJetsHepTopTagPuppiPacked","patJetsAk8PuppiJetsSoftDropPacked"),
+>         topjet_sources = cms.vstring("slimmedJetsAK8","patJetsAk8CHSJetsSoftDropPacked","patJetsAk8PuppiJetsSoftDropPacked"),
+>         #Note: use label "daughters" for  subjet_sources if you want to store as subjets the linked daughters of the topjets (NOT for slimmedJetsAK8 in miniAOD!)
+>         #to store a subjet collection present in miniAOD indicate the proper label of the subjets method in pat::Jet: SoftDrop or CMSTopTag
+>         subjet_sources = cms.vstring("SoftDropPuppi","daughters","daughters"),
+>         #subjet_sources = cms.vstring("SoftDrop","daughters","daughters","daughters","daughters"),
+>         #Specify "store" if you want to store b-tagging taginfos for subjet collection, make sure to have included them with .addTagInfos = True
+>         #addTagInfos = True is currently true by default, however, only for collections produced and not read directly from miniAOD
+>         #If you don't want to store stubjet taginfos leave string empy ""
+>         #subjet_taginfos = cms.vstring("","store","store","store","store"),
+>         subjet_taginfos = cms.vstring("","store","store"),
+>         #Note: if you want to store the MVA Higgs tagger discriminator, specify the jet collection from which to pick it up and the tagger name
+>         #currently the discriminator is trained on ungroomed jets, so the discriminaotr has to be taken from ungroomed jets
+>         #higgstag_sources = cms.vstring("patJetsAk8CHSJets","patJetsAk8CHSJets","patJetsCa15CHSJets","patJetsCa15PuppiJets","patJetsAk8PuppiJetsFat"),
+>         #higgstag_sources = cms.vstring("patJetsAK8CHSJets","patJetsAK8CHSJets","patJetsCa15CHSJets","patJetsCa15PuppiJets","patJetsAk8PuppiJetsFat"), #TEST
+>         #higgstag_names = cms.vstring("pfBoostedDoubleSecondaryVertexAK8BJetTags","pfBoostedDoubleSecondaryVertexAK8BJetTags","pfBoostedDoubleSecondaryVertexCA15BJetTags","pfBoostedDoubleSecondaryVertexCA15BJetTags","pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+>         higgstag_sources = cms.vstring("patJetsAk8PuppiJetsFat","patJetsAk8CHSJets","patJetsAk8PuppiJetsFat"), #TEST
+>         higgstag_names = cms.vstring("pfBoostedDoubleSecondaryVertexAK8BJetTags","pfBoostedDoubleSecondaryVertexAK8BJetTags","pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+>         #Note: if empty, njettiness is directly taken from MINIAOD UserFloat and added to jets, otherwise taken from the provided source (for Run II CMSSW_74 ntuples)
+>         #topjet_njettiness_sources = cms.vstring("","NjettinessAk8CHS","NjettinessCa15CHS","NjettinessCa15Puppi","NjettinessAk8Puppi"),
+>         #topjet_substructure_variables_sources = cms.vstring("","ak8CHSJets","ca15CHSJets", "ca15PuppiJets", "ak8PuppiJetsFat"),
+>         #topjet_njettiness_groomed_sources = cms.vstring("","NjettinessAk8SoftDropCHS","NjettinessCa15SoftDropCHS","NjettinessCa15SoftDropPuppi","NjettinessAk8SoftDropPuppi"),
+>         #topjet_substructure_groomed_variables_sources = cms.vstring("","ak8CHSJetsSoftDropforsub","ca15CHSJetsSoftDropforsub", "ca15PuppiJetsSoftDropforsub", "ak8PuppiJetsSoftDropforsub"),
+>         topjet_njettiness_sources = cms.vstring("","NjettinessAk8CHS","NjettinessAk8Puppi"),
+>         topjet_substructure_variables_sources = cms.vstring("","ak8CHSJets", "ak8PuppiJetsFat"),
+>         topjet_njettiness_groomed_sources = cms.vstring("","NjettinessAk8SoftDropCHS","NjettinessAk8SoftDropPuppi"),
+>         topjet_substructure_groomed_variables_sources = cms.vstring("","ak8CHSJetsSoftDropforsub","ak8PuppiJetsSoftDropforsub"),
+>         #Note: for slimmedJetsAK8 on miniAOD, the pruned mass is available as user flot, with label ak8PFJetsCHSPrunedMass.
+>         #Alternatively it is possible to specify another pruned jet collection (to be produced here), from which to get it by jet-matching.
+>         #Finally, it is also possible to leave the pruned mass empty with ""
+>         #topjet_prunedmass_sources = cms.vstring("ak8PFJetsCHSPrunedMass","patJetsAk8CHSJetsPrunedPacked","patJetsCa15CHSJetsPrunedPacked","patJetsCa15CHSJetsPrunedPacked","patJetsAk8CHSJetsPrunedPacked"),
+>         #topjet_softdropmass_sources = cms.vstring("ak8PFJetsCHSSoftDropMass", "", "", "", ""),
+>         topjet_prunedmass_sources = cms.vstring("ak8PFJetsCHSValueMap:ak8PFJetsCHSPrunedMass","patJetsAk8CHSJetsPrunedPacked","patJetsAk8CHSJetsPrunedPacked"),
+>         topjet_softdropmass_sources = cms.vstring("ak8PFJetsPuppiSoftDropMass", "", ""),
+>         #topjet_sources = cms.vstring("patJetsHepTopTagCHSPacked", "patJetsCmsTopTagCHSPacked", "patJetsCa8CHSJetsPrunedPacked", "patJetsCa15CHSJetsFilteredPacked",
+>         #        "patJetsHepTopTagPuppiPacked", "patJetsCmsTopTagPuppiPacked", "patJetsCa8PuppiJetsPrunedPacked", "patJetsCa15PuppiJetsFilteredPacked",
+>         #        'patJetsCa8CHSJetsSoftDropPacked', 'patJetsCa8PuppiJetsSoftDropPacked'
+>         #        ),
+>         # jets to match to the topjets in order to get njettiness, in the same order as topjet_sources.
+>         # Note that no substructure variables are added for the softdrop jets.
+>         #topjet_substructure_variables_sources = cms.vstring("patJetsCa15CHSJets", "patJetsCa8CHSJets", "patJetsCa8CHSJets", "patJetsCa15CHSJets",
+>         #        "patJetsCa15PuppiJets", "patJetsCa8PuppiJets", "patJetsCa8PuppiJets", "patJetsCa15PuppiJets",
+>         #        "patJetsCa8CHSJets", "patJetsCa8PuppiJets"),
+>         #topjet_njettiness_sources = cms.vstring("NjettinessCa15CHS", "NjettinessCa8CHS", "NjettinessCa8CHS", "NjettinessCa15CHS",
+>         #        "NjettinessCa15Puppi", "NjettinessCa8Puppi", "NjettinessCa8Puppi", "NjettinessCa15Puppi",
+>         #        "NjettinessCa8CHS", "NjettinessCa8Puppi"),
+886a910,912
+>         # switch off qjets for now, as it takes a long time:
+>         #topjet_qjets_sources = cms.vstring("QJetsCa15CHS", "QJetsCa8CHS", "QJetsCa8CHS", "QJetsCa15CHS"),
+>         
+909,911c935
+< #        trigger_objects = cms.InputTag("selectedPatTrigger"),
+<          trigger_objects = cms.InputTag("slimmedPatTrigger"),
+< #        trigger_objects = cms.InputTag("patTrigger"),
+---
+>         trigger_objects = cms.InputTag("selectedPatTrigger"),
+926,927c950,951
+<         gentopjet_sources = cms.VInputTag(cms.InputTag("ak8GenJetsSoftDrop")),
+<         #gentopjet_sources = cms.VInputTag(cms.InputTag("ak8GenJets"),cms.InputTag("ak8GenJetsSoftDrop")), #this can be used to save N-subjettiness for ungroomed GenJets
+---
+>         #gentopjet_sources = cms.VInputTag(cms.InputTag("ak8GenJetsSoftDrop")),
+>         gentopjet_sources = cms.VInputTag(cms.InputTag("ak8GenJets"),cms.InputTag("ak8GenJetsSoftDrop")), #this can be used to save N-subjettiness for ungroomed GenJets
+930,935c954,959
+<         gentopjet_tau1 = cms.VInputTag(),
+<         gentopjet_tau2 = cms.VInputTag(),
+<         gentopjet_tau3 = cms.VInputTag(),
+<         #gentopjet_tau1 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau1"),cms.InputTag("NjettinessAk8SoftDropGen","tau1")), #this can be used to save N-subjettiness for GenJets
+<         #gentopjet_tau2 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau2"),cms.InputTag("NjettinessAk8SoftDropGen","tau2")), #this can be used to save N-subjettiness for GenJets
+<         #gentopjet_tau3 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau3"),cms.InputTag("NjettinessAk8SoftDropGen","tau3")), #this can be used to save N-subjettiness for GenJets
+---
+>         #gentopjet_tau1 = cms.VInputTag(),
+>         #gentopjet_tau2 = cms.VInputTag(),
+>         #gentopjet_tau3 = cms.VInputTag(),
+>         gentopjet_tau1 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau1"),cms.InputTag("NjettinessAk8SoftDropGen","tau1")), #this can be used to save N-subjettiness for GenJets
+>         gentopjet_tau2 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau2"),cms.InputTag("NjettinessAk8SoftDropGen","tau2")), #this can be used to save N-subjettiness for GenJets
+>         gentopjet_tau3 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau3"),cms.InputTag("NjettinessAk8SoftDropGen","tau3")), #this can be used to save N-subjettiness for GenJets
+967,968d990
+< process.p.associate(task)
+< process.p.associate(process.patAlgosToolsTask)

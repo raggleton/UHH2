@@ -1,9 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
+# Irene commented cambridge achen stuff!
 #isDebug = True
 isDebug = False
-#useData = False
-useData = True
+useData = False
+#useData = True
 if useData:
 #    met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS","slimmedMETsMuEGClean","slimmedMETsEGClean","slimmedMETsUncorrected")
     met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS")
@@ -60,6 +61,15 @@ if isDebug:
 
 process.source = cms.Source("PoolSource",
   fileNames  = cms.untracked.vstring([
+'file:/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/00E3ABFD-22B7-E711-B972-002590D9D89C.root'
+#'/store/mc/PhaseIITDRFall17MiniAOD/VBF_BulkGravToWW_narrow_M-2000_14TeV-madgraph/MINIAODSIM/noPU_93X_upgrade2023_realistic_v2-v1/150000/00E3ABFD-22B7-E711-B972-002590D9D89C.root',
+#'/store/mc/PhaseIITDRFall17MiniAOD/VBF_BulkGravToWW_narrow_M-2000_14TeV-madgraph/MINIAODSIM/noPU_93X_upgrade2023_realistic_v2-v1/150000/04A4B67D-74B6-E711-8D23-D4AE526A0D2E.root',
+#'/store/mc/PhaseIITDRFall17MiniAOD/VBF_BulkGravToWW_narrow_M-2000_14TeV-madgraph/MINIAODSIM/noPU_93X_upgrade2023_realistic_v2-v1/150000/38B6C65C-ACB7-E711-8639-484D7E8DF06B.root',
+#'/store/mc/PhaseIITDRFall17MiniAOD/VBF_BulkGravToWW_narrow_M-2000_14TeV-madgraph/MINIAODSIM/noPU_93X_upgrade2023_realistic_v2-v1/150000/68CC7867-B3B7-E711-A58F-B083FECFF2BE.root',
+#'/store/mc/PhaseIITDRFall17MiniAOD/VBF_BulkGravToWW_narrow_M-2000_14TeV-madgraph/MINIAODSIM/noPU_93X_upgrade2023_realistic_v2-v1/150000/A02230D0-4BB7-E711-BDD2-E0071B6C9DA0.root',
+#'/store/mc/PhaseIITDRFall17MiniAOD/VBF_BulkGravToWW_narrow_M-2000_14TeV-madgraph/MINIAODSIM/noPU_93X_upgrade2023_realistic_v2-v1/150000/A456B14B-53B7-E711-AD6B-0425C5DE7BE4.root',
+#'/store/mc/PhaseIITDRFall17MiniAOD/VBF_BulkGravToWW_narrow_M-2000_14TeV-madgraph/MINIAODSIM/noPU_93X_upgrade2023_realistic_v2-v1/150000/EC342DC4-1FB7-E711-951B-0025901D0C68.root'
+
 
             #'file:////nfs/dust/cms/user/hinzmann/6214AEE4-751A-E711-8645-0025905A6056.root'
 #            '/store/data/Run2017B/JetHT/MINIAOD/23Jun2017-v1/00000/004DBDB2-C859-E711-8DD0-002590D0B042.root'
@@ -126,7 +136,8 @@ process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condD
 if useData:
     process.GlobalTag.globaltag = '92X_dataRun2_Jun23ReReco_PixelCommissioning' 
 else:
-    process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v6' 
+    process.GlobalTag.globaltag = '93X_upgrade2023_realistic_v2'#irene 
+#    process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v6' 
 
 
 from RecoJets.Configuration.RecoPFJets_cff import *
@@ -175,25 +186,35 @@ task.add(process.prunedPrunedGenParticles)
 process.chs = cms.EDFilter("CandPtrSelector", src = cms.InputTag("packedPFCandidates"), cut = cms.string("fromPV(0) > 0"))
 task.add(process.chs)
 
-process.ca8CHSJets  = ca8PFJets.clone (src = 'chs', doAreaFastjet = True, jetPtMin = fatjet_ptmin)
-process.ak8CHSJets  = ak8PFJets.clone (src = 'chs', doAreaFastjet = True, jetPtMin = 10.)
-task.add(process.ak8CHSJets)
+#process.ca8CHSJets  = ca8PFJets.clone (src = 'chs', doAreaFastjet = True, jetPtMin = fatjet_ptmin) #irene commented
+process.ak8CHSJets  = ak8PFJets.clone (src = 'chs', doAreaFastjet = True, jetPtMin = 10.) #irene commented
+task.add(process.ak8CHSJets) #irene commented
 process.ak8CHSJetsFat  = ak8PFJets.clone (src = 'chs', doAreaFastjet = True, jetPtMin = fatjet_ptmin)
 task.add(process.ak8CHSJetsFat)
-process.ca15CHSJets = process.ca8CHSJets.clone (rParam = 1.5)
+#process.ca15CHSJets = process.ca8CHSJets.clone (rParam = 1.5) #irene commented
 
-from RecoJets.JetProducers.ak4PFJetsPruned_cfi import ak4PFJetsPruned
+#from RecoJets.JetProducers.ak4PFJetsPruned_cfi import ak4PFJetsPruned #irene
+ak4PFJetsPruned = ak4PFJets.clone( #irene
+    SubJetParameters,
+    usePruning = cms.bool(True),
+    useExplicitGhosts = cms.bool(True),
+    writeCompound = cms.bool(True),
+    jetCollInstanceName=cms.string("SubJets")
+)
+
 process.ca8CHSJetsPruned = ak4PFJetsPruned.clone(rParam = 0.8, jetAlgorithm = "CambridgeAachen", doAreaFastjet = True, src = 'chs', jetPtMin = fatjet_ptmin)
 
-from RecoJets.JetProducers.ak5PFJetsFiltered_cfi import ak5PFJetsFiltered
-process.ca15CHSJetsFiltered = ak5PFJetsFiltered.clone(
-        src = 'chs',
-        jetAlgorithm = cms.string("CambridgeAachen"),
-        rParam       = cms.double(1.5),
-        writeCompound = cms.bool(True),
-        doAreaFastjet = cms.bool(True),
-        jetPtMin = cms.double(fatjet_ptmin)
-)
+#...Jets/JetProducers/python/ak5PFJets_cfi.py -> ...Jets/JetProducers/python/kt6PFJets_cfi.py :
+#from RecoJets.JetProducers.ak5PFJetsFiltered_cfi import ak5PFJetsFiltered #irene commented
+from RecoJets.JetProducers.kt6PFJets_cfi import kt6PFJets
+#process.ca15CHSJetsFiltered = kt6PFJets.clone( #irene
+#        src = 'chs',
+#        jetAlgorithm = cms.string("CambridgeAachen"),
+#        rParam       = cms.double(1.5),
+#        writeCompound = cms.bool(True),
+#        doAreaFastjet = cms.bool(True),
+#        jetPtMin = cms.double(fatjet_ptmin)
+#)
 
 from RecoJets.JetProducers.AnomalousCellParameters_cfi import *  
 from RecoJets.JetProducers.PFJetParameters_cfi import *          
@@ -261,11 +282,11 @@ from RecoJets.Configuration.RecoPFJets_cff import ak8PFJetsCHS
 process.ak8CHSJetsSoftDrop = ak8PFJetsCHSSoftDrop.clone(src = cms.InputTag('chs'), jetPtMin = fatjet_ptmin)
 task.add(process.ak8CHSJetsSoftDrop)
 process.ca15CHSJetsSoftDrop = ak8PFJetsCHSSoftDrop.clone(src = cms.InputTag('chs'), jetPtMin = fatjet_ptmin, jetAlgorithm = cms.string("CambridgeAachen"), rParam = 1.5, R0 = 1.5, zcut = cms.double(0.2), beta = cms.double(1.0))
-process.ca15CHSJetsSoftDropforsub = process.ca8CHSJets.clone (rParam = 1.5, jetPtMin = fatjet_ptmin, zcut = cms.double(0.2), beta = cms.double(1.0), useSoftDrop = cms.bool(True), useExplicitGhosts = cms.bool(True), R0 = cms.double(1.5))
+#process.ca15CHSJetsSoftDropforsub = process.ca8CHSJets.clone (rParam = 1.5, jetPtMin = fatjet_ptmin, zcut = cms.double(0.2), beta = cms.double(1.0), useSoftDrop = cms.bool(True), useExplicitGhosts = cms.bool(True), R0 = cms.double(1.5))  #irene
 process.ak8CHSJetsSoftDropforsub = process.ak8CHSJetsFat.clone (rParam = 0.8, jetPtMin = fatjet_ptmin, zcut = cms.double(0.1), beta = cms.double(0.0), useSoftDrop = cms.bool(True), useExplicitGhosts = cms.bool(True), R0 = cms.double(0.8))
 task.add(process.ak8CHSJetsSoftDropforsub)
 
-from RecoJets.JetProducers.ak4PFJetsPruned_cfi import ak4PFJetsPruned
+#from RecoJets.JetProducers.ak4PFJetsPruned_cfi import ak4PFJetsPruned #irene
 #Note low pt threshold as jets currently not stored but used just to derived pruned mass
 process.ak8CHSJetsPruned = ak4PFJetsPruned.clone(rParam = 0.8, doAreaFastjet = True, src = 'chs', jetPtMin = 70)
 task.add(process.ak8CHSJetsPruned)
@@ -280,16 +301,16 @@ process.puppi.vertexName = cms.InputTag('offlineSlimmedPrimaryVertices')
 process.puppi.clonePackedCands   = cms.bool(True)
 task.add(process.puppi)
 
-process.ca15PuppiJetsSoftDrop = ak8PFJetsCHSSoftDrop.clone(src = cms.InputTag('puppi'), jetPtMin = fatjet_ptmin, jetAlgorithm = cms.string("CambridgeAachen"), rParam = 1.5, R0 = 1.5, zcut = cms.double(0.2), beta = cms.double(1.0))
+#process.ca15PuppiJetsSoftDrop = ak8PFJetsCHSSoftDrop.clone(src = cms.InputTag('puppi'), jetPtMin = fatjet_ptmin, jetAlgorithm = cms.string("CambridgeAachen"), rParam = 1.5, R0 = 1.5, zcut = cms.double(0.2), beta = cms.double(1.0)) #irene commented
 
 process.ak8PuppiJetsSoftDrop = ak8PFJetsCHSSoftDrop.clone(src = cms.InputTag('puppi'), jetPtMin = fatjet_ptmin)
 task.add(process.ak8PuppiJetsSoftDrop)
 
-process.ca15PuppiJetsSoftDropforsub = process.ca8CHSJets.clone (rParam = 1.5, jetPtMin = fatjet_ptmin, zcut = cms.double(0.2), beta = cms.double(1.0), useSoftDrop = cms.bool(True), useExplicitGhosts = cms.bool(True), R0 = cms.double(1.5), src = cms.InputTag('puppi'))
+#process.ca15PuppiJetsSoftDropforsub = process.ca8CHSJets.clone (rParam = 1.5, jetPtMin = fatjet_ptmin, zcut = cms.double(0.2), beta = cms.double(1.0), useSoftDrop = cms.bool(True), useExplicitGhosts = cms.bool(True), R0 = cms.double(1.5), src = cms.InputTag('puppi')) #irene
 process.ak8PuppiJetsSoftDropforsub = process.ak8CHSJetsFat.clone (rParam = 0.8, jetPtMin = fatjet_ptmin, zcut = cms.double(0.1), beta = cms.double(0.0), useSoftDrop = cms.bool(True), useExplicitGhosts = cms.bool(True), R0 = cms.double(0.8), src = cms.InputTag('puppi'))
 task.add(process.ak8PuppiJetsSoftDropforsub)
 
-process.ca15PuppiJets = process.ca8CHSJets.clone (rParam = 1.5, src='puppi')
+#process.ca15PuppiJets = process.ca8CHSJets.clone (rParam = 1.5, src='puppi') #irene
 
 process.ak8PuppiJets  = ak8PFJets.clone (src = 'puppi', doAreaFastjet = True, jetPtMin = 10.)
 task.add(process.ak8PuppiJets)
@@ -298,7 +319,8 @@ process.ak8PuppiJetsFat = process.ak8CHSJets.clone (src='puppi')
 task.add(process.ak8PuppiJetsFat)
 
 # copy all the jet collections above; just use 'puppi' instead of 'chs' as input:
-for name in ['ca8CHSJets', 'ca15CHSJets', 'ca8CHSJetsPruned', 'ca15CHSJetsFiltered']:#, 'cmsTopTagCHS', 'hepTopTagCHS']:
+#for name in ['ca8CHSJets', 'ca15CHSJets', 'ca8CHSJetsPruned', 'ca15CHSJetsFiltered']:#, 'cmsTopTagCHS', 'hepTopTagCHS']:
+for name in ['ca8CHSJetsPruned']:#, 'cmsTopTagCHS', 'hepTopTagCHS']: #irene
     setattr(process, name.replace('CHS', 'Puppi'), getattr(process, name).clone(src = cms.InputTag('puppi')))
 
 ###############################################
@@ -450,17 +472,17 @@ def add_fatjets_subjets(process, fatjets_name, groomed_jets_name, jetcorr_label 
             producer.getJetMCFlavour = False
 
 #add_fatjets_subjets(process, 'ca8CHSJets', 'ca8CHSJetsPruned', genjets_name = lambda s: s.replace('CHS', 'Gen'))
-add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsFiltered',genjets_name = lambda s: s.replace('CHS', 'Gen'))
+#add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsFiltered',genjets_name = lambda s: s.replace('CHS', 'Gen')) #irene commented
 #add_fatjets_subjets(process, 'ca15CHSJets', 'hepTopTagCHS')
 #add_fatjets_subjets(process, 'ca8CHSJets', 'cmsTopTagCHS', genjets_name = lambda s: s.replace('CHS', 'Gen'))
 #add_fatjets_subjets(process, 'ca15CHSJets', 'hepTopTagCHS', genjets_name = lambda s: s.replace('CHS', 'Gen'))
 add_fatjets_subjets(process, 'ak8CHSJets', 'ak8CHSJetsSoftDrop', genjets_name = lambda s: s.replace('CHS', 'Gen'))
-add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsSoftDrop', genjets_name = lambda s: s.replace('CHS', 'Gen'))
-add_fatjets_subjets(process, 'ca15PuppiJets', 'ca15PuppiJetsSoftDrop', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
+#add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsSoftDrop', genjets_name = lambda s: s.replace('CHS', 'Gen')) #irene commented
+#add_fatjets_subjets(process, 'ca15PuppiJets', 'ca15PuppiJetsSoftDrop', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
 add_fatjets_subjets(process, 'ak8PuppiJetsFat', 'ak8PuppiJetsSoftDrop', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
 #B-tagging not needed for pruned jets, they are just used to get the mass
 add_fatjets_subjets(process, 'ak8CHSJets', 'ak8CHSJetsPruned', genjets_name = lambda s: s.replace('CHS', 'Gen'), btagging = False)
-add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsPruned', genjets_name = lambda s: s.replace('CHS', 'Gen'), btagging = False)
+#add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsPruned', genjets_name = lambda s: s.replace('CHS', 'Gen'), btagging = False) #irene commented
 #add_fatjets_subjets(process, 'ca8PuppiJets', 'ca8PuppiJetsPruned', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
 #add_fatjets_subjets(process, 'ca15PuppiJets', 'ca15PuppiJetsFiltered', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
 #add_fatjets_subjets(process, 'ca8PuppiJets', 'cmsTopTagPuppi', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
@@ -481,7 +503,7 @@ from RecoJets.JetProducers.qjetsadder_cfi import QJetsAdder
 
 process.NjettinessAk8CHS = Njettiness.clone(src = cms.InputTag("ak8CHSJets"), cone = cms.double(0.8))
 task.add(process.NjettinessAk8CHS)
-process.NjettinessCa15CHS = Njettiness.clone(src = cms.InputTag("ca15CHSJets"), cone = cms.double(1.5),R0 = cms.double(1.5))
+#process.NjettinessCa15CHS = Njettiness.clone(src = cms.InputTag("ca15CHSJets"), cone = cms.double(1.5),R0 = cms.double(1.5))
 process.NjettinessCa15SoftDropCHS = Njettiness.clone(
                                                  src = cms.InputTag("ca15CHSJetsSoftDropforsub"),
                                                  Njets=cms.vuint32(1,2,3),          # compute 1-, 2-, 3- subjettiness
@@ -495,7 +517,7 @@ process.NjettinessCa15SoftDropCHS = Njettiness.clone(
                                                  nPass = cms.int32(999),             # not used by default
                                                  akAxesR0 = cms.double(999.0)        # not used by default
                                                  )
-process.NjettinessCa15SoftDropPuppi = process.NjettinessCa15SoftDropCHS.clone(src = cms.InputTag("ca15PuppiJetsSoftDropforsub"))
+#process.NjettinessCa15SoftDropPuppi = process.NjettinessCa15SoftDropCHS.clone(src = cms.InputTag("ca15PuppiJetsSoftDropforsub"))
 process.NjettinessAk8SoftDropCHS = Njettiness.clone(
                                                  src = cms.InputTag("ak8CHSJetsSoftDropforsub"),
                                                  Njets=cms.vuint32(1,2,3),          # compute 1-, 2-, 3- subjettiness
@@ -514,7 +536,7 @@ process.NjettinessAk8SoftDropPuppi = process.NjettinessAk8SoftDropCHS.clone(src 
 task.add(process.NjettinessAk8SoftDropPuppi)
 #process.NjettinessCa15SoftDropCHS = Njettiness.clone(src = cms.InputTag("patJetsCa15CHSJetsSoftDrop"), cone = cms.double(1.5),R0 = cms.double(1.5))
 #process.NjettinessCa8Puppi = Njettiness.clone(src = cms.InputTag("patJetsCa8PuppiJets"), cone = cms.double(0.8))
-process.NjettinessCa15Puppi = Njettiness.clone(src = cms.InputTag("ca15PuppiJets"), cone = cms.double(1.5),R0 = cms.double(1.5))
+#process.NjettinessCa15Puppi = Njettiness.clone(src = cms.InputTag("ca15PuppiJets"), cone = cms.double(1.5),R0 = cms.double(1.5))
 process.NjettinessAk8Puppi = Njettiness.clone(src = cms.InputTag("ak8PuppiJetsFat"), cone = cms.double(0.8))
 task.add(process.NjettinessAk8Puppi)
 process.NjettinessAk8Gen = Njettiness.clone(src = cms.InputTag("ak8GenJets"), cone = cms.double(0.8))
@@ -924,16 +946,16 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         genjet_etamax = cms.double(5.0),
                             
         doGenTopJets = cms.bool(not useData),
-        gentopjet_sources = cms.VInputTag(cms.InputTag("ak8GenJetsSoftDrop")),
-        #gentopjet_sources = cms.VInputTag(cms.InputTag("ak8GenJets"),cms.InputTag("ak8GenJetsSoftDrop")), #this can be used to save N-subjettiness for ungroomed GenJets
+        #gentopjet_sources = cms.VInputTag(cms.InputTag("ak8GenJetsSoftDrop")),
+        gentopjet_sources = cms.VInputTag(cms.InputTag("ak8GenJets"),cms.InputTag("ak8GenJetsSoftDrop")), #this can be used to save N-subjettiness for ungroomed GenJets
         gentopjet_ptmin = cms.double(150.0), 
         gentopjet_etamax = cms.double(5.0),
-        gentopjet_tau1 = cms.VInputTag(),
-        gentopjet_tau2 = cms.VInputTag(),
-        gentopjet_tau3 = cms.VInputTag(),
-        #gentopjet_tau1 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau1"),cms.InputTag("NjettinessAk8SoftDropGen","tau1")), #this can be used to save N-subjettiness for GenJets
-        #gentopjet_tau2 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau2"),cms.InputTag("NjettinessAk8SoftDropGen","tau2")), #this can be used to save N-subjettiness for GenJets
-        #gentopjet_tau3 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau3"),cms.InputTag("NjettinessAk8SoftDropGen","tau3")), #this can be used to save N-subjettiness for GenJets
+        #gentopjet_tau1 = cms.VInputTag(),
+        #gentopjet_tau2 = cms.VInputTag(),
+        #gentopjet_tau3 = cms.VInputTag(),
+        gentopjet_tau1 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau1"),cms.InputTag("NjettinessAk8SoftDropGen","tau1")), #this can be used to save N-subjettiness for GenJets
+        gentopjet_tau2 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau2"),cms.InputTag("NjettinessAk8SoftDropGen","tau2")), #this can be used to save N-subjettiness for GenJets
+        gentopjet_tau3 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau3"),cms.InputTag("NjettinessAk8SoftDropGen","tau3")), #this can be used to save N-subjettiness for GenJets
         
         doGenJetsWithParts = cms.bool(False),
         doAllPFParticles = cms.bool(False),
