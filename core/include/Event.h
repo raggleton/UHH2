@@ -1,6 +1,7 @@
 #pragma once
 
 #include "UHH2/core/include/NtupleObjects.h"
+
 #include "UHH2/core/include/GenericEvent.h"
 
 namespace uhh2 {
@@ -17,7 +18,7 @@ public:
     
   int run;
   int luminosityBlock;
-  long long event;
+  int event;
 
   float rho;
 

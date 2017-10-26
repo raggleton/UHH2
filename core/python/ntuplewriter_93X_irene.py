@@ -133,7 +133,8 @@ process.out.outputCommands.extend([
 
 ###############################################
 # RECO AND GEN SETUP
-process.load("Configuration.Geometry.GeometryRecoDB_cff")
+#process.load("Configuration.Geometry.GeometryRecoDB_cff")
+process.load('Configuration.Geometry.GeometryExtended2023D17Reco_cff')
 process.load("Configuration.StandardSequences.MagneticField_cff")
 #see https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideFrontierConditions for latest global tags
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
@@ -824,8 +825,8 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         doGenMET= cms.bool(False), #irene
         #met_sources =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS","slimmedMETsMuEGClean"),
         met_sources =  met_sources_GL,
-        doTopJets = cms.bool(False),
-        #doTopJets = cms.bool(True),
+        #doTopJets = cms.bool(False),
+        doTopJets = cms.bool(True),
         topjet_ptmin = cms.double(150.0),
         topjet_etamax = cms.double(5.0), 
 
@@ -897,7 +898,7 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
              #    #softdropmass_source  = cms.string(""),
              #) ,
              cms.PSet(
-                 topjet_source = cms.string("patJetsAk8PuppiJetsSoftDropPacked"),
+                 topjet_source = cms.string("patJetsAk8PuppiJetsSoftDropPacked"), 
                  subjet_source = cms.string("daughters"),
                  do_subjet_taginfo = cms.bool(True),
                  higgstag_source = cms.string("patJetsAk8PuppiJetsFat"),
