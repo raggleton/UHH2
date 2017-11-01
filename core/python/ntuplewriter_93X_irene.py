@@ -775,7 +775,7 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         #    # Note: all other settings of type string are passed to the module, e.g.:
         #    TestKey = cms.string("TestValue")
         #),
-        fileName = cms.string("Ntuple.root"), 
+        fileName = cms.string("Ntuple_AK8.root"), 
         doPV = cms.bool(True),
         pv_sources = cms.vstring("offlineSlimmedPrimaryVertices"),
         doRho = cms.untracked.bool(True),
@@ -816,7 +816,7 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         
         doJets = cms.bool(True),
         #jet_sources = cms.vstring("patJetsAk4PFCHS", "patJetsAk8PFCHS", "patJetsCa15CHSJets", "patJetsCa8CHSJets", "patJetsCa15PuppiJets", "patJetsCa8PuppiJets"),
-        jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi"),
+        jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi","slimmedJetsAK8"),
         #jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi","patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
         jet_ptmin = cms.double(10.0),
         jet_etamax = cms.double(999.0),
