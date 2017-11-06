@@ -1,0 +1,1616 @@
+Adding groomed genjets  ak8GenJetsSoftDrop
+Adding ungroomed genjets  ak8GenJets
+Adding ungroomed patJetsAk8CHSJets
+adding grommed jets patJetsAk8CHSJetsSoftDrop
+adding grommed jets' subjets patJetsAk8CHSJetsSoftDropSubjets
+Adding groomed genjets  ak8GenJetsSoftDrop
+Adding ungroomed genjets  ak8GenJetsFat
+Adding ungroomed patJetsAk8PuppiJetsFat
+adding grommed jets patJetsAk8PuppiJetsSoftDrop
+adding grommed jets' subjets patJetsAk8PuppiJetsSoftDropSubjets
+Adding groomed genjets  ak8GenJetsPruned
+Adding ungroomed genjets  ak8GenJets
+adding grommed jets patJetsAk8CHSJetsPruned
+adding grommed jets' subjets patJetsAk8CHSJetsPrunedSubjets
+Switching PV collection for PF2PAT: cms.InputTag("offlineSlimmedPrimaryVertices")
+***********************************
+DEBUG 2017-11-06 04:34:39,198: 	 Executing command: 'submit'
+DEBUG 2017-11-06 04:34:39,198: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:34:39,204: 	 Checking credentials
+DEBUG 2017-11-06 04:34:39,204: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:34:39,204: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:34:39,707: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42993
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:34:40,110: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42991
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:34:40,110: 	 Proxy valid for 11:56:33 hours
+INFO 2017-11-06 04:34:40,111: 	 Will use CRAB configuration file crab_QCD_93X_pu_upgrade2023.py
+DEBUG 2017-11-06 04:34:40,111: 	 Loading CRAB configuration file.
+DEBUG 2017-11-06 04:34:42,815: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+DEBUG 2017-11-06 04:34:42,961: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:34:42,961: 	 Checking credentials
+DEBUG 2017-11-06 04:34:42,962: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:34:42,962: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:34:43,364: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42989
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:34:43,768: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42988
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:34:43,768: 	 Proxy valid for 11:56:29 hours
+DEBUG 2017-11-06 04:34:44,171: 	 Executing : 
+ command : env X509_USER_PROXY=/tmp/x509up_u28517 voms-proxy-info -fqan
+ output : /cms/Role=NULL/Capability=NULL
+/cms/dcms/Role=NULL/Capability=NULL
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:34:45,080: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:34:45,188: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:34:45,188: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:34:45,188: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:34:45,591: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:27:43  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:34:45,591: 	 Myproxy is valid: 1592863
+DEBUG 2017-11-06 04:34:45,591: 	 Command use: submit
+DEBUG 2017-11-06 04:34:45,592: 	 Options use: ['-c', 'crab_QCD_93X_pu_upgrade2023.py']
+DEBUG 2017-11-06 04:34:46,522: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:34:46,522: 	 Instance is prod
+DEBUG 2017-11-06 04:34:46,522: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:34:46,522: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:34:46,522: 	 Started submission
+DEBUG 2017-11-06 04:34:46,522: 	 Working on /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:34:47,525: 	 Loading required information from the environment
+DEBUG 2017-11-06 04:34:47,525: 	 Found CMSSW_9_3_2 for slc6_amd64_gcc630 with base /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2
+DEBUG 2017-11-06 04:34:47,525: 	 Loading required information from the environment
+DEBUG 2017-11-06 04:34:47,525: 	 Found CMSSW_9_3_2 for slc6_amd64_gcc630 with base /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2
+DEBUG 2017-11-06 04:34:47,537: 	 UNIQUE NAME: tarUUID 208a0d93-f6b7-4820-b5f2-bfd588ef6912 
+DEBUG 2017-11-06 04:34:47,537: 	 self.config: from WMCore.Configuration import Configuration
+config = Configuration()
+config.section_('General')
+config.General.transferLogs = True
+config.General.transferOutputs = True
+config.General.workArea = 'crab_Graviton'
+config.General.requestName = 'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix'
+config.section_('JobType')
+config.JobType.psetName = '/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/core/python/ntuplewriter_93X_irene.py'
+config.JobType.pluginName = 'Analysis'
+config.JobType.outputFiles = ['Ntuple_AK8_fix.root']
+config.JobType.maxMemoryMB = 2500
+config.JobType.sendExternalFolder = True
+config.section_('Data')
+config.Data.inputDataset = '/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM'
+config.Data.allowNonValidInputDataset = True
+config.Data.publication = False
+config.Data.unitsPerJob = 500
+config.Data.inputDBS = 'global'
+config.Data.splitting = 'EventAwareLumiBased'
+config.Data.outLFNDirBase = '/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix'
+config.section_('Site')
+config.Site.storageSite = 'T2_DE_DESY'
+config.section_('User')
+config.section_('Debug')
+
+DEBUG 2017-11-06 04:34:47,537: 	 self.config.JobType.psetName: /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/core/python/ntuplewriter_93X_irene.py
+INFO 2017-11-06 04:34:47,538: 	 Importing CMSSW configuration /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/core/python/ntuplewriter_93X_irene.py
+INFO 2017-11-06 04:34:49,579: 	 Finished importing CMSSW configuration /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/core/python/ntuplewriter_93X_irene.py
+DEBUG 2017-11-06 04:34:49,579: 	 Writing CMSSW configuration to /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/inputs/PSet.py
+DEBUG 2017-11-06 04:34:50,532: 	 The following EDM output files will be collected: []
+DEBUG 2017-11-06 04:34:50,532: 	 The following TFile output files will be collected: []
+DEBUG 2017-11-06 04:34:50,532: 	 The following user output files will be collected: ['Ntuple_AK8_fix.root']
+DEBUG 2017-11-06 04:34:50,533: 	 Loading required information from the environment
+DEBUG 2017-11-06 04:34:50,533: 	 Found CMSSW_9_3_2 for slc6_amd64_gcc630 with base /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2
+DEBUG 2017-11-06 04:34:50,533: 	 Making tarball in /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/inputs/208a0d93-f6b7-4820-b5f2-bfd588ef6912default.tgz
+DEBUG 2017-11-06 04:34:50,564: 	 Checking directory /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/lib
+DEBUG 2017-11-06 04:34:50,565: 	 Adding directory /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/lib to tarball
+DEBUG 2017-11-06 04:34:52,552: 	 Checking directory /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/biglib
+DEBUG 2017-11-06 04:34:52,552: 	 Adding directory /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/biglib to tarball
+DEBUG 2017-11-06 04:34:52,555: 	 Checking directory /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/module
+DEBUG 2017-11-06 04:34:52,555: 	 Checking directory /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/external
+DEBUG 2017-11-06 04:34:52,555: 	 Adding directory /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/external to tarball
+DEBUG 2017-11-06 04:34:55,288: 	 Adding data directory /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/common/data to tarball
+DEBUG 2017-11-06 04:34:57,808: 	 Adding data directory /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/JetMETObjects/data to tarball
+DEBUG 2017-11-06 04:34:58,878: 	 Adding data directory /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/JetMETObjects/interface to tarball
+DEBUG 2017-11-06 04:34:59,073: 	 Uploading archive /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/inputs/208a0d93-f6b7-4820-b5f2-bfd588ef6912default.tgz (12 MB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2017-11-06 04:35:03,954: 	 Loading required information from the environment
+DEBUG 2017-11-06 04:35:03,954: 	 Found CMSSW_9_3_2 for slc6_amd64_gcc630 with base /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2
+DEBUG 2017-11-06 04:35:03,954: 	 Making tarball in /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/inputs/debugFiles.tgz
+DEBUG 2017-11-06 04:35:03,963: 	 Uploading archive /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/inputs/debugFiles.tgz (12 KB) to the CRAB cache. Using URI https://cmsweb.cern.ch/crabcache
+DEBUG 2017-11-06 04:35:04,924: 	 Result uploading input files: e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz 
+INFO 2017-11-06 04:35:04,925: 	 Sending the request to the server
+DEBUG 2017-11-06 04:35:04,925: 	 Submitting {'maxjobruntime': 1250, 'extrajdl': [], 'ignorelocality': 0, 'savelogsflag': 1, 'useparent': 0, 'asyncdest': 'T2_DE_DESY', 'algoargs': 500, 'cachefilename': 'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', 'numcores': 1, 'addoutputfiles': ['Ntuple_AK8_fix.root'], 'generator': 'pythia', 'maxmemory': 2500, 'publishdbsurl': 'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', 'priority': 10, 'jobsw': 'CMSSW_9_3_2', 'edmoutfiles': [], 'userfiles': [], 'primarydataset': '', 'inputdata': '/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', 'lfn': '/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', 'dryrun': 0, 'workflow': 'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', 'cacheurl': u'https://cmsweb.cern.ch/crabcache', 'nonprodsw': 0, 'tfileoutfiles': [], 'oneEventMode': 0, 'debugfilename': '67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', 'saveoutput': 1, 'publication': 0, 'jobarch': 'slc6_amd64_gcc630', 'totalunits': 0, 'splitalgo': 'EventAwareLumiBased', 'ignoreglobalblacklist': 0, 'nonvaliddata': 1, 'dbsurl': 'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', 'publishgroupname': 0, 'jobtype': 'Analysis', 'publishname2': ''} 
+DEBUG 2017-11-06 04:35:04,925: 	 Encoded submit request: maxjobruntime=1250&ignorelocality=0&savelogsflag=1&useparent=0&asyncdest=T2_DE_DESY&algoargs=500&cachefilename=e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz&numcores=1&generator=pythia&maxmemory=2500&publishdbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fphys03%2FDBSWriter&priority=10&jobsw=CMSSW_9_3_2&primarydataset=&inputdata=%2FQCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8%2FPhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1%2FMINIAODSIM&lfn=%2Fstore%2Fuser%2Fizoi%2FRunII_93X_v2-v1%2FQCD_flat_PU200_fix&dryrun=0&workflow=crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix&cacheurl=https%3A%2F%2Fcmsweb.cern.ch%2Fcrabcache&nonprodsw=0&oneEventMode=0&debugfilename=67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz&saveoutput=1&publication=0&jobarch=slc6_amd64_gcc630&totalunits=0&splitalgo=EventAwareLumiBased&ignoreglobalblacklist=0&nonvaliddata=1&dbsurl=https%3A%2F%2Fcmsweb.cern.ch%2Fdbs%2Fprod%2Fglobal%2FDBSReader&publishgroupname=0&jobtype=Analysis&publishname2=&addoutputfiles=Ntuple_AK8_fix.root
+DEBUG 2017-11-06 04:35:06,101: 	 Result: {u'result': [{u'RequestName': u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix'}]}
+INFO 2017-11-06 04:35:06,104: 	 Success: Your task has been delivered to the CRAB3 server.
+INFO 2017-11-06 04:35:06,104: 	 Task name: 171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:35:06,104: 	 Please use 'crab status' to check how the submission process proceeds.
+DEBUG 2017-11-06 04:35:06,104: 	 About to return
+INFO 2017-11-06 04:35:06,107: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:36:36,322: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:36:36,323: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:36:36,330: 	 Checking credentials
+DEBUG 2017-11-06 04:36:36,330: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:36:36,330: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:36:36,832: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42876
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:37,236: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42874
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:37,236: 	 Proxy valid for 11:54:36 hours
+DEBUG 2017-11-06 04:36:37,347: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:37,347: 	 Checking credentials
+DEBUG 2017-11-06 04:36:37,347: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:36:37,347: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:36:37,750: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42875
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:38,254: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42873
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:38,254: 	 Proxy valid for 11:54:35 hours
+DEBUG 2017-11-06 04:36:39,214: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:36:39,322: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:39,322: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:36:39,322: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:36:39,725: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:25:49  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:39,726: 	 Myproxy is valid: 1592749
+DEBUG 2017-11-06 04:36:39,726: 	 Command use: status
+DEBUG 2017-11-06 04:36:39,726: 	 Options use: []
+DEBUG 2017-11-06 04:36:40,623: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:36:40,623: 	 Instance is prod
+DEBUG 2017-11-06 04:36:40,623: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:36:40,623: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:36:41,552: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:36:41,552: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:36:41,552: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:36:41,552: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:36:41,552: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:36:41,552: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:36:41,553: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:36:41,553: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:36:41,553: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:36:41,553: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:36:42,467: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:36:42,467: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:36:43,362: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:36:43,362: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=d41fd7bff753c784e35f4e227b180c3db616e697a5037ff2717a14ef1759f7d58e5a99ab30a20b8b;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:36:43 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=23755 t=1509939403325241'}
+ERROR 2017-11-06 04:36:43,362: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=d41fd7bff753c784e35f4e227b180c3db616e697a5037ff2717a14ef1759f7d58e5a99ab30a20b8b;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:36:43 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=23755 t=1509939403325241'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=d41fd7bff753c784e35f4e227b180c3db616e697a5037ff2717a14ef1759f7d58e5a99ab30a20b8b;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:36:43 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=23755 t=1509939403325241'}
+INFO 2017-11-06 04:36:43,389: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:36:47,910: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:36:47,910: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:36:47,915: 	 Checking credentials
+DEBUG 2017-11-06 04:36:47,915: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:36:47,915: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:36:48,318: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42864
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:48,721: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42863
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:48,722: 	 Proxy valid for 11:54:24 hours
+DEBUG 2017-11-06 04:36:48,831: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:48,831: 	 Checking credentials
+DEBUG 2017-11-06 04:36:48,831: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:36:48,831: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:36:49,234: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42863
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:49,637: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42862
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:49,637: 	 Proxy valid for 11:54:23 hours
+DEBUG 2017-11-06 04:36:50,799: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:36:50,905: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:50,906: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:36:50,906: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:36:51,208: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:25:37  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:36:51,209: 	 Myproxy is valid: 1592737
+DEBUG 2017-11-06 04:36:51,209: 	 Command use: status
+DEBUG 2017-11-06 04:36:51,209: 	 Options use: []
+DEBUG 2017-11-06 04:36:52,110: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:36:52,111: 	 Instance is prod
+DEBUG 2017-11-06 04:36:52,111: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:36:52,111: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:36:53,033: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:36:53,033: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:36:53,034: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:36:53,034: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:36:53,034: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:36:53,034: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:36:53,034: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:36:53,034: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:36:53,034: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:36:53,034: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:36:53,930: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:36:53,930: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:36:54,889: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:36:54,890: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=d1bb1206f30c8a43b028231f54be2e795db361f48b242eb674c6a2ee41674886232074894dd58064;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:36:54 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=3641 t=1509939414873428'}
+ERROR 2017-11-06 04:36:54,890: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=d1bb1206f30c8a43b028231f54be2e795db361f48b242eb674c6a2ee41674886232074894dd58064;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:36:54 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=3641 t=1509939414873428'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=d1bb1206f30c8a43b028231f54be2e795db361f48b242eb674c6a2ee41674886232074894dd58064;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:36:54 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=3641 t=1509939414873428'}
+INFO 2017-11-06 04:36:54,900: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:38:32,754: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:38:32,754: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:38:32,761: 	 Checking credentials
+DEBUG 2017-11-06 04:38:32,761: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:38:32,761: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:38:33,164: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42759
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:33,567: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42758
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:33,568: 	 Proxy valid for 11:52:39 hours
+DEBUG 2017-11-06 04:38:33,678: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:33,678: 	 Checking credentials
+DEBUG 2017-11-06 04:38:33,678: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:38:33,678: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:38:34,081: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42758
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:34,484: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42757
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:34,485: 	 Proxy valid for 11:52:38 hours
+DEBUG 2017-11-06 04:38:35,445: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:38:35,552: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:35,552: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:38:35,552: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:38:35,954: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:23:53  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:35,955: 	 Myproxy is valid: 1592633
+DEBUG 2017-11-06 04:38:35,955: 	 Command use: status
+DEBUG 2017-11-06 04:38:35,955: 	 Options use: []
+DEBUG 2017-11-06 04:38:36,933: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:38:36,933: 	 Instance is prod
+DEBUG 2017-11-06 04:38:36,933: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:38:36,933: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:38:37,861: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:38:37,862: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:38:37,862: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:38:37,862: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:38:37,862: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:38:37,862: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:38:37,862: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:38:37,862: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:38:37,862: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:38:37,862: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:38:38,929: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:38:38,929: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:38:39,825: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:38:39,825: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=c8a532028f09a47f9ab0c17820e19bd64f27c515eb91aa5ce7e5b9b6fcacb5e9c9b6718d9ca5ea1d;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:38:39 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=20919 t=1509939519791519'}
+ERROR 2017-11-06 04:38:39,825: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=c8a532028f09a47f9ab0c17820e19bd64f27c515eb91aa5ce7e5b9b6fcacb5e9c9b6718d9ca5ea1d;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:38:39 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=20919 t=1509939519791519'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=c8a532028f09a47f9ab0c17820e19bd64f27c515eb91aa5ce7e5b9b6fcacb5e9c9b6718d9ca5ea1d;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:38:39 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=20919 t=1509939519791519'}
+INFO 2017-11-06 04:38:39,843: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:38:43,048: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:38:43,048: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:38:43,053: 	 Checking credentials
+DEBUG 2017-11-06 04:38:43,053: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:38:43,053: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:38:43,456: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42749
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:43,860: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42748
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:43,860: 	 Proxy valid for 11:52:29 hours
+DEBUG 2017-11-06 04:38:43,970: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:43,970: 	 Checking credentials
+DEBUG 2017-11-06 04:38:43,970: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:38:43,970: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:38:44,373: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42748
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:44,776: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42747
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:44,776: 	 Proxy valid for 11:52:28 hours
+DEBUG 2017-11-06 04:38:45,714: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:38:45,821: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:45,822: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:38:45,822: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:38:46,124: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:23:42  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:46,125: 	 Myproxy is valid: 1592622
+DEBUG 2017-11-06 04:38:46,125: 	 Command use: status
+DEBUG 2017-11-06 04:38:46,125: 	 Options use: []
+DEBUG 2017-11-06 04:38:47,039: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:38:47,039: 	 Instance is prod
+DEBUG 2017-11-06 04:38:47,039: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:38:47,039: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:38:47,935: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:38:47,936: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:38:47,936: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:38:47,936: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:38:47,936: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:38:47,936: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:38:47,936: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:38:47,936: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:38:47,937: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:38:47,937: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:38:48,854: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:38:48,854: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:38:49,743: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:38:49,743: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=827f11b7e8eb736bdec5471d287b36d4e8440cfe8293a7feefe8077204d82554485b0d4712114543;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:38:49 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=19897 t=1509939529710320'}
+ERROR 2017-11-06 04:38:49,743: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=827f11b7e8eb736bdec5471d287b36d4e8440cfe8293a7feefe8077204d82554485b0d4712114543;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:38:49 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=19897 t=1509939529710320'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=827f11b7e8eb736bdec5471d287b36d4e8440cfe8293a7feefe8077204d82554485b0d4712114543;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:38:49 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=19897 t=1509939529710320'}
+INFO 2017-11-06 04:38:49,753: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:38:56,051: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:38:56,051: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:38:56,057: 	 Checking credentials
+DEBUG 2017-11-06 04:38:56,057: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:38:56,057: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:38:56,459: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42736
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:56,863: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42735
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:56,863: 	 Proxy valid for 11:52:16 hours
+DEBUG 2017-11-06 04:38:56,973: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:56,973: 	 Checking credentials
+DEBUG 2017-11-06 04:38:56,973: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:38:56,973: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:38:57,376: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42735
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:57,779: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42734
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:57,779: 	 Proxy valid for 11:52:15 hours
+DEBUG 2017-11-06 04:38:58,707: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:38:58,814: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:58,814: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:38:58,814: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:38:59,116: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:23:29  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:38:59,117: 	 Myproxy is valid: 1592609
+DEBUG 2017-11-06 04:38:59,117: 	 Command use: status
+DEBUG 2017-11-06 04:38:59,117: 	 Options use: []
+DEBUG 2017-11-06 04:39:00,029: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:39:00,029: 	 Instance is prod
+DEBUG 2017-11-06 04:39:00,029: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:39:00,029: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:39:00,917: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:39:00,917: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:39:00,917: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:39:00,917: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:39:00,917: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:39:00,917: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:39:00,918: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:39:00,918: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:39:00,918: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:39:00,918: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:39:01,848: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:39:01,848: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:39:02,739: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:39:02,739: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=b369e38f9af13ef6423d42e4514c7fcd4e5d28ad3be8a156377c43d0b21eae37dffa54b8bdcf4de5;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:39:02 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=22320 t=1509939542703677'}
+ERROR 2017-11-06 04:39:02,739: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=b369e38f9af13ef6423d42e4514c7fcd4e5d28ad3be8a156377c43d0b21eae37dffa54b8bdcf4de5;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:39:02 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=22320 t=1509939542703677'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=b369e38f9af13ef6423d42e4514c7fcd4e5d28ad3be8a156377c43d0b21eae37dffa54b8bdcf4de5;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:39:02 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=22320 t=1509939542703677'}
+INFO 2017-11-06 04:39:02,749: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:41:13,745: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:41:13,745: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:41:13,754: 	 Checking credentials
+DEBUG 2017-11-06 04:41:13,755: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:41:13,755: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:41:14,258: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42598
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:41:14,661: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42597
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:41:14,661: 	 Proxy valid for 11:49:58 hours
+DEBUG 2017-11-06 04:41:14,773: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:41:14,773: 	 Checking credentials
+DEBUG 2017-11-06 04:41:14,773: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:41:14,773: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:41:15,175: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42597
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:41:15,579: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42596
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:41:15,579: 	 Proxy valid for 11:49:57 hours
+DEBUG 2017-11-06 04:41:16,493: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:41:16,601: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:41:16,601: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:41:16,601: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:41:17,003: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:21:12  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:41:17,004: 	 Myproxy is valid: 1592472
+DEBUG 2017-11-06 04:41:17,004: 	 Command use: status
+DEBUG 2017-11-06 04:41:17,004: 	 Options use: []
+DEBUG 2017-11-06 04:41:17,897: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:41:17,897: 	 Instance is prod
+DEBUG 2017-11-06 04:41:17,897: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:41:17,897: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:41:18,797: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:41:18,797: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:41:18,797: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:41:18,797: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:41:18,797: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:41:18,797: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:41:18,798: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:41:18,798: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:41:18,798: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:41:18,798: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:41:19,719: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:41:19,719: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:41:20,599: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:41:20,599: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=2df9bf68ec871bfff34fde72e25a4066e9a02f880bc1a705cd5abe28a34026b7a52fc8c63ce0c1b3;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:41:20 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=7288 t=1509939680579450'}
+ERROR 2017-11-06 04:41:20,599: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=2df9bf68ec871bfff34fde72e25a4066e9a02f880bc1a705cd5abe28a34026b7a52fc8c63ce0c1b3;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:41:20 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=7288 t=1509939680579450'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=2df9bf68ec871bfff34fde72e25a4066e9a02f880bc1a705cd5abe28a34026b7a52fc8c63ce0c1b3;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:41:20 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=7288 t=1509939680579450'}
+INFO 2017-11-06 04:41:20,616: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:42:30,726: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:42:30,727: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:42:30,734: 	 Checking credentials
+DEBUG 2017-11-06 04:42:30,734: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:42:30,734: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:42:31,237: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42521
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:42:31,641: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42520
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:42:31,641: 	 Proxy valid for 11:48:41 hours
+DEBUG 2017-11-06 04:42:31,752: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:42:31,752: 	 Checking credentials
+DEBUG 2017-11-06 04:42:31,752: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:42:31,752: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:42:32,155: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42520
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:42:32,558: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42519
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:42:32,559: 	 Proxy valid for 11:48:40 hours
+DEBUG 2017-11-06 04:42:33,521: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:42:33,628: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:42:33,629: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:42:33,629: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:42:34,031: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:19:55  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:42:34,032: 	 Myproxy is valid: 1592395
+DEBUG 2017-11-06 04:42:34,032: 	 Command use: status
+DEBUG 2017-11-06 04:42:34,032: 	 Options use: []
+DEBUG 2017-11-06 04:42:34,912: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:42:34,912: 	 Instance is prod
+DEBUG 2017-11-06 04:42:34,912: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:42:34,912: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:42:35,821: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:42:35,822: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:42:35,822: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:42:35,822: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:42:35,822: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:42:35,822: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:42:35,822: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:42:35,822: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:42:35,822: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:42:35,822: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:42:36,746: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:42:36,746: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:42:37,613: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:42:37,614: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=951389c717a5d307b96676c45b1cfba7167f4875fac60cd5e15f56e872872306b81641d44729b332;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:42:37 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=13209 t=1509939757587672'}
+ERROR 2017-11-06 04:42:37,614: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=951389c717a5d307b96676c45b1cfba7167f4875fac60cd5e15f56e872872306b81641d44729b332;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:42:37 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=13209 t=1509939757587672'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=951389c717a5d307b96676c45b1cfba7167f4875fac60cd5e15f56e872872306b81641d44729b332;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:42:37 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=13209 t=1509939757587672'}
+INFO 2017-11-06 04:42:37,630: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:47:28,871: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:47:28,871: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:47:28,880: 	 Checking credentials
+DEBUG 2017-11-06 04:47:28,880: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:47:28,880: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:47:29,383: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42223
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:47:29,786: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42222
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:47:29,787: 	 Proxy valid for 11:43:43 hours
+DEBUG 2017-11-06 04:47:29,898: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:47:29,898: 	 Checking credentials
+DEBUG 2017-11-06 04:47:29,898: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:47:29,898: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:47:30,301: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 42222
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:47:30,705: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 42221
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:47:30,705: 	 Proxy valid for 11:43:42 hours
+DEBUG 2017-11-06 04:47:31,668: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:47:31,775: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:47:31,775: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:47:31,776: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:47:32,178: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:14:56  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:47:32,179: 	 Myproxy is valid: 1592096
+DEBUG 2017-11-06 04:47:32,179: 	 Command use: status
+DEBUG 2017-11-06 04:47:32,179: 	 Options use: []
+DEBUG 2017-11-06 04:47:33,075: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:47:33,075: 	 Instance is prod
+DEBUG 2017-11-06 04:47:33,075: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:47:33,075: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:47:34,114: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:47:34,114: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:47:34,115: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:47:34,115: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:47:34,115: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:47:34,115: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:47:34,115: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:47:34,115: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:47:34,115: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:47:34,115: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:47:35,012: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:47:35,012: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:47:35,875: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:47:35,875: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=e38cc6a263693023fde56e65fe916a0c1ccc873eddd3f79952cbb33209af6190c31551eb00c3185b;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:47:35 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=7400 t=1509940055855003'}
+ERROR 2017-11-06 04:47:35,875: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=e38cc6a263693023fde56e65fe916a0c1ccc873eddd3f79952cbb33209af6190c31551eb00c3185b;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:47:35 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=7400 t=1509940055855003'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=e38cc6a263693023fde56e65fe916a0c1ccc873eddd3f79952cbb33209af6190c31551eb00c3185b;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:47:35 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=7400 t=1509940055855003'}
+INFO 2017-11-06 04:47:35,901: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:51:51,334: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:51:51,334: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:51:51,343: 	 Checking credentials
+DEBUG 2017-11-06 04:51:51,343: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:51:51,343: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:51:51,847: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 41961
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:51:52,250: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 41959
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:51:52,250: 	 Proxy valid for 11:39:21 hours
+DEBUG 2017-11-06 04:51:52,362: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:51:52,362: 	 Checking credentials
+DEBUG 2017-11-06 04:51:52,362: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:51:52,362: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:51:52,765: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 41960
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:51:53,168: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 41958
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:51:53,169: 	 Proxy valid for 11:39:20 hours
+DEBUG 2017-11-06 04:51:54,095: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:51:54,202: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:51:54,202: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:51:54,202: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:51:54,605: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:10:34  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:51:54,606: 	 Myproxy is valid: 1591834
+DEBUG 2017-11-06 04:51:54,606: 	 Command use: status
+DEBUG 2017-11-06 04:51:54,606: 	 Options use: []
+DEBUG 2017-11-06 04:51:55,577: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:51:55,577: 	 Instance is prod
+DEBUG 2017-11-06 04:51:55,577: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:51:55,577: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:51:56,537: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:51:56,538: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:51:56,538: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:51:56,538: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:51:56,538: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:51:56,538: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:51:56,538: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:51:56,538: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:51:56,538: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:51:56,538: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:51:57,453: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:51:57,453: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:51:58,371: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:51:58,371: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=47718df11eb93eb3c3d40f8190108aef43b01eab60766ba9bd457af45786768fd559ba12aaf7a4d8;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:51:58 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=5111 t=1509940318353613'}
+ERROR 2017-11-06 04:51:58,371: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=47718df11eb93eb3c3d40f8190108aef43b01eab60766ba9bd457af45786768fd559ba12aaf7a4d8;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:51:58 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=5111 t=1509940318353613'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=47718df11eb93eb3c3d40f8190108aef43b01eab60766ba9bd457af45786768fd559ba12aaf7a4d8;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:51:58 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=5111 t=1509940318353613'}
+INFO 2017-11-06 04:51:58,387: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:52:26,498: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:52:26,498: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:52:26,504: 	 Checking credentials
+DEBUG 2017-11-06 04:52:26,504: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:52:26,504: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:52:26,907: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 41926
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:52:27,311: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 41924
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:52:27,311: 	 Proxy valid for 11:38:46 hours
+DEBUG 2017-11-06 04:52:27,422: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:52:27,422: 	 Checking credentials
+DEBUG 2017-11-06 04:52:27,422: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:52:27,422: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:52:27,825: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 41925
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:52:28,229: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 41923
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:52:28,229: 	 Proxy valid for 11:38:45 hours
+DEBUG 2017-11-06 04:52:29,147: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:52:29,254: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:52:29,255: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:52:29,255: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:52:29,657: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:09:59  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:52:29,658: 	 Myproxy is valid: 1591799
+DEBUG 2017-11-06 04:52:29,658: 	 Command use: status
+DEBUG 2017-11-06 04:52:29,658: 	 Options use: []
+DEBUG 2017-11-06 04:52:30,568: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:52:30,569: 	 Instance is prod
+DEBUG 2017-11-06 04:52:30,569: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:52:30,569: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:52:31,468: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:52:31,468: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:52:31,469: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:52:31,469: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:52:31,469: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:52:31,469: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:52:31,469: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:52:31,469: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:52:31,469: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:52:31,469: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:52:32,389: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:52:32,389: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:52:33,273: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:52:33,273: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=e848cd6d0a0827f819c176310f1973cd7bef9a3a7c390d1090199d235ccd5f0ef5b78aadc76277ab;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:52:33 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=16281 t=1509940353243625'}
+ERROR 2017-11-06 04:52:33,273: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=e848cd6d0a0827f819c176310f1973cd7bef9a3a7c390d1090199d235ccd5f0ef5b78aadc76277ab;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:52:33 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=16281 t=1509940353243625'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=e848cd6d0a0827f819c176310f1973cd7bef9a3a7c390d1090199d235ccd5f0ef5b78aadc76277ab;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:52:33 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=16281 t=1509940353243625'}
+INFO 2017-11-06 04:52:33,285: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 04:58:42,000: 	 Executing command: 'status'
+DEBUG 2017-11-06 04:58:42,000: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 04:58:42,007: 	 Checking credentials
+DEBUG 2017-11-06 04:58:42,007: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:58:42,007: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:58:42,410: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 41550
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:58:42,814: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 41549
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:58:42,814: 	 Proxy valid for 11:32:30 hours
+DEBUG 2017-11-06 04:58:42,925: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:58:42,925: 	 Checking credentials
+DEBUG 2017-11-06 04:58:42,926: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 04:58:42,926: 	 Getting proxy life time left
+DEBUG 2017-11-06 04:58:43,328: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 41549
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:58:43,732: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 41548
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:58:43,732: 	 Proxy valid for 11:32:29 hours
+DEBUG 2017-11-06 04:58:44,645: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 04:58:44,752: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:58:44,752: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 04:58:44,752: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 04:58:45,155: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:03:43  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 04:58:45,156: 	 Myproxy is valid: 1591423
+DEBUG 2017-11-06 04:58:45,156: 	 Command use: status
+DEBUG 2017-11-06 04:58:45,156: 	 Options use: []
+DEBUG 2017-11-06 04:58:46,297: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 04:58:46,297: 	 Instance is prod
+DEBUG 2017-11-06 04:58:46,297: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 04:58:46,297: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 04:58:47,215: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 04:58:47,215: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:58:47,216: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:58:47,216: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 04:58:47,216: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 04:58:47,216: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 04:58:47,216: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 04:58:47,216: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 04:58:47,216: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 04:58:47,216: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:58:48,165: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 04:58:48,165: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 04:58:49,057: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 04:58:49,057: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=bd2e9c0795d8af2f0c7b213f019998066bb7ab83e98c0b257414dbdc3d1eca2d5359949c57cfb5cf;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:58:49 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=25134 t=1509940729019202'}
+ERROR 2017-11-06 04:58:49,057: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=bd2e9c0795d8af2f0c7b213f019998066bb7ab83e98c0b257414dbdc3d1eca2d5359949c57cfb5cf;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:58:49 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=25134 t=1509940729019202'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=bd2e9c0795d8af2f0c7b213f019998066bb7ab83e98c0b257414dbdc3d1eca2d5359949c57cfb5cf;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 03:58:49 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=25134 t=1509940729019202'}
+INFO 2017-11-06 04:58:49,073: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 05:01:15,619: 	 Executing command: 'status'
+DEBUG 2017-11-06 05:01:15,620: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 05:01:15,634: 	 Checking credentials
+DEBUG 2017-11-06 05:01:15,634: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 05:01:15,634: 	 Getting proxy life time left
+DEBUG 2017-11-06 05:01:16,137: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 41396
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:01:16,540: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 41395
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:01:16,540: 	 Proxy valid for 11:29:56 hours
+DEBUG 2017-11-06 05:01:16,652: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:01:16,652: 	 Checking credentials
+DEBUG 2017-11-06 05:01:16,653: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 05:01:16,653: 	 Getting proxy life time left
+DEBUG 2017-11-06 05:01:17,055: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 41395
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:01:17,459: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 41394
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:01:17,459: 	 Proxy valid for 11:29:55 hours
+DEBUG 2017-11-06 05:01:18,436: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 05:01:18,543: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:01:18,544: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 05:01:18,544: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 05:01:18,946: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 442:01:10  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:01:18,947: 	 Myproxy is valid: 1591270
+DEBUG 2017-11-06 05:01:18,947: 	 Command use: status
+DEBUG 2017-11-06 05:01:18,947: 	 Options use: []
+DEBUG 2017-11-06 05:01:19,851: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 05:01:19,851: 	 Instance is prod
+DEBUG 2017-11-06 05:01:19,851: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 05:01:19,851: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 05:01:21,470: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 05:01:21,471: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:01:21,471: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:01:21,471: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 05:01:21,471: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 05:01:21,471: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:01:21,471: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 05:01:21,471: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 05:01:21,471: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 05:01:21,471: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 05:01:22,871: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 05:01:22,871: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 05:01:23,727: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 05:01:23,727: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=d1a68fa08fb498d8bd8cba0070ac4ca29ea60614501a3a6814e5f079c4465cd456eedb5f8d143ab8;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:01:23 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=3566 t=1509940883710285'}
+ERROR 2017-11-06 05:01:23,727: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=d1a68fa08fb498d8bd8cba0070ac4ca29ea60614501a3a6814e5f079c4465cd456eedb5f8d143ab8;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:01:23 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=3566 t=1509940883710285'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=d1a68fa08fb498d8bd8cba0070ac4ca29ea60614501a3a6814e5f079c4465cd456eedb5f8d143ab8;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:01:23 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=3566 t=1509940883710285'}
+INFO 2017-11-06 05:01:23,743: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 05:06:14,798: 	 Executing command: 'status'
+DEBUG 2017-11-06 05:06:14,798: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 05:06:14,806: 	 Checking credentials
+DEBUG 2017-11-06 05:06:14,806: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 05:06:14,806: 	 Getting proxy life time left
+DEBUG 2017-11-06 05:06:15,309: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 41097
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:06:15,813: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 41096
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:06:15,813: 	 Proxy valid for 11:24:57 hours
+DEBUG 2017-11-06 05:06:15,924: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:06:15,924: 	 Checking credentials
+DEBUG 2017-11-06 05:06:15,924: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 05:06:15,924: 	 Getting proxy life time left
+DEBUG 2017-11-06 05:06:16,327: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 41096
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:06:16,831: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 41095
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:06:16,831: 	 Proxy valid for 11:24:56 hours
+DEBUG 2017-11-06 05:06:17,779: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 05:06:17,887: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:06:17,887: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 05:06:17,887: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 05:06:18,190: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 441:56:10  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:06:18,190: 	 Myproxy is valid: 1590970
+DEBUG 2017-11-06 05:06:18,191: 	 Command use: status
+DEBUG 2017-11-06 05:06:18,191: 	 Options use: []
+DEBUG 2017-11-06 05:06:19,118: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 05:06:19,118: 	 Instance is prod
+DEBUG 2017-11-06 05:06:19,118: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 05:06:19,118: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 05:06:20,101: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 05:06:20,101: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:06:20,102: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:06:20,102: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 05:06:20,102: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 05:06:20,102: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:06:20,102: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 05:06:20,102: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 05:06:20,102: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 05:06:20,102: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 05:06:21,116: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 05:06:21,116: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 05:06:21,987: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 05:06:21,987: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=8afc1f3597274a8d5961d77e071f15f3242c883d93d00834023659a8033fcaac17a980b398ede43a;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:06:21 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=5705 t=1509941181968410'}
+ERROR 2017-11-06 05:06:21,987: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=8afc1f3597274a8d5961d77e071f15f3242c883d93d00834023659a8033fcaac17a980b398ede43a;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:06:21 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=5705 t=1509941181968410'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=8afc1f3597274a8d5961d77e071f15f3242c883d93d00834023659a8033fcaac17a980b398ede43a;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:06:21 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=5705 t=1509941181968410'}
+INFO 2017-11-06 05:06:22,008: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 05:08:44,557: 	 Executing command: 'status'
+DEBUG 2017-11-06 05:08:44,558: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 05:08:44,565: 	 Checking credentials
+DEBUG 2017-11-06 05:08:44,565: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 05:08:44,565: 	 Getting proxy life time left
+DEBUG 2017-11-06 05:08:45,068: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 40948
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:08:45,472: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 40946
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:08:45,472: 	 Proxy valid for 11:22:28 hours
+DEBUG 2017-11-06 05:08:45,582: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:08:45,583: 	 Checking credentials
+DEBUG 2017-11-06 05:08:45,583: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 05:08:45,583: 	 Getting proxy life time left
+DEBUG 2017-11-06 05:08:45,985: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 40947
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:08:46,389: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 40945
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:08:46,389: 	 Proxy valid for 11:22:27 hours
+DEBUG 2017-11-06 05:08:47,303: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 05:08:47,410: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:08:47,410: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 05:08:47,410: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 05:08:47,813: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 441:53:41  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:08:47,814: 	 Myproxy is valid: 1590821
+DEBUG 2017-11-06 05:08:47,814: 	 Command use: status
+DEBUG 2017-11-06 05:08:47,814: 	 Options use: []
+DEBUG 2017-11-06 05:08:48,728: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 05:08:48,728: 	 Instance is prod
+DEBUG 2017-11-06 05:08:48,728: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 05:08:48,728: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 05:08:49,686: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 05:08:49,687: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:08:49,687: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:08:49,687: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 05:08:49,687: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 05:08:49,687: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:08:49,687: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 05:08:49,687: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 05:08:49,687: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 05:08:49,687: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 05:08:50,645: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 05:08:50,645: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 05:08:51,546: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 05:08:51,546: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=0135856901338eb0dc485b4e8959701afd659b466a31ff247f0708b3077cfa529ab9e4b3c5cb1364;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:08:51 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=38349 t=1509941331495204'}
+ERROR 2017-11-06 05:08:51,546: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=0135856901338eb0dc485b4e8959701afd659b466a31ff247f0708b3077cfa529ab9e4b3c5cb1364;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:08:51 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=38349 t=1509941331495204'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=0135856901338eb0dc485b4e8959701afd659b466a31ff247f0708b3077cfa529ab9e4b3c5cb1364;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:08:51 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=38349 t=1509941331495204'}
+INFO 2017-11-06 05:08:51,564: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 05:16:19,137: 	 Executing command: 'status'
+DEBUG 2017-11-06 05:16:19,137: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 05:16:19,148: 	 Checking credentials
+DEBUG 2017-11-06 05:16:19,148: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 05:16:19,148: 	 Getting proxy life time left
+DEBUG 2017-11-06 05:16:19,651: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 40493
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:16:20,055: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 40491
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:16:20,055: 	 Proxy valid for 11:14:53 hours
+DEBUG 2017-11-06 05:16:20,166: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:16:20,166: 	 Checking credentials
+DEBUG 2017-11-06 05:16:20,166: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 05:16:20,166: 	 Getting proxy life time left
+DEBUG 2017-11-06 05:16:20,569: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 40492
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:16:20,973: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 40491
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:16:20,973: 	 Proxy valid for 11:14:52 hours
+DEBUG 2017-11-06 05:16:23,316: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 05:16:23,423: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:16:23,423: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 05:16:23,423: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 05:16:23,926: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 441:46:05  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:16:23,927: 	 Myproxy is valid: 1590365
+DEBUG 2017-11-06 05:16:23,927: 	 Command use: status
+DEBUG 2017-11-06 05:16:23,927: 	 Options use: []
+DEBUG 2017-11-06 05:16:24,845: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 05:16:24,845: 	 Instance is prod
+DEBUG 2017-11-06 05:16:24,845: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 05:16:24,845: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 05:16:25,760: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 05:16:25,760: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:16:25,760: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:16:25,760: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 05:16:25,761: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 05:16:25,761: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:16:25,761: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 05:16:25,761: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 05:16:25,761: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 05:16:25,761: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 05:16:26,690: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 05:16:26,690: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 05:16:27,551: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 05:16:27,551: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=5670559499d7a434325df0df2294e2c86b881ce260b2b3e5a6887dfc876926e2cf3d24e3aa57e721;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:16:27 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=6316 t=1509941787531735'}
+ERROR 2017-11-06 05:16:27,551: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=5670559499d7a434325df0df2294e2c86b881ce260b2b3e5a6887dfc876926e2cf3d24e3aa57e721;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:16:27 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=6316 t=1509941787531735'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=5670559499d7a434325df0df2294e2c86b881ce260b2b3e5a6887dfc876926e2cf3d24e3aa57e721;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:16:27 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=6316 t=1509941787531735'}
+INFO 2017-11-06 05:16:27,566: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log
+DEBUG 2017-11-06 05:28:49,491: 	 Executing command: 'status'
+DEBUG 2017-11-06 05:28:49,491: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 05:28:49,503: 	 Checking credentials
+DEBUG 2017-11-06 05:28:49,503: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 05:28:49,503: 	 Getting proxy life time left
+DEBUG 2017-11-06 05:28:50,007: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 39743
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:28:50,410: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 39741
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:28:50,410: 	 Proxy valid for 11:02:23 hours
+DEBUG 2017-11-06 05:28:50,521: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:28:50,521: 	 Checking credentials
+DEBUG 2017-11-06 05:28:50,522: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 05:28:50,522: 	 Getting proxy life time left
+DEBUG 2017-11-06 05:28:50,924: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 39742
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:28:51,328: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 39740
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:28:51,328: 	 Proxy valid for 11:02:22 hours
+DEBUG 2017-11-06 05:28:52,243: 	 Registering user credentials for server /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+DEBUG 2017-11-06 05:28:52,351: 	 Executing : 
+ command : openssl x509 -in ~/.globus/usercert.pem -subject -noout
+ output : subject= /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:28:52,351: 	 Getting myproxy life time left for myproxy.cern.ch
+DEBUG 2017-11-06 05:28:52,351: 	 Calculating hash of /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene_cmsweb.cern.ch for credential name
+DEBUG 2017-11-06 05:28:52,754: 	 Executing : 
+ command : myproxy-info -l 3cd82fca48badc692f8513e62d67e79566e4e718 -s myproxy.cern.ch
+ output : username: 3cd82fca48badc692f8513e62d67e79566e4e718
+owner: /C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene
+  renewal policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  trusted retrieval policy: /DC=ch/DC=cern/OU=computers/CN=vocms(045|052|021|031|0118|0118a|0119|0108|0105|0109).cern.ch
+  timeleft: 441:33:36  (18.4 days)
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 05:28:52,755: 	 Myproxy is valid: 1589616
+DEBUG 2017-11-06 05:28:52,755: 	 Command use: status
+DEBUG 2017-11-06 05:28:52,755: 	 Options use: []
+DEBUG 2017-11-06 05:28:54,107: 	 CRABClient version: 3.3.1707.patch1
+DEBUG 2017-11-06 05:28:54,107: 	 Instance is prod
+DEBUG 2017-11-06 05:28:54,107: 	 Server base url is cmsweb.cern.ch
+DEBUG 2017-11-06 05:28:54,107: 	 Command url /crabserver/prod/workflow
+DEBUG 2017-11-06 05:28:55,004: 	 Got information from server oracle database: {u'result': [u'171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'SUBMITTED', u'2017-11-06 03:35:06.083880', u'None', u'2017-11-06 03:35:44.783293', u'None', u'CMSSW_9_3_2', u'slc6_amd64_gcc630', u'/QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM', u'[]', u'[]', u'EventAwareLumiBased', u"{'splitOnRun': False, 'events_per_job': 500, 'halt_job_on_file_boundaries': False, 'runs': [], 'lumis': []}", u'0', u'e3b7d13c245da34f4d7b16564d47e2d808024d9cb23867d313218a231c512968.tar.gz', u'https://cmsweb.cern.ch/crabcache', u'izoi', u'/C=DE/O=GermanGrid/OU=uni-hamburg/CN=Zoi Irene', u'cms', u'None', u'None', u'crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix-00000000000000000000000000000000', u'T2_DE_DESY', u'https://cmsweb.cern.ch/dbs/prod/global/DBSReader', u'https://cmsweb.cern.ch/dbs/prod/phys03/DBSWriter', u'F', u'Analysis', u'{}', u'[]', u'T', u'vocms052', u'[]', u'1250', u'1', u'2500', u'10', u'None', u'http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix', u'None', u'None', u'[]', u'[]', u'["The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not \'VALID\' but \'PRODUCTION\'. CRAB will check if there are any valid files in the dataset and run only over those files."]', u'pythia', u"['Ntuple_AK8_fix.root']", u'[]', u'[]', u'https://cmsweb.cern.ch/crabserver/prod', u'None', u'0', u'cmsgwms-collector-global.cern.ch:9620,cmssrv221.fnal.gov:9620', u'crab3@vocms0120.cern.ch', u'F', u'[]', u'T', u'/store/user/izoi/RunII_93X_v2-v1/QCD_flat_PU200_fix', u'F', u'None', u'F', u'F', u'T', u'None', u'QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8', u'filetransfers', u'SUBMIT', u'13222155', u'67707374282ef28d7800a570f238772ef6994bf21c74133876df5903f9204985.tar.gz', u'131.169.168.54', u'F', u'None'], u'desc': {u'columns': [u'tm_taskname', u'panda_jobset_id', u'tm_task_status', u'tm_start_time', u'tm_start_injection', u'tm_end_injection', u'tm_task_failure', u'tm_job_sw', u'tm_job_arch', u'tm_input_dataset', u'tm_site_whitelist', u'tm_site_blacklist', u'tm_split_algo', u'tm_split_args', u'tm_totalunits', u'tm_user_sandbox', u'tm_cache_url', u'tm_username', u'tm_user_dn', u'tm_user_vo', u'tm_user_role', u'tm_user_group', u'tm_publish_name', u'tm_asyncdest', u'tm_dbs_url', u'tm_publish_dbs_url', u'tm_publication', u'tm_job_type', u'tm_arguments', u'panda_resubmitted_jobs', u'tm_save_logs', u'tw_name', u'tm_user_infiles', u'tm_maxjobruntime', u'tm_numcores', u'tm_maxmemory', u'tm_priority', u'tm_output_dataset', u'tm_user_webdir', u'tm_activity', u'tm_scriptexe', u'tm_scriptargs', u'tm_extrajdl', u'tm_task_warnings', u'tm_generator', u'tm_outfiles', u'tm_tfile_outfiles', u'tm_edm_outfiles', u'tm_asourl', u'tm_events_per_lumi', u'tm_use_parent', u'tm_collector', u'tm_schedd', u'tm_dry_run', u'tm_user_files', u'tm_transfer_outputs', u'tm_output_lfn', u'tm_ignore_locality', u'tm_fail_limit', u'tm_one_event_mode', u'tm_publish_groupname', u'tm_nonvalid_input_dataset', u'tm_secondary_input_dataset', u'tm_primary_dataset', u'tm_asodb', u'tm_task_command', u'clusterid', u'tm_debug_files', u'tm_submitter_ip_addr', u'tm_ignore_global_blacklist', u'tm_last_publication']}}
+INFO 2017-11-06 05:28:55,004: 	 CRAB project directory:		/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:28:55,004: 	 Task name:			171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:28:55,004: 	 Grid scheduler:			crab3@vocms0120.cern.ch
+INFO 2017-11-06 05:28:55,005: 	 Status on the CRAB server:	SUBMITTED
+INFO 2017-11-06 05:28:55,005: 	 Task URL to use for HELP:	https://cmsweb.cern.ch/crabserver/ui/task/171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+INFO 2017-11-06 05:28:55,005: 	 Dashboard monitoring URL:	http://dashb-cms-job.cern.ch/dashboard/templates/task-analysis/#user=izoi&refresh=0&table=Jobs&p=1&records=25&activemenu=2&status=&site=&tid=171106_033505%3Aizoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+WARNING 2017-11-06 05:28:55,005: 	 Warning:			The input dataset /QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_pythia8/PhaseIITDRFall17MiniAOD-PU200_93X_upgrade2023_realistic_v2-v1/MINIAODSIM is not 'VALID' but 'PRODUCTION'. CRAB will check if there are any valid files in the dataset and run only over those files.
+DEBUG 2017-11-06 05:28:55,005: 	 The CRAB server submitted your task to the Grid scheduler (cluster ID: 13222155)
+DEBUG 2017-11-06 05:28:55,005: 	 Webdir is located at http://vocms0120.cern.ch/mon/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 05:28:55,919: 	 Proxied webdir is located at https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix
+DEBUG 2017-11-06 05:28:55,919: 	 Retrieving 'status_cache' file from https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache
+INFO 2017-11-06 05:28:56,781: 	 Waiting for the Grid scheduler to report back the status of your task
+ERROR 2017-11-06 05:28:56,781: 	 Cannot retrieve the status_cache file. Maybe the task process has not run yet? Got:
+url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=95f57367039fbe2e0cb11874a2344bdd321a0223708f38b189ef2728bf05b56504bff60d1a572bfd;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:28:56 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=5897 t=1509942536762511'}
+ERROR 2017-11-06 05:28:56,781: 	 url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=95f57367039fbe2e0cb11874a2344bdd321a0223708f38b189ef2728bf05b56504bff60d1a572bfd;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:28:56 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=5897 t=1509942536762511'}
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/status.py", line 110, in __call__
+    statusCacheData = getDataFromURL(url, self.proxyfilename)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/UserUtilities.py", line 166, in getDataFromURL
+    capath=HTTPRequests.getCACertPath())
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/WMCore/Services/pycurl_manager.py", line 207, in request
+    raise exc
+HTTPException: url=https://cmsweb.cern.ch/scheddmon/0120/cms1123/171106_033505:izoi_crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/status_cache, code=403, reason=Forbidden, headers={'Content-Length': '401', 'Set-Cookie': 'cms-auth=95f57367039fbe2e0cb11874a2344bdd321a0223708f38b189ef2728bf05b56504bff60d1a572bfd;path=/;secure;httponly;expires=Thu, 01-Jan-1970 00:00:01 GMT', 'Server': 'Apache/2.2.15 (Red Hat)', 'Date': 'Mon, 06 Nov 2017 04:28:56 GMT', 'Content-Type': 'text/html; charset=iso-8859-1', 'CMS-Server-Time': 'D=5897 t=1509942536762511'}
+INFO 2017-11-06 05:28:56,799: 	 Log file is /nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix/crab.log

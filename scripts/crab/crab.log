@@ -1,0 +1,79 @@
+DEBUG 2017-10-26 16:34:02,003: 	 Executing command: 'submit'
+DEBUG 2017-10-26 16:34:02,003: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-10-26 16:34:02,017: 	 Checking credentials
+DEBUG 2017-10-26 16:34:02,017: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-10-26 16:34:02,017: 	 Getting proxy life time left
+DEBUG 2017-10-26 16:34:03,024: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 43121
+
+ error: 
+ retcode : 0
+DEBUG 2017-10-26 16:34:03,930: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 43119
+
+ error: 
+ retcode : 0
+DEBUG 2017-10-26 16:34:03,931: 	 Proxy valid for 11:58:41 hours
+INFO 2017-10-26 16:34:03,931: 	 Will use CRAB configuration file crab_VBF_Graviton_2000_93X_upgrade2023.py
+DEBUG 2017-10-26 16:34:03,932: 	 Loading CRAB configuration file.
+ERROR 2017-10-26 16:34:03,973: 	 Error while loading CRAB configuration:
+No module named DasQuery
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+ERROR 2017-10-26 16:34:03,973: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 34, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 298, in __init__
+    self.loadConfig(self.options.config, self.args)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 84, in loadConfig
+    raise ConfigurationException(configmsg)
+ConfigurationException: Error while loading CRAB configuration:
+No module named DasQuery
+Please refer to https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3CommonErrors#Syntax_error_in_CRAB_configurati
+See the ./crab.log file for more details.
+The documentation about the CRAB configuration file can be found in https://twiki.cern.ch/twiki/bin/view/CMSPublic/CRAB3ConfigurationFile
+DEBUG 2017-11-06 12:47:44,213: 	 Executing command: 'submit'
+DEBUG 2017-11-06 12:47:44,213: 	 Found CRAB cache file /afs/desy.de/user/z/zoiirene/.crab3
+DEBUG 2017-11-06 12:47:44,230: 	 Checking credentials
+DEBUG 2017-11-06 12:47:44,230: 	 Found proxy file /tmp/x509up_u28517
+DEBUG 2017-11-06 12:47:44,230: 	 Getting proxy life time left
+DEBUG 2017-11-06 12:47:44,833: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -timeleft
+ output : 13408
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 12:47:45,437: 	 Executing : 
+ command : voms-proxy-info -file /tmp/x509up_u28517 -actimeleft
+ output : 13406
+
+ error: 
+ retcode : 0
+DEBUG 2017-11-06 12:47:45,437: 	 Proxy valid for 03:43:28 hours
+INFO 2017-11-06 12:47:45,437: 	 Will use CRAB configuration file crab_QCD_93X_pu_upgrade2023.py
+DEBUG 2017-11-06 12:47:45,438: 	 Loading CRAB configuration file.
+DEBUG 2017-11-06 12:47:49,002: 	 Will use CRAB Analysis plugin (i.e. will run an analysis job type).
+ERROR 2017-11-06 12:47:49,003: 	 Working area '/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix' already exists 
+Please change the requestName in the config file
+ERROR 2017-11-06 12:47:49,003: 	 Caught exception
+Traceback (most recent call last):
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/bin/crab", line 160, in <module>
+    client()
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/bin/crab", line 146, in __call__
+    self.cmd = sub_cmd(self.logger, args[1:])
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/submit.py", line 34, in __init__
+    SubCommand.__init__(self, logger, cmdargs, disable_interspersed_args=True)
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/Commands/SubCommand.py", line 302, in __init__
+    getattr(self.configuration.General, 'requestName', None))
+  File "/cvmfs/cms.cern.ch/crab3/slc6_amd64_gcc493/cms/crabclient/3.3.1707.patch1/lib/python2.7/site-packages/CRABClient/ClientUtilities.py", line 396, in createWorkArea
+    raise ConfigException("Working area '%s' already exists \nPlease change the requestName in the config file" % fullpath)
+ConfigException: Working area '/nfs/dust/cms/user/zoiirene/UpgradeStudiesGtoWW/framework93X/new932/CMSSW_9_3_2/src/UHH2/scripts/crab/crab_Graviton/crab_QCD_Flat_Pt-15to7000_TuneCUETP8M1_14TeV_PhaseIITDRFall17_PU200_fix' already exists 
+Please change the requestName in the config file
