@@ -106,7 +106,16 @@ class JetMuonOverlapRemoval: public uhh2::AnalysisModule {
    public:
       explicit JetMuonOverlapRemoval(double deltaRmax);
       virtual bool process(uhh2::Event & event) override;
-      
+
+   private:
+      double deltaRmin_;
+ };
+
+class JetElectronOverlapRemoval: public uhh2::AnalysisModule {
+   public:
+      explicit JetElectronOverlapRemoval(double deltaRmax);
+      virtual bool process(uhh2::Event & event) override;
+
    private:
       double deltaRmin_;
  };
