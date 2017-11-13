@@ -69,6 +69,7 @@ class Jet : public FlavorParticle {
   float btag_BoostedDoubleSecondaryVertexCA15() const{return m_btag_BoostedDoubleSecondaryVertexCA15;}
   float JEC_factor_raw() const{return m_JEC_factor_raw;}
   float JEC_L1factor_raw() const{return m_JEC_L1factor_raw;}
+  int genjet_index() const {return m_genjet_index;}
   float get_tag(tag t) const { return tags.get_tag(static_cast<int>(t)); }
   JetBTagInfo btaginfo() const{return m_btaginfo;}
   int hadronFlavor() const { return m_hadronFlavor; }
