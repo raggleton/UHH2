@@ -291,15 +291,15 @@ void NtupleWriterJets::fill_jet_info(const pat::Jet & pat_jet, Jet & jet, bool d
 
     // NOTE: csvmva is NOT set.
     if(!sv_he || !csv || !csvmva || !jetp || !jetbp || !doubleak8 ||!doubleca15){
-      if(btag_warning){
-	cout << "Warning in NtupleWriterJets: did not find all b-taggers! Available btaggers: ";
-	for(const auto & name_value : bdisc){
-	  cout << name_value.first << " ";
-	}
-	cout << endl;
-	btag_warning = false;
-      }
-      // throw runtime_error("did not find all b-taggers; see output for details");
+ //      if(btag_warning){
+	// cout << "Warning in NtupleWriterJets: did not find all b-taggers! Available btaggers: ";
+	// for(const auto & name_value : bdisc){
+	//   cout << name_value.first << " ";
+	// }
+	// cout << endl;
+	// btag_warning = false;
+ //      }
+ //      // throw runtime_error("did not find all b-taggers; see output for details");
     }
   }
 
