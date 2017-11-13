@@ -71,7 +71,7 @@ def create_crab_config(request_name, input_dataset):
     conf.JobType.pluginName = 'Analysis'
     conf.JobType.psetName = '../../core/python/ntuplewriter.py'
     conf.JobType.outputFiles = ["Ntuple.root"]
-    conf.JobType.maxMemoryMB = 2500
+    conf.JobType.maxMemoryMB = 3000
     #conf.JobType.inputFiles = ['/nfs/dust/cms/user/gonvaq/CMSSW/CMSSW_7_4_15_patch1/src/UHH2/core/python/Summer15_25nsV2_MC.db']
 
     conf.Data.inputDataset = input_dataset
