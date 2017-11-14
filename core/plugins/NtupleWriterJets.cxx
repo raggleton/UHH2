@@ -303,6 +303,16 @@ void NtupleWriterJets::fill_jet_info(const pat::Jet & pat_jet, Jet & jet, bool d
     }
   }
 
+  float sumPuppiWeights = 0;
+  for (unsigned i = 0; i < pat_jet.numberOfDaughters(); i++) {
+    const pat::PackedCandidate &dau = dynamic_cast<const pat::PackedCandidate &>(*pat_jet.daughter(i));
+    auto weight = dau.puppiWeight();
+    sumPuppiWeights += weight;
+  //  std::cout  << weight << std::endl;
+  }
+  //std::cout << "sumPuppiWeights: " << sumPuppiWeights << std::endl;
+  jet.set_tag(Jet::puppiMultiplicity, sumPuppiWeights);
+
   // do special vars according to 1704.03878
   float ptd = 0, lha = 0, width = 0, thrust = 0;
   float pt_sum = 0;
