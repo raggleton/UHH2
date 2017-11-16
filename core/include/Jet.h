@@ -10,7 +10,16 @@ class Jet : public FlavorParticle {
 
  public:
   enum tag {
-    puppiMultiplicity
+    puppiMultiplicity,
+    chargedPuppiMultiplicity,
+    chargedHadronPuppiMultiplicity,
+    neutralPuppiMultiplicity,
+    neutralHadronPuppiMultiplicity,
+    photonPuppiMultiplicity,
+    electronPuppiMultiplicity,
+    muonPuppiMultiplicity,
+    HFHadronPuppiMultiplicity,
+    HFEMPuppiMultiplicity
   };
 
   Jet(){
