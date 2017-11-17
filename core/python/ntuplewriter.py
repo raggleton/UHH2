@@ -10,7 +10,7 @@ else:
     met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS") #,"slimmedMETsMuEGClean")
 
 # minimum pt for the large-R jets (applies for all: vanilla CA8/CA15, cmstoptag, heptoptag). Also applied for the corresponding genjets.
-fatjet_ptmin = 150.0
+fatjet_ptmin = 100.0
 #fatjet_ptmin = 10.0 #TEST
 
 bTagDiscriminators = [
