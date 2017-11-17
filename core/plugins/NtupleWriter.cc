@@ -809,7 +809,7 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
        for(size_t j=0; j<packed->size();j++){
 
 	 const pat::PackedGenParticle* iter = &(*packed)[j];
-	 if(iter->status()!=1) continue;
+	 // if(iter->status()!=1) continue;
 
 	 index++;
 
@@ -845,9 +845,9 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
 	 //    if (islepton) std::cout << "Nicht Doppelt: " << genp.status() << "  " << genp.pt() << "  " << genp.eta() << "  " << genp.pdgId() << std::endl;
 	 // }
 
-	 if(!islepton) {
+	 // if(!islepton) {
              event->genparticles->push_back(genp);
-         }
+         // }
        }
      }
  
