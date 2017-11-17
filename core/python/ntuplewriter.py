@@ -913,7 +913,7 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         doAllGenParticles = cms.bool(True), #set to true if you want to store all gen particles, otherwise, only prunedPrunedGenParticles are stored (see above)
 
         doGenJets = cms.bool(False),
-        genjet_sources = cms.vstring("slimmedGenJets","slimmedGenJetsAK8","ca15GenJets"),
+        genjet_sources = cms.vstring("slimmedGenJets","slimmedGenJetsAK8"), # ,"ca15GenJets"),
         genjet_ptmin = cms.double(10.0),
         genjet_etamax = cms.double(5.0),
 
