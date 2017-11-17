@@ -15,26 +15,26 @@ else:
 fatjet_ptmin = 50.0
 #fatjet_ptmin = 10.0 #TEST
 
-bTagDiscriminators = [
-    'pfJetProbabilityBJetTags',
-    'pfJetBProbabilityBJetTags',
-    'pfSimpleSecondaryVertexHighEffBJetTags',
-    #'pfSimpleSecondaryVertexHighPurBJetTags',
-    'pfCombinedInclusiveSecondaryVertexV2BJetTags',
-    'pfCombinedMVAV2BJetTags',
-    'pfBoostedDoubleSecondaryVertexAK8BJetTags',
-    'pfBoostedDoubleSecondaryVertexCA15BJetTags'
-]
+bTagDiscriminators = ['None']
+#    'pfJetProbabilityBJetTags',
+#    'pfJetBProbabilityBJetTags',
+#    'pfSimpleSecondaryVertexHighEffBJetTags',
+#    #'pfSimpleSecondaryVertexHighPurBJetTags',
+#    'pfCombinedInclusiveSecondaryVertexV2BJetTags',
+#    'pfCombinedMVAV2BJetTags',
+#    'pfBoostedDoubleSecondaryVertexAK8BJetTags',
+#    'pfBoostedDoubleSecondaryVertexCA15BJetTags'
+#]
+#
 
-
-bTagInfos = [
-    'pfImpactParameterTagInfos'
-   ,'pfSecondaryVertexTagInfos'
-   ,'pfInclusiveSecondaryVertexFinderTagInfos'
-   ,'softPFMuonsTagInfos'
-   ,'softPFElectronsTagInfos'
-]
-
+bTagInfos = ['None']
+#    'pfImpactParameterTagInfos'
+#   ,'pfSecondaryVertexTagInfos'
+#   ,'pfInclusiveSecondaryVertexFinderTagInfos'
+#   ,'softPFMuonsTagInfos'
+#   ,'softPFElectronsTagInfos'
+#]
+#
 process = cms.Process("USER",eras.Phase2)
 
 task = cms.Task()
@@ -843,8 +843,10 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
                  do_subjet_taginfo = cms.bool(False),
                  #Note: if you want to store the MVA Higgs tagger discriminator, specify the jet collection from which to pick it up and the tagger name
                  #currently the discriminator is trained on ungroomed jets, so the discriminator has to be taken from ungroomed jets
-                 higgstag_source = cms.string("patJetsAk8PuppiJetsFat"),
-                 higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+                 # higgstag_source = cms.string("patJetsAk8PuppiJetsFat"),
+                 higgstag_source = cms.string(""),
+                 # higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+                 higgstag_name = cms.string(""),
                  #Note: if empty, njettiness is directly taken from MINIAOD UserFloat and added to jets, otherwise taken from the provided source (for Run II CMSSW_74 ntuples)
                  #njettiness_source = cms.string(""),
                  #substructure_variables_source = cms.string(""),
@@ -861,10 +863,14 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
              cms.PSet(
                  topjet_source = cms.string("patJetsAk8CHSJetsSoftDropPacked"),
                  subjet_source = cms.string("daughters"),
-                 do_subjet_taginfo = cms.bool(True),
-                 higgstag_source = cms.string("patJetsAk8CHSJets"),
-                 higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
-                 higgstaginfo_source = cms.string("pfBoostedDoubleSVTagInfos"),
+                 # do_subjet_taginfo = cms.bool(True),
+                 do_subjet_taginfo = cms.bool(False),
+                 # higgstag_source = cms.string("patJetsAk8CHSJets"),
+                 higgstag_source = cms.string(""),
+                 # higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+                 higgstag_name = cms.string(""),
+                 # higgstaginfo_source = cms.string("pfBoostedDoubleSVTagInfos"),
+                 higgstaginfo_source = cms.string(""),
                  njettiness_source = cms.string("NjettinessAk8CHS"),
                  substructure_variables_source = cms.string("ak8CHSJets"),
                  njettiness_groomed_source = cms.string("NjettinessAk8SoftDropCHS"),
@@ -901,9 +907,12 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
              cms.PSet(
                  topjet_source = cms.string("patJetsAk8PuppiJetsSoftDropPacked"), 
                  subjet_source = cms.string("daughters"),
-                 do_subjet_taginfo = cms.bool(True),
-                 higgstag_source = cms.string("patJetsAk8PuppiJetsFat"),
-                 higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+                 # do_subjet_taginfo = cms.bool(True),
+                 do_subjet_taginfo = cms.bool(False),
+                 # higgstag_source = cms.string("patJetsAk8PuppiJetsFat"),
+                 higgstag_source = cms.string(""),
+                 # higgstag_name = cms.string("pfBoostedDoubleSecondaryVertexAK8BJetTags"),
+                 higgstag_name = cms.string(""),
                  njettiness_source = cms.string("NjettinessAk8Puppi"),
                  substructure_variables_source = cms.string("ak8PuppiJetsFat"),
                  njettiness_groomed_source = cms.string("NjettinessAk8SoftDropPuppi"),
