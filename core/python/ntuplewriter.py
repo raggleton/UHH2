@@ -611,7 +611,8 @@ process.patPFMetCHS.addGenMET = False
 ## Slimmed METs
 from PhysicsTools.PatAlgos.slimming.slimmedMETs_cfi import slimmedMETs
 #### CaloMET is not available in MiniAOD
-del slimmedMETs.caloMET
+if hasattr(slimmedMETs, 'caloMET'):
+    del slimmedMETs.caloMET
 
 ### CHS
 process.slimmedMETsCHS = slimmedMETs.clone()
@@ -700,6 +701,19 @@ elecID_mod_ls = [
 
 from PhysicsTools.SelectorUtils.tools.vid_id_tools import *
 for mod in elecID_mod_ls: setupAllVIDIdsInModule(process, mod, setupVIDElectronSelection)
+
+# because of the way CRAB works, successive submissions will import the script again,
+# running the setupALLVIDIdsInModule again. So we need a way to remove duplicates.
+# We also only want to keep the first occurence of a given PSet, as that's the right one
+el_dict = {}
+for pset in process.egmGsfElectronIDs.physicsObjectIDs:
+    k = pset.idMD5.value()  # need the raw string as it creates separate keys otherwise
+    if k in el_dict:
+        continue
+    el_dict[k] = pset
+
+# process.egmGsfElectronIDs.physicsObjectIDs = cms.VPSet(el_dict.values())
+
 
 # slimmedElectronsUSER ( = slimmedElectrons + USER variables)
 process.slimmedElectronsUSER = cms.EDProducer('PATElectronUserData',
