@@ -26,8 +26,9 @@ inputDatasets = [
 '/QCD_Pt-15to7000_TuneCUETHS1_Flat_13TeV_herwigpp/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v*/MINIAODSIM',
 # PYTHIA ONLY
 '/QCD_Pt-15to7000_TuneCUETP8M1_FlatP6_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v*/MINIAODSIM',
-#
-][1:3]
+# POWHEG
+'/Dijet_NNPDF30_powheg_pythia8_TuneCUETP8M1_13TeV_bornktmin150/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/MINIAODSIM',
+]
 
 filter_keywords = [
 'GenJets5',
@@ -46,7 +47,8 @@ def create_request_name(input_dataset):
     modified_name = (name.replace('_TuneCUETP8M1_13TeV-madgraphMLM-pythia8','')
                          .replace('_TuneCUETHS1_13TeV-madgraphMLM-herwigpp', '')
                          .replace('_TuneCUETP8M1_FlatP6_13TeV_pythia8', '')
-                         .replace('_TuneCUETHS1_Flat_13TeV_herwigpp', ''))
+                         .replace('_TuneCUETHS1_Flat_13TeV_herwigpp', '')
+                         .replace('_pythia8_TuneCUETP8M1_13TeV_bornktmin150', ''))
     if 'ext' in input_dataset:
         modified_name += '_ext'
     if 'madgraphMLM-pythia8' in input_dataset:
