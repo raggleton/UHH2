@@ -79,7 +79,7 @@ def create_crab_config(request_name, input_dataset):
     conf.Data.inputDataset = input_dataset
     conf.Data.inputDBS = 'global'
     conf.Data.splitting = 'EventAwareLumiBased'
-    conf.Data.unitsPerJob = 50000
+    conf.Data.unitsPerJob = 15000
     # conf.Data.totalUnits = 
     # conf.Data.outLFNDirBase = '/store/user/%s/QGNtuples/' % (getUsernameFromSiteDB())
     conf.Data.publication = False
