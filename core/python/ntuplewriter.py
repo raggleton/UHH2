@@ -71,7 +71,11 @@ process.source = cms.Source("PoolSource",
             # '/store/mc/RunIISummer16MiniAODv2/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/50000/0E15E987-84BD-E611-8DDE-A0369F3102B6.root'
             # 'file:/nfs/dust/cms/user/aggleton/CMSSW_8_0_24_patch1/src/UHH2/QGAnalysis/badJet.root'
   ]),
-  skipEvents = cms.untracked.uint32(0)
+  skipEvents = cms.untracked.uint32(0),
+  inputCommands = cms.untracked.vstring(
+         'keep *',
+         'drop LHERunInfoProduct_externalLHEProducer__LHE'
+    )
 )
 #process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(300))
 process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000))
