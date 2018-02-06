@@ -31,11 +31,16 @@ bool JetMuonOverlapRemoval::process(Event & event){
    assert(event.muons);
    if (event.muons->size() > 0) {
      std::vector<Jet> result;
-     Muon lepton = event.muons->at(0);
+     // Muon lepton = event.muons->at(0);
      for(const auto & jet : *event.jets){
-        if(deltaR(jet, lepton) > deltaRmin_){
-           result.push_back(jet);
+        bool keep = true;
+        for (uint i = 0; i < event.muons->size() && (i < 2); i++) {
+            if(deltaR(jet, event.muons->at(i)) < deltaRmin_){
+                keep = false;
+            }
         }
+        if (keep)
+           result.push_back(jet);
      }
      std::swap(result, *event.jets);
    }
@@ -51,12 +56,15 @@ bool JetElectronOverlapRemoval::process(Event & event){
    assert(event.electrons);
    if (event.electrons->size() > 0) {
      std::vector<Jet> result;
-     Electron lepton = event.electrons->at(0);
-
      for(const auto & jet : *event.jets){
-        if(deltaR(jet, lepton) > deltaRmin_){
-           result.push_back(jet);
+        bool keep = true;
+        for (uint i = 0; i < event.electrons->size() && (i < 2); i++) {
+            if(deltaR(jet, event.electrons->at(i)) < deltaRmin_){
+                keep = false;
+            }
         }
+        if (keep)
+           result.push_back(jet);
      }
      std::swap(result, *event.jets);
    }
