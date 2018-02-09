@@ -184,6 +184,13 @@ process.selectedHadronsAndPartons = cms.EDProducer('HadronAndPartonSelector',
     fullChainPhysPartons = cms.bool(True)
 )
 
+process.selectedHadronsAndPartonsFull = cms.EDProducer('HadronAndPartonSelector',
+    src = cms.InputTag("generator"),
+    particles = cms.InputTag("genParticles"),
+    partonMode = cms.string("Auto"),
+    fullChainPhysPartons = cms.bool(True)
+)
+
 
 ###############################################
 # CHS JETS
@@ -333,23 +340,27 @@ common_btag_parameters = dict(
 )
 
 # Update JetFlavourInfo using new method
-# updateJetCollection(
-#    process,
-#    labelName = 'UndoneJECPFchs',
-#    jetSource = cms.InputTag('slimmedJets'),
-#    jetCorrections = ('AK4PFchs', cms.vstring([]), 'None')
-# )
+# We first undo JEC, since the JetFlavourClustering module matches the input jets
+# with the reclustered ones, checking pT difference.
+# Then we apply new flavour to the pat::Jets
+# Then we re-apply JEC to the pat::Jets
+updateJetCollection(
+   process,
+   labelName = 'UndoneJECPFchs',
+   jetSource = cms.InputTag('slimmedJets'),
+   jetCorrections = ('AK4PFchs', cms.vstring([]), 'None')
+)
 
-# updateJetCollection(
-#    process,
-#    labelName = 'UndoneJECPuppi',
-#    jetSource = cms.InputTag('slimmedJetsPuppi'),
-#    jetCorrections = ('AK4PFchs', cms.vstring([]), 'None')
-# )
+updateJetCollection(
+   process,
+   labelName = 'UndoneJECPuppi',
+   jetSource = cms.InputTag('slimmedJetsPuppi'),
+   jetCorrections = ('AK4PF', cms.vstring([]), 'None')
+)
 
 process.ak4CHSJetFlavourInfos = cms.EDProducer("JetFlavourClustering",
-    jets                     = cms.InputTag("slimmedJets"),
-    # jets                     = cms.InputTag("updatedPatJetsUndoneJECPFchs"),
+    # jets                     = cms.InputTag("slimmedJets"),
+    jets                     = cms.InputTag("updatedPatJetsUndoneJECPFchs"),
     bHadrons                 = cms.InputTag("selectedHadronsAndPartons","bHadrons"),
     cHadrons                 = cms.InputTag("selectedHadronsAndPartons","cHadrons"),
     partons                  = cms.InputTag("selectedHadronsAndPartons","physicsPartons"),
@@ -357,18 +368,49 @@ process.ak4CHSJetFlavourInfos = cms.EDProducer("JetFlavourClustering",
     jetAlgorithm             = cms.string("AntiKt"),
     rParam                   = cms.double(0.4),
     ghostRescaling           = cms.double(1e-18),
-    relPtTolerance           = cms.double(5),  # large as we are dealing with calibrated jets
-    hadronFlavourHasPriority = cms.bool(False)
+    relPtTolerance           = cms.double(2),  # large as we are dealing with calibrated jets
+    # relPtTolerance           = cms.double(1e-3),  # large as we are dealing with calibrated jets
+    hadronFlavourHasPriority = cms.bool(False),
+    usePuppiWeights = cms.bool(False)
 )
-process.ak4PuppiJetFlavourInfos = process.ak4CHSJetFlavourInfos.clone(jets=cms.InputTag("slimmedJetsPuppi"))
+# process.ak4CHSJetFlavourInfosFull = process.ak4CHSJetFlavourInfos.clone()
+# process.ak4CHSJetFlavourInfosFull.bHadrons = cms.InputTag("selectedHadronsAndPartonsFull","bHadrons")
+# process.ak4CHSJetFlavourInfosFull.cHadrons = cms.InputTag("selectedHadronsAndPartonsFull","cHadrons")
+# process.ak4CHSJetFlavourInfosFull.partons = cms.InputTag("selectedHadronsAndPartonsFull","physicsPartons")
+# process.ak4CHSJetFlavourInfosFull.leptons = cms.InputTag("selectedHadronsAndPartonsFull","leptons")
+
+# process.ak4PuppiJetFlavourInfos = process.ak4CHSJetFlavourInfos.clone(jets=cms.InputTag("slimmedJetsPuppi"))
+process.ak4PuppiJetFlavourInfos = process.ak4CHSJetFlavourInfos.clone(jets=cms.InputTag("updatedPatJetsUndoneJECPuppi"), usePuppiWeights = cms.bool(True))
 
 process.updateFlavAK4CHSJets = cms.EDProducer("UpdatePatJetFlavourInfo",
-    jetSrc = cms.InputTag("slimmedJets"),
+    jetSrc = process.ak4CHSJetFlavourInfos.jets,
     jetFlavourInfos = cms.InputTag("ak4CHSJetFlavourInfos")
 )
+
+# process.updateFlavAK4CHSJetsFull = cms.EDProducer("UpdatePatJetFlavourInfo",
+#     jetSrc = cms.InputTag("slimmedJets"),
+#     # jetSrc = cms.InputTag("updatedPatJetsUndoneJECPFchs"),
+#     jetFlavourInfos = cms.InputTag("ak4CHSJetFlavourInfosFull")
+# )
+
 process.updateFlavAK4PuppiJets = cms.EDProducer("UpdatePatJetFlavourInfo",
-    jetSrc = cms.InputTag("slimmedJetsPuppi"),
+    jetSrc = process.ak4PuppiJetFlavourInfos.jets,
+    # jetSrc = cms.InputTag("updatedPatJetsUndoneJECPuppi"),
     jetFlavourInfos = cms.InputTag("ak4PuppiJetFlavourInfos")
+)
+
+updateJetCollection(
+    process,
+    labelName = 'RedoneJECAK4Puppi',
+    jetSource = cms.InputTag('updateFlavAK4PuppiJets'),
+    jetCorrections = ('AK4PFPuppi', cms.vstring(['L2Relative', 'L3Absolute']), 'None')
+)
+
+updateJetCollection(
+    process,
+    labelName = 'RedoneJECAK4PFchs',
+    jetSource = cms.InputTag('updateFlavAK4CHSJets'),
+    jetCorrections = ('AK4PFchs', cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute']), 'None')
 )
 
 process.packedGenParticlesForJetsNoNu = cms.EDFilter("CandPtrSelector", src = cms.InputTag("packedGenParticles"), cut = cms.string("abs(pdgId) != 12 && abs(pdgId) != 14 && abs(pdgId) != 16"))
@@ -829,10 +871,14 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         # jet_sources = cms.vstring("slimmedJets", "slimmedJetsPuppi","patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
         # jet_sources = cms.vstring("updateFlavAK4CHSJets", "slimmedJets", "updateFlavAK4PuppiJets", "slimmedJetsPuppi", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
         # jet_sources = cms.vstring("updateFlavAK4CHSJets", "slimmedJets", "updateFlavAK4PuppiJets", "slimmedJetsPuppi", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
-        jet_sources = cms.vstring("updateFlavAK4CHSJets", "updateFlavAK4PuppiJets", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
+        # jet_sources = cms.vstring("updateFlavAK4CHSJets", "updateFlavAK4PuppiJets", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
+        jet_sources = cms.vstring("updatedPatJetsRedoneJECAK4PFchs", "updatedPatJetsRedoneJECAK4Puppi", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
+        # jet_sources = cms.vstring("updatedPatJetsRedoneJECAK4Puppi"), #, "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
+        # jet_sources = cms.vstring("updateFlavAK4CHSJets", "updateFlavAK4CHSJetsFull"),#, "updateFlavAK4PuppiJets"),
+        # jet_sources = cms.vstring("updateFlavAK4CHSJets"),
         # jet_sources = cms.vstring("updateFlavAK4CHSJets", "slimmedJets", "slimmedJetsPuppi", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
         # jet_sources = cms.vstring("patJetsAk4CHSJets", "patJetsAk4PuppiJets","patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
-        jet_ptmin = cms.double(10.0),
+        jet_ptmin = cms.double(20.0),
         jet_etamax = cms.double(999.0),
 
         doMET = cms.bool(True),
