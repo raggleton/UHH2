@@ -5,7 +5,7 @@
 #include "TLorentzVector.h"
 
 
-class GenJetWithParts : public Particle {
+class GenJetWithParts : public FlavorParticle {
  public:
   GenJetWithParts(){
     m_genparticles_indices.clear();
