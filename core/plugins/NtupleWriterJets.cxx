@@ -46,7 +46,7 @@ NtupleWriterJets::NtupleWriterJets(Config & cfg, bool set_jets_member){
     btag_warning=true;
 
     save_lepton_keys_ = false;
-
+    save_daughter_keys_ = true;
     h_muons.clear();
     h_elecs.clear();
 }
@@ -55,6 +55,7 @@ NtupleWriterJets::NtupleWriterJets(Config & cfg, bool set_jets_member, const std
   NtupleWriterJets::NtupleWriterJets(cfg, set_jets_member) {
 
     save_lepton_keys_ = true;
+    save_daughter_keys_ = true;
 
     for(const auto& muo_src : muon_sources){ auto h_muon = cfg.ctx.get_handle<std::vector<Muon>    >(muo_src); h_muons.push_back(h_muon); }
     for(const auto& ele_src : elec_sources){ auto h_elec = cfg.ctx.get_handle<std::vector<Electron>>(ele_src); h_elecs.push_back(h_elec); }
@@ -115,6 +116,50 @@ void NtupleWriterJets::process(const edm::Event & event, uhh2::Event & uevent,  
           cerr << "Exception in fill_jet_info in NtupleWriterJets::process for jets with src=" << src << endl;
           throw;
         }
+        // cout << "JET: " << pat_jet.pt() << " : " << pat_jet.eta() << " : " << pat_jet.phi() << endl;
+        if (save_daughter_keys_) {
+          std::vector<uint> dauIndices;
+          dauIndices.reserve(pat_jet.numberOfDaughters());
+          for(const auto & dau : pat_jet.daughterPtrVector()) {
+            if (dau->numberOfDaughters() > 0) { // handle subjets which have their own daughters
+              // for(const auto & subconstitr : dau->daughterPtrVector()) {
+              //   const pat::PackedCandidate &constit = static_cast<const pat::PackedCandidate &>(*subconstitr);
+              //   PFParticle part = create_pfparticle(constit);
+              //   // see if particle already in list, if not add it
+              //   if (std::find(uevent.pfparticles->begin(), uevent.pfparticles->end(), part) == uevent.pfparticles->end()) continue;
+              //   else {
+              //     uevent.pfparticles->push_back(part);
+              //   }
+              // }
+            } else {
+              const pat::PackedCandidate &constit = static_cast<const pat::PackedCandidate &>(*dau);
+              PFParticle part = create_pfparticle(constit);
+              const auto findResult = std::find(uevent.pfparticles->begin(), uevent.pfparticles->end(), part);
+              if (findResult == uevent.pfparticles->end()) {
+                // cout << "Adding " << part.pt() << " : " << part.eta() << " : " << part.phi() << endl;
+                uevent.pfparticles->push_back(part);
+                dauIndices.push_back(uevent.pfparticles->size()-1);
+                // jet.add_daughterIndex(uevent.pfparticles->size()-1);
+                // cout << "Adding " << uevent.pfparticles->size()-1 << endl;
+              } else {
+                uint ind = findResult - uevent.pfparticles->begin();
+                if (findResult->puppiWeight() != part.puppiWeight() && part.puppiWeight() != 1.) {
+                  // cout << "WARNING dodgy puppiWeight " << findResult->puppiWeight() << " vs " << part.puppiWeight() << endl;
+                  uevent.pfparticles->at(ind).set_puppiWeight(part.puppiWeight());
+                } 
+                dauIndices.push_back(ind);
+                // jet.add_daughterIndex(ind);
+                // cout << "Adding " << ind << endl;
+                // cout << "Dau " << part.pt() << " : " << part.eta() << " : " << part.phi() << " : " << part.puppiWeight() << endl;
+                // cout << "Found " << findResult->pt() << " : " << findResult->eta() << " : " << findResult->phi() << " : " << findResult->puppiWeight() << endl;
+              }
+            }
+          }
+
+          jet.set_daughterIndices(dauIndices);
+          // cout << jet.daughterIndices().size() << endl;
+          
+        }
 
         /*--- lepton keys ---*/
         if(save_lepton_keys_){
@@ -139,6 +184,30 @@ void NtupleWriterJets::process(const edm::Event & event, uhh2::Event & uevent,  
     }
 }
 
+PFParticle NtupleWriterJets::create_pfparticle(const pat::PackedCandidate & pf) {
+  PFParticle part;
+  part.set_pt(pf.pt());
+  part.set_eta(pf.eta());
+  part.set_phi(pf.phi());
+  part.set_energy(pf.energy());
+  part.set_charge(pf.charge());
+  part.set_puppiWeight(pf.puppiWeight());
+  PFParticle::EParticleID id = PFParticle::eX;
+  reco::PFCandidate reco_pf;
+  switch ( reco_pf.translatePdgIdToType(pf.pdgId()) ){
+    case reco::PFCandidate::X : id = PFParticle::eX; break;
+    case reco::PFCandidate::h : id = PFParticle::eH; break;
+    case reco::PFCandidate::e : id = PFParticle::eE; break;
+    case reco::PFCandidate::mu : id = PFParticle::eMu; break;
+    case reco::PFCandidate::gamma : id = PFParticle::eGamma; break;
+    case reco::PFCandidate::h0 : id = PFParticle::eH0; break;
+    case reco::PFCandidate::h_HF : id = PFParticle::eH_HF; break;
+    case reco::PFCandidate::egamma_HF : id = PFParticle::eEgamma_HF; break;
+    return part;
+  }
+  part.set_particleID(id);
+  return part;
+}
 
 void NtupleWriterJets::fill_jet_info(const pat::Jet & pat_jet, Jet & jet, bool do_btagging, bool do_taginfo){
   jet.set_charge(pat_jet.charge());
@@ -393,29 +462,29 @@ void NtupleWriterJets::fill_jet_info(const pat::Jet & pat_jet, Jet & jet, bool d
   jet.set_tag(Jet::HFEMPuppiMultiplicity, HFEMPuppiMultiplicity);
 
   // do special vars according to 1704.03878
-  float ptd = 0, lha = 0, width = 0, thrust = 0;
-  float pt_sum = 0;
-  for (unsigned i = 0; i < pat_jet.numberOfDaughters(); i++) {
-    const reco::Candidate * dtr = pat_jet.daughter(i);
-    pt_sum += dtr->pt();
-  }
-  float jet_radius = 1.0;
-  // Doesn't seem to be a way to get jet radius (e.g. 0.4)
-  // so for now user has to divide by R**beta
-  for (unsigned i = 0; i < pat_jet.numberOfDaughters(); i++) {
-    const reco::Candidate * dtr = pat_jet.daughter(i);
-    float z = dtr->pt() / pt_sum;
-    float theta = reco::deltaR(*dtr, pat_jet) / jet_radius;
-    ptd += pow(z, 2);
-    lha += z * pow(theta, 0.5);
-    width += z*theta;
-    thrust += z * pow(theta, 2);
-  }
+  // float ptd = 0, lha = 0, width = 0, thrust = 0;
+  // float pt_sum = 0;
+  // for (unsigned i = 0; i < pat_jet.numberOfDaughters(); i++) {
+  //   const reco::Candidate * dtr = pat_jet.daughter(i);
+  //   pt_sum += dtr->pt();
+  // }
+  // float jet_radius = 1.0;
+  // // Doesn't seem to be a way to get jet radius (e.g. 0.4)
+  // // so for now user has to divide by R**beta
+  // for (unsigned i = 0; i < pat_jet.numberOfDaughters(); i++) {
+  //   const reco::Candidate * dtr = pat_jet.daughter(i);
+  //   float z = dtr->pt() / pt_sum;
+  //   float theta = reco::deltaR(*dtr, pat_jet) / jet_radius;
+  //   ptd += pow(z, 2);
+  //   lha += z * pow(theta, 0.5);
+  //   width += z*theta;
+  //   thrust += z * pow(theta, 2);
+  // }
   // cout << "My pt_sum: " << pt_sum << " jet pt: " << pat_jet.pt() << endl;
-  jet.set_pTD(ptd);
-  jet.set_LHA(lha);
-  jet.set_width(width);
-  jet.set_thrust(thrust);
+  // jet.set_pTD(ptd);
+  // jet.set_LHA(lha);
+  // jet.set_width(width);
+  // jet.set_thrust(thrust);
   // cout << "My mass: " << mass << " obj mass: " << pat_jet.mass() << endl;
 
 }

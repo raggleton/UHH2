@@ -6,6 +6,7 @@
 #include "FWCore/Framework/interface/ESHandle.h"
 #include "CommonTools/Utils/interface/TMVAEvaluator.h"
 #include "RecoBTau/JetTagComputer/interface/JetTagComputer.h"
+// #include "DataFormats/PatCandidtes/interface/PFParticle.h"
 #include "DataFormats/JetReco/interface/JetCollection.h"
 #include "DataFormats/VertexReco/interface/Vertex.h"
 #include "DataFormats/VertexReco/interface/VertexFwd.h"
@@ -23,6 +24,7 @@ namespace uhh2 {
 class NtupleWriterJets: public NtupleWriterModule {
 public:
     static void fill_jet_info(const pat::Jet & pat_jet, Jet & jet, bool do_btagging, bool do_taginfo);
+    static PFParticle create_pfparticle(const pat::PackedCandidate & pf);
 
     explicit NtupleWriterJets(Config & cfg, bool set_jets_member);
     explicit NtupleWriterJets(Config & cfg, bool set_jets_member, const std::vector<std::string>&, const std::vector<std::string>&);
@@ -41,6 +43,7 @@ private:
     boost::optional<Event::Handle<std::vector<Jet>>> jets_handle; // handle of name "jets" in case set_jets_member is true
 
     bool save_lepton_keys_;
+    bool save_daughter_keys_;
     std::vector<Event::Handle<std::vector<Muon>    >> h_muons;
     std::vector<Event::Handle<std::vector<Electron>>> h_elecs;
 };

@@ -433,6 +433,11 @@ NtupleWriter::NtupleWriter(const edm::ParameterSet& iConfig): outfile(0), tr(0),
     event->ishitsNotReplaced = false;
   }
 
+  // for storing jet daughters
+  // make sure you don't use with doAllPFParticles
+  event->pfparticles = new vector<PFParticle>;
+  branch(tr, "JetPFParticles", "std::vector<PFParticle>", &event->pfparticles);
+
   //input tokens for objects with fixed names, not defined in the ntuplewriter.py script
   bs_token = consumes<reco::BeamSpot>( edm::InputTag("offlineBeamSpot"));
   generator_token = consumes<GenEventInfoProduct>( edm::InputTag("generator"));
@@ -645,6 +650,46 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
   }
 
    print_times(timer, "rho");
+
+    // Necessary if saving jet constituents, otherwise ever growing
+    event->pfparticles->clear();
+
+   if(doAllPFParticles){
+     event->pfparticles->clear();
+     edm::Handle<vector<pat::PackedCandidate> > pfColl_handle;
+     iEvent.getByToken(pf_collection_token, pfColl_handle);
+
+     const std::vector<pat::PackedCandidate>& pf_coll = *(pfColl_handle.product()); 
+
+     for ( unsigned int j = 0; j<pf_coll.size(); ++j){
+       const pat::PackedCandidate pf = pf_coll.at(j);
+       
+       PFParticle part;
+       part.set_pt(pf.pt());
+       part.set_eta(pf.eta());
+       part.set_phi(pf.phi());
+       part.set_energy(pf.energy());
+       part.set_charge(pf.charge());
+       part.set_puppiWeight(pf.puppiWeight());
+       // part.set_puppiWeightNoLep(pf.puppiWeightNoLep());
+       PFParticle::EParticleID id = PFParticle::eX;
+       reco::PFCandidate reco_pf;
+       switch ( reco_pf.translatePdgIdToType(pf.pdgId()) ){
+       case reco::PFCandidate::X : id = PFParticle::eX; break;
+       case reco::PFCandidate::h : id = PFParticle::eH; break;
+       case reco::PFCandidate::e : id = PFParticle::eE; break;
+       case reco::PFCandidate::mu : id = PFParticle::eMu; break;
+       case reco::PFCandidate::gamma : id = PFParticle::eGamma; break;
+       case reco::PFCandidate::h0 : id = PFParticle::eH0; break;
+       case reco::PFCandidate::h_HF : id = PFParticle::eH_HF; break;
+       case reco::PFCandidate::egamma_HF : id = PFParticle::eEgamma_HF; break;
+       }
+       part.set_particleID(id);
+      cout << "PF PARTICLE: " << part.pt() << " : " << part.eta() << " : " << part.phi() << endl;
+       event->pfparticles->push_back(part);
+     }
+
+   }
 
    // ------------- primary vertices and beamspot  -------------
 
@@ -932,6 +977,7 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
    for(auto & m : writer_modules){
        m->process(iEvent, *event, iSetup);
    }
+   // cout << "# PF PARTICLES: " << event->pfparticles->size() << endl;
 
    // ------------- generator top jets -------------
    if(doGenTopJets){
@@ -1130,7 +1176,7 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
        part.set_energy(pf.energy());
        part.set_charge(pf.charge());
        part.set_puppiWeight(pf.puppiWeight());
-       part.set_puppiWeightNoLep(pf.puppiWeightNoLep());
+       // part.set_puppiWeightNoLep(pf.puppiWeightNoLep());
        PFParticle::EParticleID id = PFParticle::eX;
        reco::PFCandidate reco_pf;
        switch ( reco_pf.translatePdgIdToType(pf.pdgId()) ){

@@ -20,7 +20,7 @@ public:
   PFParticle(){
      m_particleID=eX;
      m_puppi_weight=1.;
-     m_puppi_weight_nolep=1;
+     // m_puppi_weight_nolep=1;
   };
   
   ~PFParticle(){
@@ -28,16 +28,16 @@ public:
 
   EParticleID particleID(){return m_particleID;}
   float puppiWeight(){return m_puppi_weight;}
-  float puppiWeightNoLep(){return m_puppi_weight_nolep;}
+  // float puppiWeightNoLep(){return m_puppi_weight_nolep;}
 
   void set_particleID(EParticleID id){m_particleID = id;}
   void set_puppiWeight(float e){m_puppi_weight = e;}
-  void set_puppiWeightNoLep(float e){m_puppi_weight_nolep = e;}
+  // void set_puppiWeightNoLep(float e){m_puppi_weight_nolep = e;}
 
  private:
   
   EParticleID m_particleID;
   float m_puppi_weight;
-  float m_puppi_weight_nolep;
+  // float m_puppi_weight_nolep;
 
 };

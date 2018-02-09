@@ -51,11 +51,12 @@ class Jet : public FlavorParticle {
     m_genPartonFlavor = 0;
 
     m_lepton_keys.clear();
+    m_daughterIndices.clear();
 
-    m_LHA = 0.;
-    m_pTD = 0.;
-    m_width = 0.;
-    m_thrust = 0.;
+    // m_LHA = 0.;
+    // m_pTD = 0.;
+    // m_width = 0.;
+    // m_thrust = 0.;
   }
 
   float jetArea() const{return m_jetArea;}
@@ -87,11 +88,12 @@ class Jet : public FlavorParticle {
   int genPartonFlavor() const { return m_genPartonFlavor; }
 
   const std::vector<long int>& lepton_keys() const { return m_lepton_keys; }
+  const std::vector<uint>& daughterIndices() const { return m_daughterIndices; }
 
-  float LHA() const {return m_LHA;}
-  float pTD() const {return m_pTD;}
-  float width() const {return m_width;}
-  float thrust() const {return m_thrust;}
+  // float LHA() const {return m_LHA;}
+  // float pTD() const {return m_pTD;}
+  // float width() const {return m_width;}
+  // float thrust() const {return m_thrust;}
 
   void set_jetArea(float x){m_jetArea=x;}
   void set_numberOfDaughters(int x){m_numberOfDaughters=x;} 
@@ -124,10 +126,13 @@ class Jet : public FlavorParticle {
   void set_lepton_keys(const std::vector<long int>& vlk){ m_lepton_keys = vlk; }
   void add_lepton_key (const long int k){ m_lepton_keys.push_back(k); }
 
-  void set_LHA(float x){m_LHA=x;}
-  void set_pTD(float x){m_pTD=x;}
-  void set_width(float x){m_width=x;}
-  void set_thrust(float x){m_thrust=x;}
+  void set_daughterIndices(const std::vector<uint>& vlk){ m_daughterIndices = vlk; }
+  void add_daughterIndex (const uint k){ m_daughterIndices.push_back(k); }
+
+  // void set_LHA(float x){m_LHA=x;}
+  // void set_pTD(float x){m_pTD=x;}
+  // void set_width(float x){m_width=x;}
+  // void set_thrust(float x){m_thrust=x;}
 
  private:
   float m_jetArea;
@@ -159,11 +164,13 @@ class Jet : public FlavorParticle {
   JetBTagInfo m_btaginfo;
 
   std::vector<long int> m_lepton_keys;
+  
+  std::vector<uint> m_daughterIndices;
 
-  float m_LHA;
-  float m_pTD;
-  float m_width;
-  float m_thrust;
+  // float m_LHA;
+  // float m_pTD;
+  // float m_width;
+  // float m_thrust;
 
   Tags tags;
 };
