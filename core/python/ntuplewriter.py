@@ -414,6 +414,24 @@ updateJetCollection(
     jetCorrections = ('AK4PFchs', cms.vstring(['L1FastJet', 'L2Relative', 'L3Absolute']), 'None')
 )
 
+
+# Update genjet flavour
+process.ak4GenJetFlavourInfos = process.ak4CHSJetFlavourInfos.clone(
+    jets = cms.InputTag("slimmedGenJets")
+)
+process.ak8GenJetFlavourInfos = process.ak4CHSJetFlavourInfos.clone(
+    jets = cms.InputTag("slimmedGenJetsAK8"),
+    rParam = 0.8
+)
+process.updateFlavAK4GenJets = cms.EDProducer("UpdateGenJetFlavourInfo",
+    jetSrc = process.ak4GenJetFlavourInfos.jets,
+    jetFlavourInfos = cms.InputTag("ak4GenJetFlavourInfos")
+)
+process.updateFlavAK8GenJets = cms.EDProducer("UpdateGenJetFlavourInfo",
+    jetSrc = process.ak8GenJetFlavourInfos.jets,
+    jetFlavourInfos = cms.InputTag("ak8GenJetFlavourInfos")
+)
+
 process.packedGenParticlesForJetsNoNu = cms.EDFilter("CandPtrSelector", src = cms.InputTag("packedGenParticles"), cut = cms.string("abs(pdgId) != 12 && abs(pdgId) != 14 && abs(pdgId) != 16"))
 
 # Add PAT part of fat jets and subjets, and optionally gen jets. Note that the input collections for the groomed PF jets have to be defined elsewhere
@@ -982,7 +1000,8 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         #gentopjet_tau3 = cms.VInputTag(cms.InputTag("NjettinessAk8Gen","tau3"),cms.InputTag("NjettinessAk8SoftDropGen","tau3")), #this can be used to save N-subjettiness for GenJets
 
         doGenJetsWithParts = cms.bool(not useData),
-        genjetwithparts_sources = cms.vstring("slimmedGenJets", "slimmedGenJetsAK8"), #, "ca15GenJets"),
+        genjetwithparts_sources = cms.vstring("updateFlavAK4GenJets","updateFlavAK8GenJets"), # ,"ca15GenJets"),
+        # genjetwithparts_sources = cms.vstring("slimmedGenJets", "slimmedGenJetsAK8"), #, "ca15GenJets"),
         genjetwithparts_ptmin = cms.double(10.0),
         genjetwithparts_etamax = cms.double(5.0),
 
