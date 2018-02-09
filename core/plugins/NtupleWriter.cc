@@ -956,7 +956,8 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
 	 genjet.set_pt(gen_jet->pt());
 	 genjet.set_eta(gen_jet->eta());
 	 genjet.set_phi(gen_jet->phi());
-	 genjet.set_energy(gen_jet->energy());
+   genjet.set_energy(gen_jet->energy());
+	 genjet.set_pdgId(gen_jet->pdgId());
 
 	 // recalculate the jet charge
 	 int jet_charge = 0;
