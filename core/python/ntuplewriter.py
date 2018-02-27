@@ -547,22 +547,23 @@ def add_fatjets_subjets(process, fatjets_name, groomed_jets_name, jetcorr_label 
             producer.addGenJetMatch = False
             producer.getJetMCFlavour = False
 
+
 #add_fatjets_subjets(process, 'ca8CHSJets', 'ca8CHSJetsPruned', genjets_name = lambda s: s.replace('CHS', 'Gen'))
-add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsFiltered',genjets_name = lambda s: s.replace('CHS', 'Gen'))
-add_fatjets_subjets(process, 'ca15CHSJets', 'hepTopTagCHS')
+# add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsFiltered',genjets_name = lambda s: s.replace('CHS', 'Gen'))
+# add_fatjets_subjets(process, 'ca15CHSJets', 'hepTopTagCHS')
 #add_fatjets_subjets(process, 'ca8CHSJets', 'cmsTopTagCHS', genjets_name = lambda s: s.replace('CHS', 'Gen'))
 #add_fatjets_subjets(process, 'ca15CHSJets', 'hepTopTagCHS', genjets_name = lambda s: s.replace('CHS', 'Gen'))
 add_fatjets_subjets(process, 'ak8CHSJets', 'ak8CHSJetsSoftDrop', genjets_name = lambda s: s.replace('CHS', 'Gen'))
-add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsSoftDrop', genjets_name = lambda s: s.replace('CHS', 'Gen'))
-add_fatjets_subjets(process, 'ca15PuppiJets', 'ca15PuppiJetsSoftDrop', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
+# add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsSoftDrop', genjets_name = lambda s: s.replace('CHS', 'Gen'))
+# add_fatjets_subjets(process, 'ca15PuppiJets', 'ca15PuppiJetsSoftDrop', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
 add_fatjets_subjets(process, 'ak8PuppiJetsFat', 'ak8PuppiJetsSoftDrop', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
 #B-tagging not needed for pruned jets, they are just used to get the mass
 add_fatjets_subjets(process, 'ak8CHSJets', 'ak8CHSJetsPruned', genjets_name = lambda s: s.replace('CHS', 'Gen'), btagging = False)
-add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsPruned', genjets_name = lambda s: s.replace('CHS', 'Gen'), btagging = False)
+# add_fatjets_subjets(process, 'ca15CHSJets', 'ca15CHSJetsPruned', genjets_name = lambda s: s.replace('CHS', 'Gen'), btagging = False)
 #add_fatjets_subjets(process, 'ca8PuppiJets', 'ca8PuppiJetsPruned', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
 #add_fatjets_subjets(process, 'ca15PuppiJets', 'ca15PuppiJetsFiltered', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
 #add_fatjets_subjets(process, 'ca8PuppiJets', 'cmsTopTagPuppi', genjets_name = lambda s: s.replace('Puppi', 'Gen'))
-add_fatjets_subjets(process, 'ca15PuppiJets', 'hepTopTagPuppi')
+# add_fatjets_subjets(process, 'ca15PuppiJets', 'hepTopTagPuppi')
 #add_fatjets_subjets(process, 'ca8PuppiJets', 'ca8PuppiJetsSoftDrop')
 
 # configure PAT for miniAOD:
