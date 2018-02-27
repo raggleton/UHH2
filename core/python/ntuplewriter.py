@@ -839,6 +839,11 @@ if useData:
 else:
     metfilterpath="PAT"
 
+jet_sources = ["updatedPatJetsRedoneJECAK4PFchs", "updatedPatJetsRedoneJECAK4Puppi", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"]
+if useData:
+    jet_sources = ["slimmedJets", "slimmedJetsPuppi","patJetsAK8PFPUPPI","patJetsAK8PFCHS"]
+
+
 process.MyNtuple = cms.EDFilter('NtupleWriter',
         #AnalysisModule = cms.PSet(
         #    name = cms.string("NoopAnalysisModule"),
@@ -885,18 +890,7 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         #photon_sources = cms.vstring("selectedPatPhotons"),
 
         doJets = cms.bool(True),
-        #jet_sources = cms.vstring("patJetsAk4PFCHS", "patJetsAk8PFCHS", "patJetsCa15CHSJets", "patJetsCa8CHSJets", "patJetsCa15PuppiJets", "patJetsCa8PuppiJets"),
-   #     jet_sources = cms.vstring("slimmedJets","slimmedJetsPuppi"),
-        # jet_sources = cms.vstring("slimmedJets", "slimmedJetsPuppi","patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
-        # jet_sources = cms.vstring("updateFlavAK4CHSJets", "slimmedJets", "updateFlavAK4PuppiJets", "slimmedJetsPuppi", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
-        # jet_sources = cms.vstring("updateFlavAK4CHSJets", "slimmedJets", "updateFlavAK4PuppiJets", "slimmedJetsPuppi", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
-        # jet_sources = cms.vstring("updateFlavAK4CHSJets", "updateFlavAK4PuppiJets", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
-        jet_sources = cms.vstring("updatedPatJetsRedoneJECAK4PFchs", "updatedPatJetsRedoneJECAK4Puppi", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
-        # jet_sources = cms.vstring("updatedPatJetsRedoneJECAK4Puppi"), #, "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
-        # jet_sources = cms.vstring("updateFlavAK4CHSJets", "updateFlavAK4CHSJetsFull"),#, "updateFlavAK4PuppiJets"),
-        # jet_sources = cms.vstring("updateFlavAK4CHSJets"),
-        # jet_sources = cms.vstring("updateFlavAK4CHSJets", "slimmedJets", "slimmedJetsPuppi", "patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
-        # jet_sources = cms.vstring("patJetsAk4CHSJets", "patJetsAk4PuppiJets","patJetsAK8PFPUPPI","patJetsAK8PFCHS"),
+        jet_sources = cms.vstring(jet_sources),
         jet_ptmin = cms.double(20.0),
         jet_etamax = cms.double(999.0),
 
@@ -982,7 +976,8 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         doAllGenParticles = cms.bool(True), #set to true if you want to store all gen particles, otherwise, only prunedPrunedGenParticles are stored (see above)
 
         doGenJets = cms.bool(False),
-        genjet_sources = cms.vstring("slimmedGenJets","slimmedGenJetsAK8"), # ,"ca15GenJets"),
+        # genjet_sources = cms.vstring("slimmedGenJets","slimmedGenJetsAK8"), # ,"ca15GenJets"),
+        genjet_sources = cms.vstring("updateFlavAK4GenJets","updateFlavAK8GenJets"), # ,"ca15GenJets"),
         genjet_ptmin = cms.double(10.0),
         genjet_etamax = cms.double(5.0),
 
