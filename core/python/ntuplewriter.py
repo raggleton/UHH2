@@ -1,13 +1,10 @@
 import FWCore.ParameterSet.Config as cms
 
-#isDebug = True
+# isDebug = True
 isDebug = False
-#useData = False
-useData = True
-if useData:
-    met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi") #,"slMETsCHS","slimmedMETsMuEGClean","slimmedMETsEGClean","slimmedMETsUncorrected")
-else:
-    met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi","slMETsCHS") #,"slimmedMETsMuEGClean")
+useData = False
+# useData = True
+met_sources_GL =  cms.vstring("slimmedMETs","slimmedMETsPuppi") #,"slMETsCHS","slimmedMETsMuEGClean","slimmedMETsEGClean","slimmedMETsUncorrected")
 
 # minimum pt for the large-R jets (applies for all: vanilla CA8/CA15, cmstoptag, heptoptag). Also applied for the corresponding genjets.
 fatjet_ptmin = 100.0
@@ -33,13 +30,14 @@ bTagInfos = [
    ,'softPFElectronsTagInfos'
 ]
 
-process = cms.Process("USER")
+process = cms.Process("Ntuple")
 
 process.load("FWCore.MessageService.MessageLogger_cfi")
-process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1000)
-#process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1)
-process.options = cms.untracked.PSet( wantSummary = cms.untracked.bool(False) , allowUnscheduled = cms.untracked.bool(True) )
-#process.options = cms.untracked.PSet( wantSummary = cms.untracked.bool(True) , allowUnscheduled = cms.untracked.bool(True) )
+# process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(200)
+process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(100)
+# process.MessageLogger.cerr.FwkReport.reportEvery = cms.untracked.int32(1)
+# process.options = cms.untracked.PSet( wantSummary = cms.untracked.bool(False) , allowUnscheduled = cms.untracked.bool(True) )
+process.options = cms.untracked.PSet( wantSummary = cms.untracked.bool(True) , allowUnscheduled = cms.untracked.bool(True) )
 
 # DEBUG ----------------
 if isDebug:
@@ -49,21 +47,28 @@ if isDebug:
     )
 
     process.SimpleMemoryCheck = cms.Service("SimpleMemoryCheck",
-    ignoreTotal = cms.untracked.int32(2),                                            
+    ignoreTotal = cms.untracked.int32(0),
     moduleMemorySummary = cms.untracked.bool(True)
     )
 
 # DEBUG ----------------
-
+ntuplename = "Ntuple.root"
 process.source = cms.Source("PoolSource",
   fileNames  = cms.untracked.vstring([
+            '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_Pt-250To400_TuneCUETP8M1_13TeV-amcatnloFXFX-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/70000/807DE55F-D7D4-E611-A46A-00259029E670.root'
+            
             # '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/80000/362BD21E-47CE-E611-9D61-0025905A612E.root'
             # '/store/data/Run2016B/SingleElectron/MINIAOD/03Feb2017_ver2-v2/110000/028CD245-EFEA-E611-8A2B-90B11C2801E1.root'
             # '/store/data/Run2016B/SingleMuon/MINIAOD/03Feb2017_ver2-v2/100000/000C6E52-8BEC-E611-B3FF-0025905C42FE.root'
             # '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext2-v1/100000/00099D43-77ED-E611-8889-5065F381E1A1.root'
             # '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/80000/362BD21E-47CE-E611-9D61-0025905A612E.root'
-            '/store/mc/RunIISummer16MiniAODv2/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/120000/00DED9E0-F7BD-E611-94B8-02163E015EF5.root'
-            # '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/50000/809318C1-55C0-E611-B1B2-001E67457E7C.root '
+            
+            # '/store/mc/RunIISummer16MiniAODv2/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/120000/00DED9E0-F7BD-E611-94B8-02163E015EF5.root'
+            
+            # '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v1/50000/809318C1-55C0-E611-B1B2-001E67457E7C.root'
+            # 'file:/nfs/dust/cms/user/aggleton/QG/CMSSW_8_0_24_patch1/src/UHH2/core/python/ext_809318C1-55C0-E611-B1B2-001E67457E7C.root'
+            # '/store/mc/RunIISummer16MiniAODv2/QCD_HT700to1000_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/50000/0E15E987-84BD-E611-8DDE-A0369F3102B6.root'
+            # '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_HT-400to600_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/50000/52D899A9-92D0-E611-857A-001E674FCAE9.root'
             # '/store/data/Run2016B/ZeroBias/MINIAOD/01Jul2016-v1/90000/12B35741-8F4D-E611-96D6-B499BAAC068A.root'
             # '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/C6C0A700-DCDE-E611-A924-14187741121F.root'
             # '/store/mc/RunIISummer16MiniAODv2/QCD_Pt-15to7000_TuneCUETHS1_Flat_13TeV_herwigpp/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/100000/8EAD8B76-38D3-E611-A34E-0025905A60E4.root'
@@ -75,12 +80,41 @@ process.source = cms.Source("PoolSource",
   inputCommands = cms.untracked.vstring(
          'keep *',
          'drop LHERunInfoProduct_externalLHEProducer__LHE'
-    )
+    ),
+  secondaryFileNames=cms.untracked.vstring(
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_Pt-15to7000_TuneCUETHS1_Flat_13TeV_herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/100000/82FAFEAB-30D3-E611-BED3-0CC47A74524E.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_Pt-15to7000_TuneCUETHS1_Flat_13TeV_herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/100000/3E3AFE26-34D2-E611-A9E7-0CC47A78A408.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_Pt-15to7000_TuneCUETHS1_Flat_13TeV_herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/100000/5AF22856-38D2-E611-8488-0CC47A78A3B4.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_Pt-15to7000_TuneCUETHS1_Flat_13TeV_herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/100000/70D76E70-32D2-E611-9BFF-0025905B855C.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_Pt-15to7000_TuneCUETHS1_Flat_13TeV_herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/100000/741E4CDC-66D2-E611-A330-0025905B858C.root',
+
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/4A868D5E-A9DE-E611-A64C-B083FED42488.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/4C23EC98-B2DE-E611-B0B3-549F3525A64C.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/586EE5BD-ABDE-E611-A32B-1866DAEB1FCC.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/680FD687-A4DE-E611-A041-1866DAEA8394.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/C8FBA3B8-AEDE-E611-A975-D4AE527EDFE6.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/D21B50E0-ABDE-E611-B691-90B11C0BD63B.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/E4BB8872-A7DE-E611-B7DA-549F3525DDFC.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/F096CB07-A7DE-E611-85AB-1866DAEA8394.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/FEC486D6-AEDE-E611-9D3E-B083FED42FB0.root',
+
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/120001/B8358738-09B6-E611-8D83-FA163E4839C7.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/120001/CA09347C-1EB6-E611-9448-FA163E9CE256.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/50001/567A1CDE-F0B5-E611-B38F-FA163E111082.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/50001/A6CF5BE6-F4B5-E611-B1ED-02163E00E5AD.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/50001/E6737B41-04B6-E611-AD07-FA163EC2516C.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/70000/5EC0C07D-8CB5-E611-BF83-FA163E6F7F45.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/70000/D64B5391-88B5-E611-B8E3-0025904B11B0.root',
+    # 'root://cms-xrd-global.cern.ch//store/mc/RunIISummer16DR80Premix/QCD_HT100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/AODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/70001/74192178-BDB5-E611-8B29-02163E015EB4.root',
+    ),
+    # eventsToProcess=cms.untracked.VEventRange(
+    #     '1:298743',
+    #     '1:327469',
+    #     # '1:327415'
+    # )
 )
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(300))
-process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(1000))
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10000))
-#process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(50000))
+process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(500))
+# process.maxEvents = cms.untracked.PSet( input = cms.untracked.int32(10))
 
 # Grid-control changes:
 gc_maxevents = '__MAX_EVENTS__'
@@ -129,6 +163,9 @@ process.out.outputCommands.extend([
     "keep *_egmGsfElectronIDs_*_*"
 ])
 
+# process.MINIAODSIMoutput_step = cms.EndPath(process.out)
+
+
 ###############################################
 # RECO AND GEN SETUP
 process.load("Configuration.Geometry.GeometryRecoDB_cff")
@@ -136,9 +173,9 @@ process.load("Configuration.StandardSequences.MagneticField_cff")
 #see https://twiki.cern.ch/twiki/bin/view/CMSPublic/SWGuideFrontierConditions for latest global tags
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_condDBv2_cff')
 if useData:
-    process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v5' 
+    process.GlobalTag.globaltag = '80X_dataRun2_2016SeptRepro_v5'
 else:
-    process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v6' 
+    process.GlobalTag.globaltag = '80X_mcRun2_asymptotic_2016_TrancheIV_v6'
 
 
 from RecoJets.Configuration.RecoPFJets_cff import *
@@ -216,8 +253,8 @@ process.ca15CHSJetsFiltered = ak5PFJetsFiltered.clone(
         jetPtMin = cms.double(fatjet_ptmin)
 )
 
-from RecoJets.JetProducers.AnomalousCellParameters_cfi import *  
-from RecoJets.JetProducers.PFJetParameters_cfi import *          
+from RecoJets.JetProducers.AnomalousCellParameters_cfi import *
+from RecoJets.JetProducers.PFJetParameters_cfi import *
 from RecoJets.JetProducers.CATopJetParameters_cfi import CATopJetParameters
 process.cmsTopTagCHS = cms.EDProducer(
     "CATopJetProducer",
@@ -233,7 +270,7 @@ process.cmsTopTagCHS = cms.EDProducer(
     writeCompound = cms.bool(True)
 )
 
-#process.hepTopTagCHS = process.cmsTopTagCHS.clone(  
+#process.hepTopTagCHS = process.cmsTopTagCHS.clone(
 #    rParam = cms.double(1.5),
 #    tagAlgo = cms.int32(2), #2=fastjet heptt
 #    muCut = cms.double(0.8),
@@ -241,13 +278,13 @@ process.cmsTopTagCHS = cms.EDProducer(
 #    useSubjetMass = cms.bool(False),
 #)
 
-process.hepTopTagCHS = cms.EDProducer(     
+process.hepTopTagCHS = cms.EDProducer(
         "HTTTopJetProducer",
          PFJetParameters.clone( src = cms.InputTag('chs'),
                                doAreaFastjet = cms.bool(True),
                                doRhoFastjet = cms.bool(False),
                                jetPtMin = cms.double(fatjet_ptmin)
-                               ),   
+                               ),
         AnomalousCellParameters,
         optimalR = cms.bool(True),
         algorithm = cms.int32(1),
@@ -465,13 +502,13 @@ def add_fatjets_subjets(process, fatjets_name, groomed_jets_name, jetcorr_label 
         assert getattr(process, fatjets_name).jetAlgorithm.value() == 'AntiKt'
     else:
         raise RuntimeError, "cannot guess jet algo (ca/ak) from fatjets name %s" % fatjets_name
-    
+
     subjets_name = groomed_jets_name + 'Subjets' # e.g. CA8CHSPruned + Subjets
-    
+
     # add genjet producers, if requested:
     groomed_genjets_name = 'INVALID'
     ungroomed_genjets_name = 'INVALID'
-    
+
     if genjets_name is not None:
         groomed_jetproducer = getattr(process, groomed_jets_name)
         assert groomed_jetproducer.type_() in ('FastjetJetProducer', 'CATopJetProducer'), "do not know how to construct genjet collection for %s" % repr(groomed_jetproducer)
@@ -484,7 +521,7 @@ def add_fatjets_subjets(process, fatjets_name, groomed_jets_name, jetcorr_label 
         ungroomed_genjets_name = genjets_name(fatjets_name)
         if verbose: print "Adding ungroomed genjets ", ungroomed_genjets_name
         setattr(process, ungroomed_genjets_name, ungroomed_jetproducer.clone(src = cms.InputTag('packedGenParticlesForJetsNoNu'), jetType = 'GenJet'))
-        
+
 
     # patify ungroomed jets, if not already done:
     add_ungroomed = not hasattr(process, 'patJets' + cap(fatjets_name))
@@ -499,7 +536,7 @@ def add_fatjets_subjets(process, fatjets_name, groomed_jets_name, jetcorr_label 
             **common_btag_parameters
         )
         getattr(process,"patJets" + cap(fatjets_name)).addTagInfos = True
-    
+
     # patify groomed fat jets, with b-tagging:
     if verbose: print "adding grommed jets patJets" + cap(groomed_jets_name)
     addJetCollection(process, labelName = groomed_jets_name, jetSource = cms.InputTag(groomed_jets_name), algo = algo, rParam = rParam,
@@ -528,7 +565,7 @@ def add_fatjets_subjets(process, fatjets_name, groomed_jets_name, jetcorr_label 
     setattr(process, 'patJets' + cap(groomed_jets_name) + 'Packed',cms.EDProducer("BoostedJetMerger",
         jetSrc=cms.InputTag("patJets" + cap(groomed_jets_name)),
         subjetSrc=cms.InputTag("patJets" + cap(subjets_name))))
-        
+
     # adapt all for b-tagging, and switch off some PAT features not supported in miniAOD:
     module_names = [subjets_name, groomed_jets_name]
     if add_ungroomed: module_names += [fatjets_name]
@@ -583,7 +620,7 @@ process.NjettinessCa15CHS = Njettiness.clone(src = cms.InputTag("ca15CHSJets"), 
 process.NjettinessCa15SoftDropCHS = Njettiness.clone(
                                                  src = cms.InputTag("ca15CHSJetsSoftDropforsub"),
                                                  Njets=cms.vuint32(1,2,3),          # compute 1-, 2-, 3- subjettiness
-                                                 # variables for measure definition : 
+                                                 # variables for measure definition :
                                                  measureDefinition = cms.uint32( 0 ), # CMS default is normalized measure
                                                  beta = cms.double(1.0),              # CMS default is 1
                                                  R0 = cms.double(1.5),                  # CMS default is jet cone size
@@ -597,7 +634,7 @@ process.NjettinessCa15SoftDropPuppi = process.NjettinessCa15SoftDropCHS.clone(sr
 process.NjettinessAk8SoftDropCHS = Njettiness.clone(
                                                  src = cms.InputTag("ak8CHSJetsSoftDropforsub"),
                                                  Njets=cms.vuint32(1,2,3),          # compute 1-, 2-, 3- subjettiness
-                                                 # variables for measure definition : 
+                                                 # variables for measure definition :
                                                  measureDefinition = cms.uint32( 0 ), # CMS default is normalized measure
                                                  beta = cms.double(1.0),              # CMS default is 1
                                                  R0 = cms.double(0.8),                  # CMS default is jet cone size
@@ -692,7 +729,7 @@ else:
     process.patPFMetCHS.addGenMET = False
     process.slimmedMETsCHS.src = cms.InputTag("patPFMetCHS")
     del process.slimmedMETsCHS.rawUncertainties # not available
-    
+
 clean_met_(process.slimmedMETsCHS)
 addMETCollection(process, labelName="slMETsCHS", metSource="slimmedMETsCHS")
 process.slMETsCHS.addGenMET = False
@@ -778,7 +815,7 @@ for pset in process.egmGsfElectronIDs.physicsObjectIDs:
         continue
     el_dict[k] = pset
 
-# process.egmGsfElectronIDs.physicsObjectIDs = cms.VPSet(el_dict.values())
+process.egmGsfElectronIDs.physicsObjectIDs = cms.VPSet(el_dict.values())
 
 
 # slimmedElectronsUSER ( = slimmedElectrons + USER variables)
@@ -852,7 +889,13 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         #    # Note: all other settings of type string are passed to the module, e.g.:
         #    TestKey = cms.string("TestValue")
         #),
-        fileName = cms.string("Ntuple.root"), 
+        # fileName = cms.string("Ntuple.root"),
+        fileName = cms.string(ntuplename),
+        # fileName = cms.string("Ntuple_data_SingleMuon.root"),
+        # fileName = cms.string("Ntuple_data_ZeroBias.root"),
+        # fileName = cms.string("Ntuple_mc_DYJetsToLL_HT_100to200.root"),
+        # fileName = cms.string("Ntuple_dummy.root"),
+        # fileName = cms.string("Ntuple_mc_QCD_HT_100to200.root"),
         doPV = cms.bool(True),
         pv_sources = cms.vstring("offlineSlimmedPrimaryVertices"),
         doRho = cms.untracked.bool(True),
@@ -863,21 +906,22 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         doElectrons = cms.bool(True),
         #doElectrons = cms.bool(False),
         electron_source = cms.InputTag("slimmedElectronsUSER"),
-        electron_IDtags = cms.vstring(
-          # keys to be stored in UHH2 Electron class via the tag mechanism:
-          # each string should correspond to a variable saved
-          # via the "userInt" method in the pat::Electron collection used 'electron_source'
-          # [the configuration of the pat::Electron::userInt variables should be done in PATElectronUserData]
-          'cutBasedElectronID_Summer16_80X_V1_veto',
-          'cutBasedElectronID_Summer16_80X_V1_loose',
-          'cutBasedElectronID_Summer16_80X_V1_medium',
-          'cutBasedElectronID_Summer16_80X_V1_tight',
-          'cutBasedElectronHLTPreselection_Summer16_V1',
-          'heepElectronID_HEEPV60',
-        ),
-        #Add variables to trace possible issues with the ECAL slew rate mitigation 
+        electron_IDtags = cms.vstring(),
+        #   # keys to be stored in UHH2 Electron class via the tag mechanism:
+        #   # each string should correspond to a variable saved
+        #   # via the "userInt" method in the pat::Electron collection used 'electron_source'
+        #   # [the configuration of the pat::Electron::userInt variables should be done in PATElectronUserData]
+        #   'cutBasedElectronID_Summer16_80X_V1_veto',
+        #   'cutBasedElectronID_Summer16_80X_V1_loose',
+        #   'cutBasedElectronID_Summer16_80X_V1_medium',
+        #   'cutBasedElectronID_Summer16_80X_V1_tight',
+        #   'cutBasedElectronHLTPreselection_Summer16_V1',
+        #   'heepElectronID_HEEPV60',
+        # ),
+        #Add variables to trace possible issues with the ECAL slew rate mitigation
         #https://twiki.cern.ch/twiki/bin/view/CMSPublic/ReMiniAOD03Feb2017Notes#EGM
         doEleAddVars = cms.bool(useData),
+        # doEleAddVars = cms.bool(False),
         dupECALClusters_source = cms.InputTag('particleFlowEGammaGSFixed:dupECALClusters'),
         hitsNotReplaced_source = cms.InputTag('ecalMultiAndGSGlobalRecHitEB:hitsNotReplaced'),
 
@@ -942,8 +986,8 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
 
         # switch off qjets for now, as it takes a long time:
         #topjet_qjets_sources = cms.vstring("QJetsCa15CHS", "QJetsCa8CHS", "QJetsCa8CHS", "QJetsCa15CHS"),
-        
-        doTrigger = cms.bool(True), 
+
+        doTrigger = cms.bool(True),
         trigger_bits = cms.InputTag("TriggerResults","",triggerpath),
         # MET filters (HBHE noise, CSC, etc.) are stored as trigger Bits in MINIAOD produced in path "PAT"/"RECO" with prefix "Flag_"
         metfilter_bits = cms.InputTag("TriggerResults","",metfilterpath),
@@ -953,7 +997,7 @@ process.MyNtuple = cms.EDFilter('NtupleWriter',
         # Give the names of filters for that you want to store the trigger objects that have fired the respecitve trigger
         # filter paths for a given trigger can be found in https://cmsweb.cern.ch/confdb/
         # Example: for HLT_Mu45_eta2p1 the last trigger filter is hltL3fL1sMu16orMu25L1f0L2f10QL3Filtered45e2p1Q
-        #          for HLT_Ele35_CaloIdVT_GsfTrkIdT_PFJet150_PFJet50: relevant filters are hltEle35CaloIdVTGsfTrkIdTGsfDphiFilter (last electron filter), hltEle35CaloIdVTGsfTrkIdTDiCentralPFJet50EleCleaned and hltEle35CaloIdVTGsfTrkIdTCentralPFJet150EleCleaned (for the two jets). 
+        #          for HLT_Ele35_CaloIdVT_GsfTrkIdT_PFJet150_PFJet50: relevant filters are hltEle35CaloIdVTGsfTrkIdTGsfDphiFilter (last electron filter), hltEle35CaloIdVTGsfTrkIdTDiCentralPFJet50EleCleaned and hltEle35CaloIdVTGsfTrkIdTCentralPFJet150EleCleaned (for the two jets).
         #          The  filter hltEle35CaloIdVTGsfTrkIdTCentralPFJet150EleCleaned only included redundant objects that are already included in hltEle35CaloIdVTGsfTrkIdTCentralPFJet50EleCleaned.
         #          for HLT_Ele45_CaloIdVT_GsfTrkIdT_PFJet200_PFJet50: relevant filters are hltEle45CaloIdVTGsfTrkIdTGsfDphiFilter (last electron filter), hltEle45CaloIdVTGsfTrkIdTDiCentralPFJet50EleCleaned
         triggerObjects_sources = cms.vstring(""),
