@@ -685,7 +685,7 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
        case reco::PFCandidate::egamma_HF : id = PFParticle::eEgamma_HF; break;
        }
        part.set_particleID(id);
-      cout << "PF PARTICLE: " << part.pt() << " : " << part.eta() << " : " << part.phi() << endl;
+      // cout << "PF PARTICLE: " << part.pt() << " : " << part.eta() << " : " << part.phi() << endl;
        event->pfparticles->push_back(part);
      }
 
