@@ -22,7 +22,8 @@ inputDatasets = [
 '/DYJetsToLL_M-50_HT-*to*_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_*/MINIAODSIM',
 '/QCD_HT*to*_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v*/MINIAODSIM',
 # MG+HERWIG
-'/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v*/MINIAODSIM',
+'/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v*/MINIAODSIM', # broken
+'/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-herwigpp_30M/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM', # fixed? altho HS1 not P8 as that's a pythia tune
 '/QCD_Pt-15to7000_TuneCUETHS1_Flat_13TeV_herwigpp/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v*/MINIAODSIM',
 # '/QCD_Pt-15to7000_TuneCUETHS1_FlatP6_13TeV_herwigpp/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v*/MINIAODSIM',
 # PYTHIA ONLY
@@ -34,14 +35,34 @@ inputDatasets = [
 ]
 
 inputDatasets = [
-    '/SingleMuon/Run2016B-03Feb2017_ver2-v2/MINIAOD',
-    '/SingleMuon/Run2016C-03Feb2017-v1/MINIAOD',
-    '/SingleMuon/Run2016D-03Feb2017-v1/MINIAOD',
-    '/SingleMuon/Run2016E-03Feb2017-v1/MINIAOD',
-    '/SingleMuon/Run2016F-03Feb2017-v1/MINIAOD',
-    '/SingleMuon/Run2016G-03Feb2017-v1/MINIAOD',
-    '/SingleMuon/Run2016H-03Feb2017_ver2-v1/MINIAOD',
-    '/SingleMuon/Run2016H-03Feb2017_ver3-v1/MINIAOD',
+# '/QCD_Pt_15to30_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_30to50_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_50to80_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_80to120_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_120to170_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_170to300_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_300to470_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_470to600_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_600to800_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_800to1000_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_1000to1400_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_1400to1800_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_1800to2400_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_2400to3200_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM',
+# '/QCD_Pt_3200toInf_TuneCUETP8M1_13TeV_pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v3/MINIAODSIM',
+# '/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext*-v*/MINIAODSIM',
+'/DYJetsToLL_M-50_TuneCUETP8M1_13TeV-madgraphMLM-herwigpp_30M/RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/MINIAODSIM', # fixed? altho HS1 not P8 as that's a pythia tune
+]
+
+# inputDatasets = [
+    # '/SingleMuon/Run2016B-03Feb2017_ver2-v2/MINIAOD',
+    # '/SingleMuon/Run2016C-03Feb2017-v1/MINIAOD',
+    # '/SingleMuon/Run2016D-03Feb2017-v1/MINIAOD',
+    # '/SingleMuon/Run2016E-03Feb2017-v1/MINIAOD',
+    # '/SingleMuon/Run2016F-03Feb2017-v1/MINIAOD',
+    # '/SingleMuon/Run2016G-03Feb2017-v1/MINIAOD',
+    # '/SingleMuon/Run2016H-03Feb2017_ver2-v1/MINIAOD',
+    # '/SingleMuon/Run2016H-03Feb2017_ver3-v1/MINIAOD',
 
     # '/DoubleMuon/Run2016B-03Feb2017_ver2-v2/MINIAOD',
     # '/DoubleMuon/Run2016C-03Feb2017-v1/MINIAOD',
@@ -52,23 +73,32 @@ inputDatasets = [
     # '/DoubleMuon/Run2016H-03Feb2017_ver2-v1/MINIAOD',
     # '/DoubleMuon/Run2016H-03Feb2017_ver3-v1/MINIAOD',
 
-    '/JetHT/Run2016B-03Feb2017_ver2-v2/MINIAOD',
-    '/JetHT/Run2016C-03Feb2017-v1/MINIAOD',
-    '/JetHT/Run2016D-03Feb2017-v1/MINIAOD',
-    '/JetHT/Run2016E-03Feb2017-v1/MINIAOD',
-    '/JetHT/Run2016F-03Feb2017-v1/MINIAOD',
-    '/JetHT/Run2016G-03Feb2017-v1/MINIAOD',
-    '/JetHT/Run2016H-03Feb2017_ver2-v1/MINIAOD',
-    '/JetHT/Run2016H-03Feb2017_ver3-v1/MINIAOD',
+    # '/JetHT/Run2016B-03Feb2017_ver2-v2/MINIAOD',
+    # '/JetHT/Run2016C-03Feb2017-v1/MINIAOD',
+    # '/JetHT/Run2016D-03Feb2017-v1/MINIAOD',
+    # '/JetHT/Run2016E-03Feb2017-v1/MINIAOD',
+    # '/JetHT/Run2016F-03Feb2017-v1/MINIAOD',
+    # '/JetHT/Run2016G-03Feb2017-v1/MINIAOD',
+    # '/JetHT/Run2016H-03Feb2017_ver2-v1/MINIAOD',
+    # '/JetHT/Run2016H-03Feb2017_ver3-v1/MINIAOD',
 
-]
+    # '/ZeroBias/Run2016B-03Feb2017_ver2-v2/MINIAOD',
+    # '/ZeroBias/Run2016C-03Feb2017-v1/MINIAOD',
+    # '/ZeroBias/Run2016D-03Feb2017-v1/MINIAOD',
+    # '/ZeroBias/Run2016E-03Feb2017-v1/MINIAOD',
+    # '/ZeroBias/Run2016F-03Feb2017-v1/MINIAOD',
+    # '/ZeroBias/Run2016G-03Feb2017-v1/MINIAOD',
+    # '/ZeroBias/Run2016H-03Feb2017_ver2-v1/MINIAOD',
+    # '/ZeroBias/Run2016H-03Feb2017_ver3-v1/MINIAOD',
+
+# ]
 
 filter_keywords = [
 'GenJets5',
 'BGenFilter',
 ]
 
-requestNameCustom = "_newRecoJetFlav_fixPuppi_v3"
+requestNameCustom = "_newRecoJetFlav_fixPuppi_v4"
 
 
 def filter_datasets(input_datasets):
@@ -81,11 +111,14 @@ def create_request_name(input_dataset):
                          .replace('_TuneCUETHS1_13TeV-madgraphMLM-herwigpp', '')
                          .replace('_TuneCUETP8M1_FlatP6_13TeV_pythia8', '')
                          .replace('_TuneCUETHS1_Flat_13TeV_herwigpp', '')
-                         .replace('_pythia8_TuneCUETP8M1_13TeV_bornktmin150', ''))
+                         .replace('_pythia8_TuneCUETP8M1_13TeV_bornktmin150', '')
+                         .replace('_TuneCUETP8M1_13TeV-madgraphMLM-herwigpp_30M', ''))
     if 'ext' in input_dataset:
         modified_name += '_ext'
     if 'madgraphMLM-pythia8' in input_dataset:
         modified_name += '_mg-pythia'
+    elif 'madgraphMLM-herwigpp_30M' in input_dataset:
+        modified_name += '_mg-herwig-actual'
     elif 'madgraphMLM-herwigpp' in input_dataset:
         modified_name += '_mg-herwig'
     elif '_pythia8' in input_dataset:
