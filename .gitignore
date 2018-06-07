@@ -10,3 +10,10 @@ core/python/__init__.py
 *.local
 VLQToHiggsPairProd/*
 ZprimeSemiLeptonic/*
+*.patch
+*.txt
+*.out
+*.pdf
+*.pyc
+*.log
+
