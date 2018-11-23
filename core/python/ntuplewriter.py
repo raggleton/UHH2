@@ -457,7 +457,7 @@ process.ak4GenJetFlavourInfos = process.ak4CHSJetFlavourInfos.clone(
     jets = cms.InputTag("slimmedGenJets")
 )
 process.ak8GenJetFlavourInfos = process.ak4CHSJetFlavourInfos.clone(
-    jets = cms.InputTag("slimmedGenJetsAK8"),
+    jets = cms.InputTag("ak8GenJetsFat"),
     rParam = 0.8
 )
 process.updateFlavAK4GenJets = cms.EDProducer("UpdateGenJetFlavourInfo",
