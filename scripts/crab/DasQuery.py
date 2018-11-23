@@ -36,4 +36,3 @@ def autocomplete_Datasets(data):
     # https://github.com/dmwm/DAS/issues/4287#issuecomment-390278822
     return sorted(set(result_array), key=result_array.index)
 
->>>>>>> 77ebe65... Fix issue with duplicate datasets from DasQuery, update tests
