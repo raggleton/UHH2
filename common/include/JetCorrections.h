@@ -192,6 +192,36 @@ namespace JERFiles {
 
 }
 
+namespace JERFiles {
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_BCD_L123_AK4PFchs_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_EF_L123_AK4PFchs_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_G_L123_AK4PFchs_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_H_L123_AK4PFchs_DATA;
+
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_BCD_L123_AK8PFchs_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_EF_L123_AK8PFchs_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_G_L123_AK8PFchs_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_H_L123_AK8PFchs_DATA;
+
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_L123_AK4PFchs_MC;
+
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_L123_AK8PFchs_MC;
+
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_BCD_L123_AK4PFPuppi_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_EF_L123_AK4PFPuppi_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_G_L123_AK4PFPuppi_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_H_L123_AK4PFPuppi_DATA;
+
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_BCD_L123_AK8PFPuppi_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_EF_L123_AK8PFPuppi_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_G_L123_AK8PFPuppi_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_H_L123_AK8PFPuppi_DATA;
+
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_L123_AK4PFPuppi_MC;
+
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_L123_AK8PFPuppi_MC;
+}
+
 /** \brief (Re-)Correct jets according to the corrections in the passed txt files
  * 
  * txt files are available in JetMETObjects/data/; see README there for instructions how to produce
@@ -402,6 +432,7 @@ namespace JERSmearing {
 
   extern const SFtype1 SF_13TeV_2016;
   extern const SFtype1 SF_13TeV_2016_03Feb2017;
+  extern const SFtype1 SF_13Tev_Summer16_25nsV1;
 
 }
 
@@ -420,7 +451,7 @@ class GenericJetResolutionSmearer : public uhh2::AnalysisModule {
 
  public:
   explicit GenericJetResolutionSmearer(uhh2::Context&, const std::string& recj="jets", const std::string& genj="genjets", const bool allow_met_smear=true,
-                                       const JERSmearing::SFtype1& JER_sf=JERSmearing::SF_13TeV_2016, const TString ResolutionFileName="Spring16_25nsV10_MC_PtResolution_AK4PFchs.txt");
+                                       const JERSmearing::SFtype1& JER_sf=JERSmearing::SF_13Tev_Summer16_25nsV1, const TString ResolutionFileName="Spring16_25nsV10_MC_PtResolution_AK4PFchs.txt");
   virtual ~GenericJetResolutionSmearer() {m_resfile.close();}
 
   virtual bool process(uhh2::Event&) override;
@@ -465,7 +496,7 @@ class GenericJetResolutionSmearer : public uhh2::AnalysisModule {
  */
 class JetResolutionSmearer: public uhh2::AnalysisModule{
 public:
-    explicit JetResolutionSmearer(uhh2::Context & ctx, const JERSmearing::SFtype1& JER_sf=JERSmearing::SF_13TeV_2016);
+    explicit JetResolutionSmearer(uhh2::Context & ctx, const JERSmearing::SFtype1& JER_sf=JERSmearing::SF_13Tev_Summer16_25nsV1);
 
     virtual bool process(uhh2::Event & event) override;
 
