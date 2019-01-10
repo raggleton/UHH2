@@ -73,7 +73,7 @@ bool Event::lookup_trigger_index(TriggerIndex & ti) const{
             }
         }
     }
-    if(runid == -1 || ti.index >= triggerNames_currentrun.size()){
+    if(runid == -1 || index >= triggerNames_currentrun.size()){
         return false;
     }
     ti.runid = runid;
