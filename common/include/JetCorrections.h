@@ -195,13 +195,11 @@ namespace JERFiles {
 namespace JERFiles {
     extern const std::vector<std::string> Summer16_07Aug2017_V11_BCD_L123_AK4PFchs_DATA;
     extern const std::vector<std::string> Summer16_07Aug2017_V11_EF_L123_AK4PFchs_DATA;
-    extern const std::vector<std::string> Summer16_07Aug2017_V11_G_L123_AK4PFchs_DATA;
-    extern const std::vector<std::string> Summer16_07Aug2017_V11_H_L123_AK4PFchs_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_GH_L123_AK4PFchs_DATA;
 
     extern const std::vector<std::string> Summer16_07Aug2017_V11_BCD_L123_AK8PFchs_DATA;
     extern const std::vector<std::string> Summer16_07Aug2017_V11_EF_L123_AK8PFchs_DATA;
-    extern const std::vector<std::string> Summer16_07Aug2017_V11_G_L123_AK8PFchs_DATA;
-    extern const std::vector<std::string> Summer16_07Aug2017_V11_H_L123_AK8PFchs_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_GH_L123_AK8PFchs_DATA;
 
     extern const std::vector<std::string> Summer16_07Aug2017_V11_L123_AK4PFchs_MC;
 
@@ -209,13 +207,11 @@ namespace JERFiles {
 
     extern const std::vector<std::string> Summer16_07Aug2017_V11_BCD_L123_AK4PFPuppi_DATA;
     extern const std::vector<std::string> Summer16_07Aug2017_V11_EF_L123_AK4PFPuppi_DATA;
-    extern const std::vector<std::string> Summer16_07Aug2017_V11_G_L123_AK4PFPuppi_DATA;
-    extern const std::vector<std::string> Summer16_07Aug2017_V11_H_L123_AK4PFPuppi_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_GH_L123_AK4PFPuppi_DATA;
 
     extern const std::vector<std::string> Summer16_07Aug2017_V11_BCD_L123_AK8PFPuppi_DATA;
     extern const std::vector<std::string> Summer16_07Aug2017_V11_EF_L123_AK8PFPuppi_DATA;
-    extern const std::vector<std::string> Summer16_07Aug2017_V11_G_L123_AK8PFPuppi_DATA;
-    extern const std::vector<std::string> Summer16_07Aug2017_V11_H_L123_AK8PFPuppi_DATA;
+    extern const std::vector<std::string> Summer16_07Aug2017_V11_GH_L123_AK8PFPuppi_DATA;
 
     extern const std::vector<std::string> Summer16_07Aug2017_V11_L123_AK4PFPuppi_MC;
 
