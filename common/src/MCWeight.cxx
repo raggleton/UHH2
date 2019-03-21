@@ -174,8 +174,8 @@ MCScaleVariation::MCScaleVariation(Context & ctx){
     cout << "Warning: MCScaleVariation will not have an effect on this non-MC sample (dataset_type = '" + dataset_type + "')" << endl;
     return;
   }
-  auto s_mu_r = ctx.get("ScaleVariationMuR");
-  auto s_mu_f = ctx.get("ScaleVariationMuF");
+  auto s_mu_r = ctx.get("ScaleVariationMuR", "");
+  auto s_mu_f = ctx.get("ScaleVariationMuF", "");
 
   if(s_mu_r == "up") {i_mu_r = 1;}
   else if(s_mu_r == "down"){i_mu_r = 2;}
