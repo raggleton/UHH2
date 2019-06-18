@@ -13,6 +13,7 @@
  * to read what kind of argument is expected at some places.
  */
 typedef std::function<bool (const Jet &, const uhh2::Event &)> JetId;
+typedef std::function<bool (const GenJetWithParts &, const uhh2::Event &)> GenJetWithPartsId;
 typedef std::function<bool (const PrimaryVertex &, const uhh2::Event &)> PrimaryVertexId;
 typedef std::function<bool (const Electron &, const uhh2::Event &)> ElectronId;
 typedef std::function<bool (const Muon &, const uhh2::Event &)> MuonId;

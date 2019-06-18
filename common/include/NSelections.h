@@ -61,6 +61,18 @@ private:
     boost::optional<Event::Handle<std::vector<Jet> > > jetcollection;
 };
 
+class NGenJetWithPartsSelection: public uhh2::Selection {
+public:
+    explicit NGenJetWithPartsSelection(int nmin, int nmax = -1,
+        const boost::optional<GenJetWithPartsId> & jetid = boost::none,
+        const boost::optional<Event::Handle<std::vector<GenJetWithParts> > > & genjetwithpartscollection = boost::none);
+    virtual bool passes(const uhh2::Event & event);
+private:
+    int nmin, nmax;
+    boost::optional<GenJetWithPartsId> jetid;
+    boost::optional<Event::Handle<std::vector<GenJetWithParts> > > jetcollection;
+};
+
 class NTopJetSelection: public uhh2::Selection {
 public:
     explicit NTopJetSelection(int nmin, int nmax = -1,
