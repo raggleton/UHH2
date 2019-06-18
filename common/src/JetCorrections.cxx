@@ -994,7 +994,7 @@ JetCorrectionUncertainty* corrector_uncertainty(uhh2::Context & ctx, const std::
 
 JetCorrector::JetCorrector(uhh2::Context & ctx, const std::vector<std::string> & filenames, const std::vector<std::string> & filenames_L1RC){
     corrector = build_corrector(filenames);
-    direction = 0;
+    direction = 0;  // this is updated within corrector_uncertainty
 
     //MET should only be corrected using AK8 jets, iff there is no AK4 collection that could be used for this because the calculation of our raw MET is based on AK4 jets
     used_ak4chs = ctx.get("JetCollection")=="updatedPatJetsRedoneJECAK4PFchs" || ctx.get("JetCollection")=="slimmedJets";

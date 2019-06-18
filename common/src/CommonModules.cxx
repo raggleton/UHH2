@@ -128,7 +128,7 @@ bool CommonModules::process(uhh2::Event & event){
 	else throw runtime_error("CommonModules.cxx: run number not covered by if-statements in process-routine.");
       }
     }
-    else if(jec || jetlepcleaner) cout <<"WARNING: You used CommonModules for either JEC or jet-lepton-cleaning but MET is not corrected. Please be aware of this." << endl;
+    // else if(jec || jetlepcleaner) cout <<"WARNING: You used CommonModules for either JEC or jet-lepton-cleaning but MET is not corrected. Please be aware of this." << endl;
 
     if(jetid) jet_cleaner->process(event);
 
