@@ -8,11 +8,13 @@
 #include <string>
 
 #include "TH1F.h"
+#include "TH2F.h"
 
 class GenJetsHists : public uhh2::Hists {
  public:
   struct ParticleHist{
       TH1F* pt, *eta, *phi, *mass; 
+      TH2F *ptVsEta;
   };
   GenJetsHists(uhh2::Context & ctx, const std::string & dirname,  const unsigned int NumberOfPlottedJets=4, const std::string & collection_="", bool useRapidity_=true);
   GenJetsHists::ParticleHist book_ParticleHist(const std::string & axisSuffix, const std::string & histSuffix, double minPt, double maxPt);

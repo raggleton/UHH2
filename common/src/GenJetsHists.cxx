@@ -13,7 +13,7 @@ GenJetsHists::GenJetsHists(Context & ctx,
       useRapidity(useRapidity_) {
     number = book<TH1F>("number","number of genjets",21, -.5, 20.5);
     alljets = book_ParticleHist("genjet","_genjet",20,1500);
-    vector<double> minPt {20,20,20,20};
+    vector<double> minPt {0,0,0,0};
     vector<double> maxPt {1500,1000,500,350};
     vector<string> axis_suffix {"first jet","second jet","third jet","fourth jet"};
     for(unsigned int i =0; i<NumberOfPlottedJets; i++){
@@ -37,6 +37,7 @@ void GenJetsHists::fill_ParticleHist(const Particle & jet, ParticleHist & partic
     particle_hist.eta->Fill(jet.Rapidity(), weight);
   particle_hist.phi->Fill(jet.phi(), weight);
   particle_hist.mass->Fill(jet.v4().M(), weight);
+  particle_hist.ptVsEta->Fill(jet.eta(), jet.pt(), weight);
 }
 GenJetsHists::ParticleHist GenJetsHists::book_ParticleHist(const string & axisSuffix, const string & histSuffix, double minPt, double maxPt){
   ParticleHist particle_hist;
