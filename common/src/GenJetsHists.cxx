@@ -9,7 +9,7 @@ GenJetsHists::GenJetsHists(Context & ctx,
 			   const std::string & collection_):  Hists(ctx, dname), collection(collection_){
     number = book<TH1F>("number","number of genjets",21, -.5, 20.5);
     alljets = book_ParticleHist("genjet","_genjet",20,1500);
-    vector<double> minPt {20,20,20,20};
+    vector<double> minPt {0,0,0,0};
     vector<double> maxPt {1500,1000,500,350};
     vector<string> axis_suffix {"first jet","second jet","third jet","fourth jet"};
     for(unsigned int i =0; i<NumberOfPlottedJets; i++){
@@ -30,13 +30,15 @@ void GenJetsHists::fill_ParticleHist(const GenJetWithParts & jet, ParticleHist &
   particle_hist.eta->Fill(jet.eta(), weight);
   particle_hist.phi->Fill(jet.phi(), weight);
   particle_hist.mass->Fill(jet.v4().M(), weight);
+  particle_hist.ptVsEta->Fill(jet.eta(), jet.pt(), weight);
 }
 GenJetsHists::ParticleHist GenJetsHists::book_ParticleHist(const string & axisSuffix, const string & histSuffix, double minPt, double maxPt){
   ParticleHist particle_hist;
-  particle_hist.pt = book<TH1F>("pt"+histSuffix,"p_{T} "+axisSuffix,50,minPt,maxPt);
+  particle_hist.pt = book<TH1F>("pt"+histSuffix,"p_{T} "+axisSuffix,200,minPt,maxPt);
   particle_hist.eta = book<TH1F>("eta"+histSuffix,"#eta "+axisSuffix,100,-5,5);
   particle_hist.phi = book<TH1F>("phi"+histSuffix,"#phi "+axisSuffix,50,-M_PI,M_PI);
   particle_hist.mass = book<TH1F>("mass"+histSuffix,"M^{ "+axisSuffix+"} [GeV/c^{2}]", 100, 0, 300);
+  particle_hist.ptVsEta = book<TH2F>("ptVsEta"+histSuffix, "#eta "+axisSuffix+";p_{T} "+axisSuffix, 100, -5, 5, 200, minPt, maxPt);
   return particle_hist;
 }
 
