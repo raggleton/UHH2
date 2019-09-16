@@ -5,6 +5,9 @@ using namespace uhh2;
 
 AnalysisModule::~AnalysisModule(){}
 
+void AnalysisModule::endInputData(){}
+
+
 Context::Context(GenericEventStructure & ges_): ges(ges_) {}
 
 Context::~Context(){}
@@ -50,6 +53,7 @@ public:
     virtual bool process(Event &){
         return true;
     }
+    virtual void endInputData(){}
 };
 
 UHH2_REGISTER_ANALYSIS_MODULE(NoopAnalysisModule)

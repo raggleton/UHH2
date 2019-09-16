@@ -762,6 +762,9 @@ void AnalysisModuleRunner::CloseOutputFile() throw( SError ){
 }
 
 void AnalysisModuleRunner::EndMasterInputData(const SInputData &) throw (SError) {
+    // Allow analysis module to finish up
+    pimpl->analysis->endInputData();
+
     TList * l = GetHistOutput();
     TIter next(l);
     TObject * obj;

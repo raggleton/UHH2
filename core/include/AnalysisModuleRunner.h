@@ -43,7 +43,7 @@ public:
 
     // called at the beginning of the input data, on all proof nodes:
     void BeginInputData( const SInputData& ) throw( SError ) override;
-    void EndInputData  ( const SInputData& ) throw( SError ) override {}
+    void EndInputData  ( const SInputData& ) throw( SError) override {};
 
     // called at the beginning of an input file, on the proof nodes:
     void BeginInputFile( const SInputData& ) throw( SError ) override;
