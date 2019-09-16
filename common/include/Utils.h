@@ -74,6 +74,20 @@ inline void sort_by_pt(std::vector<P*> & particles){
     std::sort(particles.begin(), particles.end(), [](const P* p1, const P* p2){return p1->pt() > p2->pt();});
 }
 
+
+/** Sort vector of Particles descending in eta
+ *
+ */
+template<typename P>
+inline void sort_by_eta(std::vector<P> & particles){
+    std::sort(particles.begin(), particles.end(), [](const P & p1, const P & p2){return fabs(p1.eta()) > fabs(p2.eta());});
+}
+
+template<typename P>
+inline void sort_by_eta(std::vector<P*> & particles){
+    std::sort(particles.begin(), particles.end(), [](const P* p1, const P* p2){return fabs(p1->eta()) > fabs(p2->eta());});
+}
+
 /** common code to filter out objects from a collection according to an object id
  *
  */
