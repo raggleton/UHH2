@@ -24,6 +24,10 @@ bool uhh2::string2bool(const std::string & s){
     throw std::runtime_error("could not interpret '" + s + "' as boolean");
 }
 
+std::string uhh2::bool2string(bool b) {
+    return (b) ? "true" : "false";
+}
+
 std::string uhh2::double2string(double d){
     char buf[40];
     int res = snprintf(buf, 40, "%.18e", d);
@@ -76,6 +80,18 @@ std::string uhh2::demangle(const std::string & mangled_typename){
     free(demangled);
     return result;
 }
+
+
+bool uhh2::isSubstring(const std::string & s, const std::string & substring, bool ignoreCase) {
+    std::string newS = s;
+    std::string newSubstring = substring;
+    if (ignoreCase) {
+        std::transform(newS.begin(), newS.end(), newS.begin(), [](unsigned char c){ return std::tolower(c); });
+        std::transform(newSubstring.begin(), newSubstring.end(), newSubstring.begin(), [](unsigned char c){ return std::tolower(c); });
+    }
+    return newS.find(newSubstring) != std::string::npos;
+}
+
 
 void uhh2::trim(string & s, const std::string & to_trim){
     size_t p0 = s.find_first_not_of(to_trim);
@@ -157,7 +173,7 @@ void TableOutput::print(ostream & out){
         total_width += sep.size() + colsize[i];
     }
     total_width += sep.size();
-    
+
     // output table:
     hline(out, total_width);
     out_row(out, header, colsize, sep);
