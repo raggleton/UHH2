@@ -41,7 +41,7 @@ protected:
     
   JetHistsBase(uhh2::Context & ctx, const std::string & dirname);
 
-  jetHist book_jetHist(const std::string & axisSuffix, const std::string & histSuffix, double minPt, double maxPt);
+  jetHist book_jetHist(const std::string & axisSuffix, const std::string & histSuffix, int nBins, double minPt, double maxPt);
   void fill_jetHist(const Jet & jet, jetHist & jet_hist, double  weight);
   template<typename T>
     bool passes_id(const T & object, const uhh2::Event & event, const boost::optional<std::function<bool (const T &, const uhh2::Event & )>> & object_id);
@@ -60,7 +60,7 @@ public:
   //set id which jets should be looked at
   void set_JetId(JetId my_jetId){jetid = my_jetId;}
  //UserJet defines the i-th Jet to be plotted. The other variables are needed for plotting and to have different histogram names/axis.
-  void add_iJetHists(unsigned int UserJet, double minPt=20, double maxPt=800, const std::string & axisSuffix="userjet", const std::string & histSuffix="userjet");
+  void add_iJetHists(unsigned int UserJet, int nBins=50, double minPt=20, double maxPt=800, const std::string & axisSuffix="userjet", const std::string & histSuffix="userjet");
  protected:
   std::vector<unsigned int> m_userjet;
   std::vector<jetHist> userjets;
@@ -86,15 +86,15 @@ class TopJetHists: public JetHistsBase{
   //set id which topjets should be looked at
   void set_TopJetId(TopJetId my_jetId){topjetid = my_jetId;}
   //UserJet defines the i-th Jet to be plotted. The other variables are needed for plotting and to have different histogram names/axis. For each TopJet all its SubJets are also plotted. 
-  void add_iTopJetHists(unsigned int UserJet, double minPt=0, double maxPt=800, double minPt_sub=0, double maxPt_sub=500, const std::string & axisSuffix="userjet", const std::string & histSuffix="userjet");
+  void add_iTopJetHists(unsigned int UserJet, int nBins=50, double minPt=0, double maxPt=800, double minPt_sub=0, double maxPt_sub=500, const std::string & axisSuffix="userjet", const std::string & histSuffix="userjet");
  protected:
-  JetHistsBase::jetHist book_topJetHist(const std::string & axisSuffix, const std::string & histSuffix, double minPt, double maxPt);
+  JetHistsBase::jetHist book_topJetHist(const std::string & axisSuffix, const std::string & histSuffix, int nBins, double minPt, double maxPt);
   void fill_topJetHist(const TopJet & jet, JetHistsBase::jetHist & jet_hist, double  weight);
 
   struct subjetHist {
     TH1F* number, *sum4Vec, *pt, *eta, *phi, *mass, *csv;
   };
-  subjetHist book_subjetHist(const std::string & axisSuffix, const std::string & histSuffix, double minPt, double maxPt);
+  subjetHist book_subjetHist(const std::string & axisSuffix, const std::string & histSuffix, int nBins, double minPt, double maxPt);
   void fill_subjetHist(const TopJet & topjet, subjetHist & subjet_hist, double weight);
   std::string collection;
   std::vector<unsigned int> m_usertopjet;
