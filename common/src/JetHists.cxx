@@ -12,9 +12,9 @@ using namespace std;
 
 JetHistsBase::JetHistsBase(uhh2::Context & ctx, const std::string & dirname): Hists(ctx, dirname){}
 
-JetHistsBase::jetHist JetHistsBase::book_jetHist(const string & axisSuffix, const string & histSuffix, double minPt, double maxPt){
+JetHistsBase::jetHist JetHistsBase::book_jetHist(const string & axisSuffix, const string & histSuffix, int nBins, double minPt, double maxPt){
   jetHist jet_hist;
-  jet_hist.pt = book<TH1F>("pt"+histSuffix,"p_{T} "+axisSuffix,50,minPt,maxPt);
+  jet_hist.pt = book<TH1F>("pt"+histSuffix,"p_{T} "+axisSuffix,nBins,minPt,maxPt);
   jet_hist.eta = book<TH1F>("eta"+histSuffix,"#eta "+axisSuffix,100,-5,5);
   jet_hist.phi = book<TH1F>("phi"+histSuffix,"#phi "+axisSuffix,50,-M_PI,M_PI);
   jet_hist.mass = book<TH1F>("mass"+histSuffix,"M^{ "+axisSuffix+"} [GeV/c^{2}]", 100, 0, 300);
@@ -37,16 +37,16 @@ JetHists::JetHists(Context & ctx,
                    const std::string & collection_): JetHistsBase(ctx, dname), collection(collection_){
     number = book<TH1F>("number","number of jets",21, -.5, 20.5);
     jetid = boost::none;
-    alljets = book_jetHist("jet","_jet",20,1500);
+    alljets = book_jetHist("jet","_jet",200,0,2000);
     vector<double> minPt {20,20,20,20};
     vector<double> maxPt {1500,1000,500,350};
     vector<string> axis_suffix {"first jet","second jet","third jet","fourth jet"};
     for(unsigned int i =0; i<NumberOfPlottedJets; i++){
       if(i<4){
-        single_jetHists.push_back(book_jetHist(axis_suffix[i],"_"+to_string(i+1),minPt[i],maxPt[i]));
+        single_jetHists.push_back(book_jetHist(axis_suffix[i],"_"+to_string(i+1),100,minPt[i],maxPt[i]));
       }
       else {
-        single_jetHists.push_back(book_jetHist(to_string(i+1)+"-th jet","_"+to_string(i+1),20,500));
+        single_jetHists.push_back(book_jetHist(to_string(i+1)+"-th jet","_"+to_string(i+1),50,20,500));
       }
     }
     deltaRmin_1 = book<TH1F>("deltaRmin_1", "#Delta R_{min}(first jet,nearest jet)", 40, 0, 8.0);
@@ -56,9 +56,9 @@ JetHists::JetHists(Context & ctx,
     }
 }
 
-void JetHists::add_iJetHists(unsigned int UserJet, double minPt, double maxPt, const std::string & axisSuffix, const std::string & histSuffix ){
-  m_userjet.push_back(UserJet);
-  userjets.push_back(book_jetHist(axisSuffix, histSuffix, minPt, maxPt));
+void JetHists::add_iJetHists(unsigned int UserJet, int nBins, double minPt, double maxPt, const std::string & axisSuffix, const std::string & histSuffix ){
+  m_userjet.push_back(UserJet); 
+  userjets.push_back(book_jetHist(axisSuffix, histSuffix, nBins, minPt, maxPt));
 }
 
 void JetHists::fill(const Event & event){
@@ -97,12 +97,12 @@ void JetHists::fill(const Event & event){
 //----------------------------------------------
 /** TopJet Histograms
  */
-TopJetHists::subjetHist TopJetHists::book_subjetHist(const std::string & axisSuffix, const std::string & histSuffix, double minPt, double maxPt){
+TopJetHists::subjetHist TopJetHists::book_subjetHist(const std::string & axisSuffix, const std::string & histSuffix, int nBins, double minPt, double maxPt){
   subjetHist subjet_hist;
 
   subjet_hist.number = book<TH1F>("number"+histSuffix,"number "+axisSuffix,7, -.5, 6.5);
-
-  subjet_hist.pt = book<TH1F>("pt"+histSuffix,"p_{T} "+axisSuffix,50,minPt,maxPt);
+    
+  subjet_hist.pt = book<TH1F>("pt"+histSuffix,"p_{T} "+axisSuffix,nBins,minPt,maxPt);
   subjet_hist.eta = book<TH1F>("eta"+histSuffix,"#eta "+axisSuffix,100,-5,5);
   subjet_hist.phi = book<TH1F>("phi"+histSuffix,"#phi "+axisSuffix,50,-M_PI,M_PI);
   subjet_hist.mass = book<TH1F>("mass"+histSuffix,"M^{ "+axisSuffix+"} [GeV/c^{2}]", 100, 0, 200);
@@ -127,8 +127,8 @@ void TopJetHists::fill_subjetHist(const TopJet & topjet, subjetHist & subjet_his
   subjet_hist.sum4Vec->Fill(sumLorenzv4.M(), weight);
 }
 
-JetHistsBase::jetHist TopJetHists::book_topJetHist(const std::string & axisSuffix, const std::string & histSuffix, double minPt, double maxPt) {
-  auto jet_hist = book_jetHist(axisSuffix, histSuffix, minPt, maxPt);
+JetHistsBase::jetHist TopJetHists::book_topJetHist(const std::string & axisSuffix, const std::string & histSuffix, int nBins, double minPt, double maxPt) {
+  auto jet_hist = book_jetHist(axisSuffix, histSuffix, nBins, minPt, maxPt);
   jet_hist.mvahiggsdiscr = book<TH1F>("mvahiggsdiscr"+histSuffix,"mva-higgs-disriminator "+axisSuffix,50,0,1);
   jet_hist.subjet_sum_mass = book<TH1F>("mass_subjet_sum"+histSuffix,"M^{ "+axisSuffix+"}_{subjet sum} [GeV/c^{2}]", 100, 0, 300);
   return jet_hist;
@@ -151,20 +151,20 @@ TopJetHists::TopJetHists(Context & ctx,
 
   number = book<TH1F>("number","number of topjets",21, -.5, 20.5);
   topjetid = boost::none;
-  alljets = book_topJetHist("topjet","",20,1500);
-  allsubjets = book_subjetHist("subjet","_subjets",0,500);
+  alljets = book_topJetHist("topjet","",100,20,1500);
+  allsubjets = book_subjetHist("subjet","_subjets",100,0,500);
   vector<double> maxPt {900,600,400,300};
   string axis_suffix = "topjet";
   string axis_subjetSuffix = "subjets ";
   vector<string> axis_singleSubjetSuffix {"first ","second ","third ","fourth "};
   for(unsigned int i =0; i<NumberOfPlottedJets; i++){
     if(i<4){
-      single_jetHists.push_back(book_topJetHist(axis_singleSubjetSuffix[i]+axis_suffix,string("_")+to_string(i+1),0,maxPt[i]));
-      subjets.push_back(book_subjetHist(axis_subjetSuffix+axis_singleSubjetSuffix[i]+axis_suffix,string("_")+to_string(i+1)+string("_subj"),0,maxPt[i]));
+      single_jetHists.push_back(book_topJetHist(axis_singleSubjetSuffix[i]+axis_suffix,string("_")+to_string(i+1),100,0,maxPt[i]));
+      subjets.push_back(book_subjetHist(axis_subjetSuffix+axis_singleSubjetSuffix[i]+axis_suffix,string("_")+to_string(i+1)+string("_subj"),100,0,maxPt[i]));
     }
     else{
-      single_jetHists.push_back(book_topJetHist(to_string(i+1)+string("-th jet"),string("_")+to_string(i+1),20,500));
-      subjets.push_back(book_subjetHist(axis_subjetSuffix+to_string(i+1)+string("-th subjet")+axis_suffix,string("_")+to_string(i+1)+string("_subj"),0,maxPt[i]));
+      single_jetHists.push_back(book_topJetHist(to_string(i+1)+string("-th jet"),string("_")+to_string(i+1),50,20,500));
+      subjets.push_back(book_subjetHist(axis_subjetSuffix+to_string(i+1)+string("-th subjet")+axis_suffix,string("_")+to_string(i+1)+string("_subj"),50,0,maxPt[i]));
     }
   }
   deltaRmin_1 = book<TH1F>("deltaRmin_1", "#Delta R_{min}(first jet,nearest jet)", 40, 0, 8.0);
@@ -182,10 +182,10 @@ TopJetHists::TopJetHists(Context & ctx,
   }
 }
 
-void TopJetHists::add_iTopJetHists(unsigned int UserJet, double minPt, double maxPt, double minPt_sub, double maxPt_sub, const std::string & axisSuffix, const std::string & histSuffix ){
-  m_usertopjet.push_back(UserJet);
-  usertopjets.push_back(book_topJetHist(axisSuffix,histSuffix, minPt, maxPt));
-  usersubjets.push_back(book_subjetHist(axisSuffix+"_sub", histSuffix+"_sub", minPt_sub, maxPt_sub));
+void TopJetHists::add_iTopJetHists(unsigned int UserJet, int nBins, double minPt, double maxPt, double minPt_sub, double maxPt_sub, const std::string & axisSuffix, const std::string & histSuffix ){
+  m_usertopjet.push_back(UserJet); 
+  usertopjets.push_back(book_topJetHist(axisSuffix,histSuffix, nBins, minPt, maxPt));
+  usersubjets.push_back(book_subjetHist(axisSuffix+"_sub", histSuffix+"_sub", nBins, minPt_sub, maxPt_sub));
 }
 
 
