@@ -880,29 +880,26 @@ std::unique_ptr<FactorizedJetCorrector> build_corrector(const std::vector<std::s
    
     if(jec_unc_direction!=0){
       if (jec_unc==NULL){
-	std::cerr << "JEC variation should be applied, but JEC uncertainty object is NULL! Abort." << std::endl;
-	exit(EXIT_FAILURE);
+        std::cerr << "JEC variation should be applied, but JEC uncertainty object is NULL! Abort." << std::endl;
+        exit(EXIT_FAILURE);
       }
       // ignore jets with very low pt or high eta, avoiding a crash from the JESUncertainty tool
       double pt = jet_v4_corrected.Pt();
       double eta = jet_v4_corrected.Eta();
       if (!(pt<5. || fabs(eta)>5.)) {
-      
-	jec_unc->setJetEta(eta);
-	jec_unc->setJetPt(pt);
-	
-	double unc = 0.;	  
-	if (jec_unc_direction == 1){
-	  unc = jec_unc->getUncertainty(1);
-	  correctionfactor *= (1 + fabs(unc));
-	} else if (jec_unc_direction == -1){
-	  unc = jec_unc->getUncertainty(-1);
-	  correctionfactor *= (1 - fabs(unc));
-	}
-	jet_v4_corrected = jet.v4() * (factor_raw *correctionfactor);
+        jec_unc->setJetEta(eta);
+        jec_unc->setJetPt(pt);
+
+        double unc = 0.;
+        if (jec_unc_direction == 1){
+          unc = jec_unc->getUncertainty(true);
+        } else if (jec_unc_direction == -1){
+          unc = jec_unc->getUncertainty(false);
+        }
+        correctionfactor *= (1 + (jec_unc_direction * fabs(unc)));
+        jet_v4_corrected = jet.v4() * (factor_raw *correctionfactor);
       }
     }
-
   
     jet.set_v4(jet_v4_corrected);
     jet.set_JEC_factor_raw(1. / correctionfactor);
