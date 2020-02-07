@@ -61,3 +61,7 @@ private:
 inline bool operator==(const Particle& lhs, const Particle& rhs) {
   return (lhs.v4() == rhs.v4());
 }
+
+inline bool operator<(const Particle& lhs, const Particle& rhs) {
+  return (lhs.pt() < rhs.pt());
+}

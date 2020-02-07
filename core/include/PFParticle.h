@@ -26,8 +26,8 @@ public:
   ~PFParticle(){
   };
 
-  EParticleID particleID(){return m_particleID;}
-  float puppiWeight(){return m_puppi_weight;}
+  EParticleID particleID() const {return m_particleID;}
+  float puppiWeight() const {return m_puppi_weight;}
   // float puppiWeightNoLep(){return m_puppi_weight_nolep;}
 
   void set_particleID(EParticleID id){m_particleID = id;}
