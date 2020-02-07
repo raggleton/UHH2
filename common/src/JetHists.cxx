@@ -34,16 +34,18 @@ void JetHistsBase::fill_jetHist(const Jet & jet, JetHistsBase::jetHist & jet_his
 JetHists::JetHists(Context & ctx,
                    const std::string & dname,
                    const unsigned int NumberOfPlottedJets,
-                   const std::string & collection_): JetHistsBase(ctx, dname), collection(collection_){
+                   const std::string & collection_,
+                   bool useWeight_): JetHistsBase(ctx, dname), collection(collection_), useWeight(useWeight_) {
     number = book<TH1F>("number","number of jets",21, -.5, 20.5);
     jetid = boost::none;
     alljets = book_jetHist("jet","_jet",200,0,2000);
-    vector<double> minPt {20,20,20,20};
-    vector<double> maxPt {1500,1000,500,350};
+    vector<double> minPt {0,0,0,0};
+    vector<double> maxPt {2000,1000,500,350};
     vector<string> axis_suffix {"first jet","second jet","third jet","fourth jet"};
     for(unsigned int i =0; i<NumberOfPlottedJets; i++){
       if(i<4){
-        single_jetHists.push_back(book_jetHist(axis_suffix[i],"_"+to_string(i+1),100,minPt[i],maxPt[i]));
+        int nbins = (i==0) ? 2000 : maxPt[i]/10;
+        single_jetHists.push_back(book_jetHist(axis_suffix[i],"_"+to_string(i+1),nbins,minPt[i],maxPt[i]));
       }
       else {
         single_jetHists.push_back(book_jetHist(to_string(i+1)+"-th jet","_"+to_string(i+1),50,20,500));
@@ -62,7 +64,7 @@ void JetHists::add_iJetHists(unsigned int UserJet, int nBins, double minPt, doub
 }
 
 void JetHists::fill(const Event & event){
-    auto w = event.weight;
+    auto w = (useWeight) ? event.weight : 1.;
     if (!collection.empty() && !event.is_valid(h_jets)){
       cerr<<collection<<" is invalid. Going to abort from JetHists class"<<endl;
       cerr<<" GenJets are stored as Particle which is not a Jet"<<endl;

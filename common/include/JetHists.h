@@ -55,7 +55,8 @@ public:
   JetHists(uhh2::Context & ctx,
 	   const std::string & dirname,
 	   const unsigned int NumberOfPlottedJets=4,
-	   const std::string & collection = "");
+	   const std::string & collection = "",
+     bool useWeight_=true);
   virtual void fill(const uhh2::Event & ev) override;
   //set id which jets should be looked at
   void set_JetId(JetId my_jetId){jetid = my_jetId;}
@@ -70,6 +71,7 @@ public:
   jetHist alljets;
   std::vector<jetHist> single_jetHists;
   std::string collection;
+  bool useWeight;
   uhh2::Event::Handle<std::vector<Jet> > h_jets;
   boost::optional<JetId> jetid;
 };
