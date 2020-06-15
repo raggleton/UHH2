@@ -29,6 +29,8 @@ public:
   float phi() const{return m_phi;}
   ///energy
   float energy() const{return m_energy;}
+  ///rapidity (note needs same name as in ROOT::Math::LorentzVector for templating in DeltaRUsingY)
+  float Rapidity() const {return v4().Rapidity();}
 
   /// set charge
   void set_charge(short charge){m_charge=charge;}
