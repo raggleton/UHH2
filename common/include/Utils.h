@@ -14,7 +14,7 @@ const T * closestParticle(const Particle  & p, const std::vector<T> & particles)
     const T* next=0;
     for(unsigned int i=0; i<particles.size(); ++i) {
         const T & pi = particles[i];
-        double dr = uhh2::deltaR(pi, p);
+        double dr = uhh2::deltaRUsingY(pi, p);
         if(dr < deltarmin && &pi != &p) {
             deltarmin = dr;
             next = &pi;
@@ -85,6 +85,20 @@ inline void sort_by_eta(std::vector<P> & particles){
 template<typename P>
 inline void sort_by_eta(std::vector<P*> & particles){
     std::sort(particles.begin(), particles.end(), [](const P* p1, const P* p2){return fabs(p1->eta()) > fabs(p2->eta());});
+}
+
+
+/** Sort vector of Particles descending in y (rapidity)
+ *
+ */
+template<typename P>
+inline void sort_by_y(std::vector<P> & particles){
+    std::sort(particles.begin(), particles.end(), [](const P & p1, const P & p2){return fabs(p1.Rapidity()) > fabs(p2.Rapidity());});
+}
+
+template<typename P>
+inline void sort_by_y(std::vector<P*> & particles){
+    std::sort(particles.begin(), particles.end(), [](const P* p1, const P* p2){return fabs(p1->Rapidity()) > fabs(p2->Rapidity());});
 }
 
 /** common code to filter out objects from a collection according to an object id

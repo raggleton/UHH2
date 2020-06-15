@@ -49,4 +49,12 @@ inline double deltaR(const T & p1, const U & p2){
     return sqrt(deltaeta * deltaeta + dphi * dphi);
 }
 
+/// distance in eta-y space (use rapidity not pseudorapidity)
+template<typename T, typename U>
+inline double deltaRUsingY(const T & p1, const U & p2){
+    double deltay = p1.Rapidity() - p2.Rapidity();
+    double dphi = deltaPhi(p1, p2);
+    return sqrt(deltay * deltay + dphi * dphi);
+}
+
 }
