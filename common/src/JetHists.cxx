@@ -10,12 +10,13 @@ using namespace uhh2;
 using namespace std;
 
 
-JetHistsBase::JetHistsBase(uhh2::Context & ctx, const std::string & dirname): Hists(ctx, dirname){}
+JetHistsBase::JetHistsBase(uhh2::Context & ctx, const std::string & dirname, bool useRapidity_): Hists(ctx, dirname), useRapidity(useRapidity_) {}
 
 JetHistsBase::jetHist JetHistsBase::book_jetHist(const string & axisSuffix, const string & histSuffix, int nBins, double minPt, double maxPt){
   jetHist jet_hist;
   jet_hist.pt = book<TH1F>("pt"+histSuffix,"p_{T} "+axisSuffix,nBins,minPt,maxPt);
-  jet_hist.eta = book<TH1F>("eta"+histSuffix,"#eta "+axisSuffix,100,-5,5);
+  string etaLabel = (useRapidity) ? "y" : "#eta";
+  jet_hist.eta = book<TH1F>("eta"+histSuffix,etaLabel+" "+axisSuffix,100,-5,5);
   jet_hist.phi = book<TH1F>("phi"+histSuffix,"#phi "+axisSuffix,50,-M_PI,M_PI);
   jet_hist.mass = book<TH1F>("mass"+histSuffix,"M^{ "+axisSuffix+"} [GeV/c^{2}]", 100, 0, 300);
   jet_hist.csv = book<TH1F>("csv"+histSuffix,"csv-disriminator "+axisSuffix,50,0,1);
@@ -24,7 +25,7 @@ JetHistsBase::jetHist JetHistsBase::book_jetHist(const string & axisSuffix, cons
 
 void JetHistsBase::fill_jetHist(const Jet & jet, JetHistsBase::jetHist & jet_hist, double weight){
   jet_hist.pt->Fill(jet.pt(), weight);
-  jet_hist.eta->Fill(jet.eta(), weight);
+  jet_hist.eta->Fill((useRapidity) ? jet.Rapidity() : jet.eta(), weight);
   jet_hist.phi->Fill(jet.phi(), weight);
   jet_hist.mass->Fill(jet.v4().M(), weight);
   jet_hist.csv->Fill(jet.btag_combinedSecondaryVertex(), weight);
@@ -35,7 +36,12 @@ JetHists::JetHists(Context & ctx,
                    const std::string & dname,
                    const unsigned int NumberOfPlottedJets,
                    const std::string & collection_,
-                   bool useWeight_): JetHistsBase(ctx, dname), collection(collection_), useWeight(useWeight_) {
+                   bool useWeight_,
+                   bool useRapidity_):
+  JetHistsBase(ctx, dname, useRapidity_),
+  collection(collection_),
+  useWeight(useWeight_),
+  useRapidity(useRapidity_) {
     number = book<TH1F>("number","number of jets",21, -.5, 20.5);
     jetid = boost::none;
     alljets = book_jetHist("jet","_jet",200,0,2000);
@@ -89,7 +95,7 @@ void JetHists::fill(const Event & event){
       }
       if(i < 2){
         auto next_jet = closestParticle(jet, jets);
-        auto drmin = next_jet ? deltaR(jet, *next_jet) : numeric_limits<float>::infinity();
+        auto drmin = next_jet ? (useRapidity ? deltaRUsingY(jet, *next_jet) : deltaR(jet, *next_jet)) : numeric_limits<float>::infinity();
         if(i==0) deltaRmin_1->Fill(drmin, w);
         else deltaRmin_2->Fill(drmin, w);
       }
@@ -105,7 +111,8 @@ TopJetHists::subjetHist TopJetHists::book_subjetHist(const std::string & axisSuf
   subjet_hist.number = book<TH1F>("number"+histSuffix,"number "+axisSuffix,7, -.5, 6.5);
     
   subjet_hist.pt = book<TH1F>("pt"+histSuffix,"p_{T} "+axisSuffix,nBins,minPt,maxPt);
-  subjet_hist.eta = book<TH1F>("eta"+histSuffix,"#eta "+axisSuffix,100,-5,5);
+  string etaLabel = (useRapidity) ? "y" : "#eta";
+  subjet_hist.eta = book<TH1F>("eta"+histSuffix,etaLabel+" "+axisSuffix,100,-5,5);
   subjet_hist.phi = book<TH1F>("phi"+histSuffix,"#phi "+axisSuffix,50,-M_PI,M_PI);
   subjet_hist.mass = book<TH1F>("mass"+histSuffix,"M^{ "+axisSuffix+"} [GeV/c^{2}]", 100, 0, 200);
   subjet_hist.csv = book<TH1F>("csv"+histSuffix,"csv-disriminator "+axisSuffix,50,0,1);
@@ -120,7 +127,7 @@ void TopJetHists::fill_subjetHist(const TopJet & topjet, subjetHist & subjet_his
   LorentzVector sumLorenzv4;
   for (auto & subjet : subjets) {
     subjet_hist.pt->Fill(subjet.pt(), weight);
-    subjet_hist.eta->Fill(subjet.eta(), weight);
+    subjet_hist.eta->Fill((useRapidity) ? subjet.Rapidity() : subjet.eta(), weight);
     subjet_hist.phi->Fill(subjet.phi(), weight);
     subjet_hist.mass->Fill(subjet.v4().M(), weight);
     subjet_hist.csv->Fill(subjet.btag_combinedSecondaryVertex(), weight);
@@ -149,7 +156,11 @@ void TopJetHists::fill_topJetHist(const TopJet & jet, JetHistsBase::jetHist & je
 TopJetHists::TopJetHists(Context & ctx,
                 const std::string & dname,
                 const unsigned int NumberOfPlottedJets,
-                const std::string & collection_): JetHistsBase(ctx, dname), collection(collection_) {
+                const std::string & collection_,
+                bool useRapidity_):
+  JetHistsBase(ctx, dname, useRapidity_),
+  collection(collection_),
+  useRapidity(useRapidity_) {
 
   number = book<TH1F>("number","number of topjets",21, -.5, 20.5);
   topjetid = boost::none;
@@ -222,7 +233,7 @@ void TopJetHists::fill(const Event & event){
       }
       if(i<2){
         auto next_jet = closestParticle(jet, jets);
-        auto drmin = next_jet ? deltaR(jet, *next_jet) : numeric_limits<float>::infinity();
+        auto drmin = next_jet ? (useRapidity ? deltaRUsingY(jet, *next_jet) : deltaR(jet, *next_jet)) : numeric_limits<float>::infinity();
         if(i==0)deltaRmin_1->Fill(drmin, w);
         else deltaRmin_2->Fill(drmin, w);
       }
@@ -230,7 +241,7 @@ void TopJetHists::fill(const Event & event){
       for (unsigned int j = 0; j <ak4jets.size(); j++)
          {
             const auto & ak4jet = ak4jets[j];
-            double deltaRtopjetak4jet = deltaR(jet, ak4jet);
+            double deltaRtopjetak4jet = (useRapidity) ? deltaRUsingY(jet, ak4jet) : deltaR(jet, ak4jet);
             deltaR_ak4jet->Fill(deltaRtopjetak4jet,w);
             invmass_topjetak4jet->Fill(inv_mass_safe(jet.v4()+ak4jet.v4())); 
          }
@@ -239,12 +250,12 @@ void TopJetHists::fill(const Event & event){
 
       vector<Muon> muons = *event.muons;
       for (unsigned int j = 0; j <muons.size(); j++){
-         double deltaRtjlepton = deltaR(jet, muons[j]);
+         double deltaRtjlepton = (useRapidity) ? deltaRUsingY(jet, muons[j]) : deltaR(jet, muons[j]);
          deltaR_lepton->Fill(deltaRtjlepton, w);
       }
       vector<Electron> electrons = *event.electrons;
       for (unsigned int j = 0; j <electrons.size(); j++){
-         double deltaRtjlepton = deltaR(jet, electrons[j]);
+         double deltaRtjlepton = (useRapidity) ? deltaRUsingY(jet, electrons[j]) : deltaR(jet, electrons[j]);
          deltaR_lepton->Fill(deltaRtjlepton, w);
       }
 

@@ -39,12 +39,14 @@ protected:
       TH1F* pt, *eta, *phi, *mass, *csv, *mvahiggsdiscr, *subjet_sum_mass;
   };
 
-  JetHistsBase(uhh2::Context & ctx, const std::string & dirname);
+  JetHistsBase(uhh2::Context & ctx, const std::string & dirname, bool useRapidity_);
 
   jetHist book_jetHist(const std::string & axisSuffix, const std::string & histSuffix, int nBins, double minPt, double maxPt);
   void fill_jetHist(const Jet & jet, jetHist & jet_hist, double  weight);
   template<typename T>
     bool passes_id(const T & object, const uhh2::Event & event, const boost::optional<std::function<bool (const T &, const uhh2::Event & )>> & object_id);
+private:
+  bool useRapidity;
 };
 
 
@@ -53,10 +55,11 @@ protected:
 class JetHists: public JetHistsBase {
 public:
   JetHists(uhh2::Context & ctx,
-	   const std::string & dirname,
-	   const unsigned int NumberOfPlottedJets=4,
-	   const std::string & collection = "",
-     bool useWeight_=true);
+           const std::string & dirname,
+           const unsigned int NumberOfPlottedJets=4,
+           const std::string & collection = "",
+           bool useWeight_=true,
+           bool useRapidity_=true);
   virtual void fill(const uhh2::Event & ev) override;
   //set id which jets should be looked at
   void set_JetId(JetId my_jetId){jetid = my_jetId;}
@@ -71,7 +74,7 @@ public:
   jetHist alljets;
   std::vector<jetHist> single_jetHists;
   std::string collection;
-  bool useWeight;
+  bool useWeight, useRapidity;
   uhh2::Event::Handle<std::vector<Jet> > h_jets;
   boost::optional<JetId> jetid;
 };
@@ -80,9 +83,10 @@ public:
 class TopJetHists: public JetHistsBase{
  public:
   TopJetHists(uhh2::Context & ctx,
-	      const std::string & dirname,
-	      const unsigned int NumberOfPlottedJets=4,
-	      const std::string & collection = "");
+              const std::string & dirname,
+              const unsigned int NumberOfPlottedJets=4,
+              const std::string & collection = "",
+              bool useRapidity_=true);
 
   virtual void fill(const uhh2::Event & ev) override;
   //set id which topjets should be looked at
@@ -99,6 +103,7 @@ class TopJetHists: public JetHistsBase{
   subjetHist book_subjetHist(const std::string & axisSuffix, const std::string & histSuffix, int nBins, double minPt, double maxPt);
   void fill_subjetHist(const TopJet & topjet, subjetHist & subjet_hist, double weight);
   std::string collection;
+  bool useRapidity;
   std::vector<unsigned int> m_usertopjet;
   std::vector<jetHist> usertopjets;
   std::vector<subjetHist> usersubjets;
