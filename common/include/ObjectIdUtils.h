@@ -42,6 +42,22 @@ private:
     float min_pt, max_eta, max_pt,min_eta ;
 };
 
+
+/**
+ * Similar to PtEta cut, but cuts on y instead
+ */
+class PtYCut {
+public:
+ PtYCut(float min_pt_, float max_y_, float max_pt_ =-1, float min_y_=-1): min_pt(min_pt_), max_y(max_y_), max_pt(max_pt_),min_y(min_y_){}
+
+    bool operator()(const Particle & p, const uhh2::Event & ) const{
+      return p.pt() > min_pt && (p.pt() < max_pt || max_pt == -1) && std::abs(p.Rapidity()) < max_y && std::abs(p.Rapidity())> min_y ;
+    }
+
+private:
+    float min_pt, max_y, max_pt, min_y ;
+};
+
 /// The standard primary vertex id, i.e. ndof >= 4, |z| < 24cm, rho < 2cm
 class StandardPrimaryVertexId {
 public:

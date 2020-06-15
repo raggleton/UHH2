@@ -48,7 +48,7 @@ bool JetMuonOverlapRemoval::process(Event & event){
      for(const auto & jet : *event.jets){
         bool keep = true;
         for (uint i = 0; i < event.muons->size() && (i < 2); i++) {
-            if(deltaR(jet, event.muons->at(i)) < deltaRmin_){
+            if(deltaRUsingY(jet, event.muons->at(i)) < deltaRmin_){
                 keep = false;
             }
         }
@@ -72,7 +72,7 @@ bool JetElectronOverlapRemoval::process(Event & event){
      for(const auto & jet : *event.jets){
         bool keep = true;
         for (uint i = 0; i < event.electrons->size() && (i < 2); i++) {
-            if(deltaR(jet, event.electrons->at(i)) < deltaRmin_){
+            if(deltaRUsingY(jet, event.electrons->at(i)) < deltaRmin_){
                 keep = false;
             }
         }
