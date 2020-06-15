@@ -61,6 +61,16 @@ bool NTopJetSelection::passes(const Event & event){
     return passes_minmax(jets, nmin, nmax, event, topjetid);
 }
 
+NGenJetSelection::NGenJetSelection(int nmin_, int nmax_,
+    const boost::optional<GenJetId> & genjetid_,
+    const boost::optional<Event::Handle<std::vector<GenJet> > > & genjetcollection_) :
+    nmin(nmin_), nmax(nmax_), genjetid(genjetid_), genjetcollection(genjetcollection_){}
+
+bool NGenJetSelection::passes(const Event & event){
+    const auto & jets = genjetcollection ? event.get(*genjetcollection) : *event.genjets;
+    return passes_minmax(jets, nmin, nmax, event, genjetid);
+}
+
 NPVSelection::NPVSelection(int nmin_, int nmax_,const boost::optional<PrimaryVertexId> & pvid_): nmin(nmin_), nmax(nmax_), pvid(pvid_){
 }
 
