@@ -34,6 +34,8 @@ bool JetPFID::operator()(const Jet & jet, const Event &) const{
     return looseID(jet);
   case WP_TIGHT:
     return tightID(jet);
+  case WP_TIGHT_PUPPI:
+      return tightID_PUPPI(jet);
   case  WP_TIGHT_LEPVETO:
     return tightLepVetoID(jet);
   default:
@@ -80,6 +82,11 @@ bool JetPFID::tightID(const Jet & jet) const{
     return true;
   }
   return false;
+}
+
+bool JetPFID::tightID_PUPPI(const Jet & jet) const{
+  if(fabs(jet.eta())>2.7) return true;
+  return tightID(jet);
 }
 
 bool JetPFID::tightLepVetoID(const Jet & jet) const{
