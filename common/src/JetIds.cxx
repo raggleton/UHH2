@@ -413,6 +413,7 @@ bool JetPFID::looseID2016_PUPPI(const Jet & jet) const{
 }
 
 bool JetPFID::tightID2016_PUPPI(const Jet & jet) const{
+  if (jet.numberOfDaughters() < 2) return false;
   if(fabs(jet.eta())>2.7) return true;
   return tightID2016_CHS(jet);
 }
