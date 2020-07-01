@@ -35,7 +35,7 @@ bool JetPFID::operator()(const Jet & jet, const Event &) const{
   case WP_TIGHT:
     return tightID(jet);
   case WP_TIGHT_PUPPI:
-      return tightID_PUPPI(jet);
+    return tightID_PUPPI(jet);
   case  WP_TIGHT_LEPVETO:
     return tightLepVetoID(jet);
   default:
