@@ -85,6 +85,7 @@ bool JetPFID::tightID(const Jet & jet) const{
 }
 
 bool JetPFID::tightID_PUPPI(const Jet & jet) const{
+  if (jet.numberOfDaughters() < 2) return false;
   if(fabs(jet.eta())>2.7) return true;
   return tightID(jet);
 }
