@@ -18,6 +18,7 @@ Requires you to have a valid voms proxy, as it calls DAS.
 from __future__ import print_function
 
 import sys,os
+from tqdm import tqdm
 import argparse
 import FWCore.PythonUtilities.LumiList as LumiList
 from Utilities.General.cmssw_das_client import get_data
@@ -54,11 +55,7 @@ def get_mc_lumi_list(inputDataset="/QCD_Pt_300to470_TuneCP5_13TeV_pythia8/RunIIF
         try:
             n_files = len(json_dict['data'])
             printout = round(n_files / 10)
-            for i, file_info in enumerate(json_dict['data']):
-                if (i>n_files):
-                    break
-                if i % printout == 0:
-                    print("{}% done...".format(100 * i / n_files))
+            for file_info in tqdm(json_dict['data']):
                 ls = file_info['lumi'][0]['number']
                 run = file_info['run'][0]['run_number']
                 lumi_list += LumiList.LumiList(runsAndLumis={run: ls})

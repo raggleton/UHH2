@@ -8,6 +8,9 @@
 *
 *
 """
+import ROOT
+ROOT.PyConfig.IgnoreCommandLineOptions = True
+
 from fnmatch import fnmatchcase
 import argparse
 import os, glob, sys
@@ -27,10 +30,10 @@ if __name__ == '__main__':
         parser.add_argument('--submit','-s', dest='submit_flag', action='store_true',
                             default=False,
                             help='Submit to the grid')
-	parser.add_argument('--resubmit','-r', dest='resubmit_flag', action='store_true',
+        parser.add_argument('--resubmit','-r', dest='resubmit_flag', action='store_true',
                             default=False,
                             help='Resubmit to the grid')
-	parser.add_argument('--extratime','-t', dest='extratime_flag', action='store_true',
+        parser.add_argument('--extratime','-t', dest='extratime_flag', action='store_true',
                             default=False,
                             help='Resubmit with extra time to the grid')
         parser.add_argument('--status', dest='status_flag', action='store_true',
@@ -67,14 +70,14 @@ if __name__ == '__main__':
         if args.ConfigFile.endswith('.py'):
                 args.ConfigFile = args.ConfigFile.replace('.py','')
 
-	#sys.path.append(os.path.abspath("/nfs/dust/cms/user/gonvaq/CMSSW/CMSSW_7_4_15_patch1/src/UHH2/VLQToTopAndLepton/Utils/crab"))
+        #sys.path.append(os.path.abspath("/nfs/dust/cms/user/gonvaq/CMSSW/CMSSW_7_4_15_patch1/src/UHH2/VLQToTopAndLepton/Utils/crab"))
         
         module_name = args.ConfigFile
         __import__(module_name)
         ConfigFile = sys.modules[module_name]
 
-	if not os.path.exists(ConfigFile.config.General.workArea):
-		os.makedirs(ConfigFile.config.General.workArea)
+        if not os.path.exists(ConfigFile.config.General.workArea):
+                os.makedirs(ConfigFile.config.General.workArea)
 
 
 
@@ -105,19 +108,19 @@ if __name__ == '__main__':
 
 
         print 'Going to print the Request-Name / Input-Dataset pairs' 
-	print 'Number of Samples',len(ConfigFile.requestNames)
+        print 'Number of Samples',len(ConfigFile.requestNames)
         for i in range(len(ConfigFile.requestNames)):
                 print ConfigFile.requestNames[i],ConfigFile.inputDatasets[i]
 
         if args.submit_flag:
                 work = CrabConfig(ConfigFile.config,'submit',args.crab_options)
                 work.ByDatasets(ConfigFile.inputDatasets,ConfigFile.requestNames,args.postfix)
-	if args.resubmit_flag:
+        if args.resubmit_flag:
                 work = CrabConfig(ConfigFile.config,'resubmit',args.crab_options)
                 work.ByDatasets(ConfigFile.inputDatasets,ConfigFile.requestNames,args.postfix)
-	if args.extratime_flag:
-		if not "--maxjobruntime=2750" in set(args.crab_options):
-			args.crab_options.append("--maxjobruntime=2750")
+        if args.extratime_flag:
+                if not "--maxjobruntime=2750" in set(args.crab_options):
+                        args.crab_options.append("--maxjobruntime=2750")
                 work = CrabConfig(ConfigFile.config,'resubmit',args.crab_options)
                 work.ByDatasets(ConfigFile.inputDatasets,ConfigFile.requestNames,args.postfix)
         if args.status_flag:
@@ -132,6 +135,7 @@ if __name__ == '__main__':
                         help_name = ConfigFile.inputDatasets[i].split('/')[1]
                         #print help_name
                         dirname = '/pnfs/desy.de/cms/tier2/'+ConfigFile.config.Data.outLFNDirBase+'/'+help_name+'/crab_'+name+args.postfix+'/**/**/*.root'
+                        print dirname
                         xmlname = name+'.xml'
                         #print dirname
                         print 'For',xmlname 
