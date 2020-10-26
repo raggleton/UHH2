@@ -29,6 +29,7 @@ typedef std::function<bool (const PFParticle &, const uhh2::Event &)> PFParticle
  */
 typedef std::function<bool (const PFParticle &)> PFId;
 typedef std::function<bool (const GenParticle &)> GenId;
+typedef std::function<bool (const Particle &)> ParticleId;
 
 
 /** \brief Cut on minimum pt and maximum |eta| of a particle
