@@ -18,6 +18,10 @@ process.source.fileNames = cms.untracked.vstring([
     '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/C6C0A700-DCDE-E611-A924-14187741121F.root'
     # '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/80000/362BD21E-47CE-E611-9D61-0025905A612E.root'
 ])
+process.source.inputCommands = cms.untracked.vstring(
+         'keep *',
+         'drop LHERunInfoProduct_externalLHEProducer__LHE' # for buggy 2016v2 DY HT sample, otherwise too much RAM used
+)
 
 # Turn on jet constituent storing for all AK4/8 jets (since we have all GPs anyway)
 process.MyNtuple.doPFJetConstituentsNjets = 40
