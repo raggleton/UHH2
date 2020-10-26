@@ -231,6 +231,7 @@ class Muon : public Particle {
   void  set_tag(tag t, float value) { tags.set_tag(static_cast<int>(t), value); }
 
   float relIso() const{
+    // POG PF isolation https://twiki.cern.ch/twiki/bin/view/CMS/SWGuideMuonIdRun2#Particle_Flow_isolation
     return ( m_sumChargedHadronPt + std::max( 0.0, m_sumNeutralHadronEt + m_sumPhotonEt - 0.5*m_sumPUPt) ) / pt();
   }
 

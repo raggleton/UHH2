@@ -2605,6 +2605,7 @@ def generate_process(year, useData=True, isDebug=False, fatjet_ptmin=120.):
         # process.p.insert(0, process.BadChargedCandidateFilter)
 
     if year == "2016v2" and (not useData):
+        # Do ghost clustering for flavour (replaces deltaR matched flavour)
         process.load("PhysicsTools.JetMCAlgos.HadronAndPartonSelector_cfi")
         process.selectedHadronsAndPartonsForGenJetsFlavourInfos.particles = "prunedGenParticles"
         task.add(process.selectedHadronsAndPartonsForGenJetsFlavourInfos)

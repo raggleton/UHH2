@@ -127,10 +127,10 @@ class NtupleWriter : public edm::EDFilter {
       edm::EDGetToken generator_token;
       edm::EDGetToken pus_token;
       edm::EDGetToken lhe_token;
-      edm::EDGetToken genjetflavor_token;
+      // edm::EDGetToken genjetflavor_token;
       edm::EDGetToken dupECALClusters_token;
       edm::EDGetToken hitsNotReplaced_token;
-      std::vector<edm::EDGetToken> genjet_tokens;
+      std::vector<edm::EDGetToken> genjet_tokens, genjetflavor_tokens;
       std::vector<std::vector<GenJet>> genjets;
       double genjet_ptmin;
       double genjet_etamax;

@@ -526,11 +526,12 @@ NtupleWriter::NtupleWriter(const edm::ParameterSet& iConfig): outfile(0), tr(0),
     for(size_t j=0; j< genjet_sources.size(); ++j){
       genjet_tokens.push_back(consumes<vector<reco::GenJet>>(genjet_sources[j]));
       branch(tr, genjet_sources[j].c_str(), "std::vector<GenJet>", &genjets[j]);
+      // Get assocaiated flavour info stored in separate collection
+      genjetflavor_tokens.push_back(consumes<reco::JetFlavourInfoMatchingCollection>( edm::InputTag(genjet_sources[j] + "FlavourInfos")));
     }
     if(!genjet_sources.empty()){
         event->genjets = &genjets[0];
     }
-    genjetflavor_token = consumes<reco::JetFlavourInfoMatchingCollection > ( edm::InputTag("slimmedGenJetsFlavourInfos"));
   }
   
   if(doMET){
@@ -985,14 +986,17 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
    //-------------- gen jets -------------
 
    if(doGenJets){
-     edm::Handle<reco::JetFlavourInfoMatchingCollection> genjetflavorMatching;
-     bool hasFlavInfo = iEvent.getByToken(genjetflavor_token, genjetflavorMatching);
-
      for(size_t j=0; j< genjet_tokens.size(); ++j){
        genjets[j].clear();
        edm::Handle< std::vector<reco::GenJet> > genjet_handle;
        iEvent.getByToken(genjet_tokens[j], genjet_handle);
        const std::vector<reco::GenJet>& gen_jets = *genjet_handle;
+
+       edm::Handle<reco::JetFlavourInfoMatchingCollection> genjetflavorMatching;
+       bool hasFlavInfo = iEvent.getByToken(genjetflavor_tokens[j], genjetflavorMatching);
+       if (!hasFlavInfo) {
+         edm::LogWarning("NtupleWriter") << "GenJet collection number " << j << " is missing JetFlavourInfo";
+       }
        for (unsigned int i = 0; i < gen_jets.size(); ++i) {
          const reco::GenJet & gen_jet = gen_jets[i];
          if(gen_jet.pt() < genjet_ptmin) continue;
@@ -1006,10 +1010,10 @@ bool NtupleWriter::filter(edm::Event& iEvent, const edm::EventSetup& iSetup) {
          jet.set_pt(gen_jet.pt());
          jet.set_energy(gen_jet.energy());
          if (hasFlavInfo) {
-           for ( reco::JetFlavourInfoMatchingCollection::const_iterator j  = genjetflavorMatching->begin(); j != genjetflavorMatching->end(); ++j ) {
-             const reco::Jet *aJet = (*j).first.get();
-             if(&gen_jet == aJet){
-               reco::JetFlavourInfo aInfo = (*j).second;
+           for (reco::JetFlavourInfoMatchingCollection::const_iterator fitr = genjetflavorMatching->begin(); fitr != genjetflavorMatching->end(); ++fitr) {
+             const reco::Jet *aJet = (*fitr).first.get();
+             if (&gen_jet == aJet){
+               reco::JetFlavourInfo aInfo = (*fitr).second;
                jet.set_partonFlavour(aInfo.getPartonFlavour());
                jet.set_hadronFlavour(aInfo.getHadronFlavour());
              }

@@ -38,6 +38,13 @@ process.MyNtuple.doGenHOTVR = False
 
 # Lower AK8 GenJet pT cut, change AK8 GenJet collection
 process.ak8GenJetsFat.jetPtMin = cms.double(10.0)
+process.ak8GenJetsFatFlavourInfos = process.slimmedGenJetsFlavourInfos.clone(jets="ak8GenJetsFat")
+process.ak8GenJetsFatFlavourInfos.rParam = cms.double(0.8)
+for task in process.p._tasks:
+    # hack to add to first task
+    task.add(process.ak8GenJetsFatFlavourInfos)
+    break
+
 process.MyNtuple.genjet_sources = ['slimmedGenJets', 'ak8GenJetsFat']
 
 # Save all GenParticles
