@@ -1013,8 +1013,8 @@ void GenericJetResolutionSmearer::apply_JER_smearing(std::vector<RJ>& rec_jets, 
     // Generally this should be reported! This is a Bad Thing
     if (isnan(resolution)) {
       if (recopt < 35) { // leniency in this problematic region, hopefully fixed in future version of JER
-        cout << "WARNING: getResolution() evaluated to nan. Since this jet is in problematic region, it will instead be set to 0." << endl;
-        cout << "Input eta : rho : pt = " << recoeta << " : " << rho << ": " << recopt << endl;
+        // cout << "WARNING: getResolution() evaluated to nan. Since this jet is in problematic region, it will instead be set to 0." << endl;
+        // cout << "Input eta : rho : pt = " << recoeta << " : " << rho << ": " << recopt << endl;
         resolution = 0.;
       } else {
         throw std::runtime_error("getResolution() evaluated to nan. Input eta : rho : pt = " + double2string(recoeta) + " : " + double2string(rho) + " : " + double2string(recopt));
