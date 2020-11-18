@@ -57,15 +57,14 @@ process.MyNtuple.doStableGenParticles = True
 # Only standard METs
 process.MyNtuple.met_sources = [x for x in process.MyNtuple.met_sources if x != "slMETsCHS"]
 
-# GenParticles for H++
-# process.prunedPrunedGenParticles.select = cms.vstring(
-#     # 'keep *'
-#    'drop *',
-#    'keep status == 3',
-#    'keep 20 <= status <= 30 && pt > 1', # keep Pythia ME particles
-#    'keep ((1 <= abs(pdgId) <= 6) || abs(pdgId) == 21) && status == 11 && pt > 1', # keep ME partons for H++
-#    "keep (abs(pdgId) == 11 || abs(pdgId) == 13 || abs(pdgId) == 15) && status > 2", # keep leptons, but not status 1 (those are in packedGenParticles already) or 2 (which are just annoying)
-# )
+# Parton GenParticles, incase we need to redo jet flavour clustering
+# Also non-final-state leptons
+process.prunedPrunedGenParticles.select = cms.vstring(
+   'drop *',
+   'keep ((1 <= abs(pdgId) <= 6) || abs(pdgId) == 21)', # keep ANY partons
+   'keep 20 <= status <= 30', # keep Pythia ME particles
+   # "keep (abs(pdgId) == 11 || abs(pdgId) == 13 || abs(pdgId) == 15) && status != 1", # keep leptons, but not status 1 (those are in packedGenParticles already)
+)
 
 # Do this after setting process.source.fileNames, since we want the ability to override it on the commandline
 options = setup_opts()

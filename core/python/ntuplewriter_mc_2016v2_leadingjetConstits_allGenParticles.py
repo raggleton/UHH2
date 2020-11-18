@@ -15,7 +15,8 @@ process = generate_process(year="2016v2", useData=False)
 process.source.fileNames = cms.untracked.vstring([
     # '/store/mc/RunIISummer16MiniAODv2/TT_TuneCUETP8M2T4_13TeV-powheg-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/80000/E022CF80-0ABF-E611-B5CD-00259048A87C.root'
     # '/store/mc/RunIISummer16MiniAODv2/QCD_Pt-15to7000_TuneCUETHS1_Flat_13TeV_herwigpp/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v2/20000/9A862150-7F9F-E811-A0FD-44A842482557.root'
-    '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/C6C0A700-DCDE-E611-A924-14187741121F.root'
+    # '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_TuneCUETHS1_13TeV-madgraphMLM-herwigpp/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v2/50000/C6C0A700-DCDE-E611-A924-14187741121F.root'
+    '/store/mc/RunIISummer16MiniAODv2/QCD_HT500to700_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext1-v2/110000/0055B499-54B6-E611-9F86-FA163E1F94C5.root'
     # '/store/mc/RunIISummer16MiniAODv2/DYJetsToLL_M-50_HT-100to200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8/MINIAODSIM/PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/80000/362BD21E-47CE-E611-9D61-0025905A612E.root'
 ])
 
@@ -53,15 +54,18 @@ process.MyNtuple.doStableGenParticles = True
 # Only standard METs
 process.MyNtuple.met_sources = [x for x in process.MyNtuple.met_sources if x != "slMETsCHS"]
 
-# GenParticles for H++
-# process.prunedPrunedGenParticles.select = cms.vstring(
-#     # 'keep *'
-#    'drop *',
-#    'keep status == 3',
-#    'keep 20 <= status <= 30 && pt > 1', # keep Pythia ME particles
-#    'keep ((1 <= abs(pdgId) <= 6) || abs(pdgId) == 21) && status == 11 && pt > 1', # keep ME partons for H++
-#    "keep (abs(pdgId) == 11 || abs(pdgId) == 13 || abs(pdgId) == 15) && status > 2", # keep leptons, but not status 1 (those are in packedGenParticles already) or 2 (which are just annoying)
-# )
+# Parton GenParticles, incase we need to redo jet flavour clustering
+# Also non-final-state leptons
+process.prunedPrunedGenParticles.select = cms.vstring(
+   'drop *',
+   # keep ANY partons that could be the hardest in the jet
+   # the status check for gluons is because there are so many we don't want
+   # this only works for Pythia samples though!
+   'keep (1 <= abs(pdgId) <= 6)',
+   'keep (pdgId == 21)', #' && (status == 23 || status == 44 || status == 51 || status == 52 || status == 62 || status == 71 || status == 72 || status == 73))',
+   'keep 20 <= status <= 30', # keep Pythia ME particles
+   # "keep (abs(pdgId) == 11 || abs(pdgId) == 13 || abs(pdgId) == 15) && status != 1", # keep leptons, but not status 1 (those are in packedGenParticles already)
+)
 
 # Do this after setting process.source.fileNames, since we want the ability to override it on the commandline
 options = setup_opts()
