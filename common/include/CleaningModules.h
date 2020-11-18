@@ -130,18 +130,20 @@ private:
 
 class JetMuonOverlapRemoval: public uhh2::AnalysisModule {
    public:
-      explicit JetMuonOverlapRemoval(double deltaRmax);
+      explicit JetMuonOverlapRemoval(uhh2::Context & ctx, double deltaRmax, const std::string & label_="muons");
       virtual bool process(uhh2::Event & event) override;
 
    private:
       double deltaRmin_;
+      uhh2::Event::Handle<std::vector<Muon>> hndl;
  };
 
 class JetElectronOverlapRemoval: public uhh2::AnalysisModule {
    public:
-      explicit JetElectronOverlapRemoval(double deltaRmax);
+      explicit JetElectronOverlapRemoval(uhh2::Context & ctx, double deltaRmax, const std::string & label_="electrons");
       virtual bool process(uhh2::Event & event) override;
 
    private:
       double deltaRmin_;
+      uhh2::Event::Handle<std::vector<Electron>> hndl;
  };

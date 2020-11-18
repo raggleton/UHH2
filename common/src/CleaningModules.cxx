@@ -36,53 +36,58 @@ bool GenJetCleaner::process(Event & event){
     return true;
 }
 
-JetMuonOverlapRemoval::JetMuonOverlapRemoval(double deltaRmin):
-deltaRmin_(deltaRmin){}
+JetMuonOverlapRemoval::JetMuonOverlapRemoval(Context & ctx, double deltaRmin, const std::string & label_):
+deltaRmin_(deltaRmin),
+hndl(ctx.get_handle<vector<Muon>>(label_)) {}
 
 bool JetMuonOverlapRemoval::process(Event & event){
-   
-   assert(event.muons);
-   if (event.muons->size() > 0) {
-     std::vector<Jet> result;
-     // Muon lepton = event.muons->at(0);
-     for(const auto & jet : *event.jets){
-        bool keep = true;
-        for (uint i = 0; i < event.muons->size() && (i < 2); i++) {
-            if(deltaRUsingY(jet, event.muons->at(i)) < deltaRmin_){
-                keep = false;
+    if (!event.is_valid(hndl)) {
+        throw std::runtime_error("In JetMuonOverlapRemoval: Handle not valid!");
+    }
+    vector<Muon> & muons = event.get(hndl);
+    if (muons.size() > 0) {
+        std::vector<Jet> result;
+        for(const auto & jet : *event.jets){
+            bool keep = true;
+            for (uint i = 0; i < muons.size(); i++) {
+                if (deltaRUsingY(jet, muons.at(i)) < deltaRmin_){
+                    keep = false;
+                }
             }
+            if (keep)
+                result.push_back(jet);
         }
-        if (keep)
-           result.push_back(jet);
-     }
-     std::swap(result, *event.jets);
-   }
+        std::swap(result, *event.jets);
+    }
 
-   return true;
+    return true;
 }
 
-JetElectronOverlapRemoval::JetElectronOverlapRemoval(double deltaRmin):
-deltaRmin_(deltaRmin){}
+JetElectronOverlapRemoval::JetElectronOverlapRemoval(Context & ctx, double deltaRmin, const std::string & label_):
+deltaRmin_(deltaRmin),
+hndl(ctx.get_handle<vector<Electron>>(label_)) {}
 
 bool JetElectronOverlapRemoval::process(Event & event){
-   
-   assert(event.electrons);
-   if (event.electrons->size() > 0) {
-     std::vector<Jet> result;
-     for(const auto & jet : *event.jets){
-        bool keep = true;
-        for (uint i = 0; i < event.electrons->size() && (i < 2); i++) {
-            if(deltaRUsingY(jet, event.electrons->at(i)) < deltaRmin_){
-                keep = false;
+    if (!event.is_valid(hndl)) {
+        throw std::runtime_error("In JetElectronOverlapRemoval: Handle not valid!");
+    }
+    vector<Electron> & electrons = event.get(hndl);
+    if (electrons.size() > 0) {
+        std::vector<Jet> result;
+        for(const auto & jet : *event.jets){
+            bool keep = true;
+            for (uint i = 0; i < electrons.size(); i++) {
+                if (deltaRUsingY(jet, electrons.at(i)) < deltaRmin_){
+                    keep = false;
+                }
             }
+            if (keep)
+                result.push_back(jet);
         }
-        if (keep)
-           result.push_back(jet);
-     }
-     std::swap(result, *event.jets);
-   }
+        std::swap(result, *event.jets);
+    }
 
-   return true;
+    return true;
 }
 
 
